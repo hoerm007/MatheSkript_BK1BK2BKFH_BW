@@ -1,0 +1,450 @@
+\documentclass[a4paper,12pt, headsepline, ngerman]{scrartcl}
+
+\usepackage{scrlayer-scrpage}
+\usepackage[nodisplayskipstretch]{setspace} %vspace before/after math mode
+%\setstretch{5}
+\raggedbottom
+\onehalfspacing
+%\renewcommand*{\familydefault}{\sfdefault}
+
+
+
+\pagestyle{scrheadings} %KOMA-Script mit Kopf-Fuß-Zeilen
+\usepackage{hyperref}			%Hyperlinks setzen
+\usepackage{babel}				%Silbentrennung mit ngerman
+
+\usepackage{booktabs} 			% For prettier tables
+
+\usepackage{mathtools}  		%Mathe-Paket
+\usepackage{amssymb}			%Symbole
+\usepackage{bbm}				%\mathbbm{N} für natürliche Zahlen o.ä.
+%\usepackage{graphicx}			%Optionen für \includegraphics{imagefile}
+%Solte in mathtools beinhaltet sein
+\usepackage{color}				%\textcolor{blue}{text...}
+\usepackage[dvipsnames]{xcolor}
+%Häufig verwendetet Farben
+%ForestGreen 		RGB(  0,155, 85)
+%YellowOrange		RGB(250,162, 26)
+
+\usepackage[T1]{fontenc}		%Umlaute
+
+
+
+
+\usepackage{ulem}
+%\uline{important} underlined text
+%\uuline{urgent} double-underlined text
+%\uwave{boat} wavy underline
+%\sout{wrong} line struck through word
+%\xout{removed} marked over like //////////
+%\dashuline{dashing} dashed underline
+%\dotuline{dotty} dotted underline
+\usepackage{cancel}					%Durchstreichen von Dingen in Formeln
+\usepackage{enumitem}				%Aufzählungen [label=\alph*)]
+\setlist[enumerate]{nosep, topsep=0pt}	%Kleinere Abstände bei Aufzählungen
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+\usepackage{framed}                 %Rahmen machen \begin{framed} ... \end{framed}
+
+\usepackage{tcolorbox} 				%Für Boxen um Text
+\usepackage{array}
+%Plots
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{pgfmath}
+
+\usepackage{bm}						%\bm{xxx} for bold in math mode
+
+\usepackage{geometry}
+\geometry{a4paper, portrait, left=1.5cm, right=2cm, top=1cm, bottom=2cm, headsep=0.2cm, includehead, head=27.30193pt}
+
+\usepackage{marvosym} %\Lightning
+\usepackage{multirow}
+\renewcommand{\mvchr}[1]{\Large{\mbox{\mvs\symbol{#1}}}} %\Lightning in math mode
+
+\usetikzlibrary{intersections}
+
+\setkomafont{headsepline}{\color{black}}
+
+\usepackage{amsthm}					%Definitionsumgebung für \newtheorem{defi}{Definition}[section] usw.
+\theoremstyle{definition}
+\newtheorem{defi}{Definition}[subsection]
+\newtheorem*{bsp}{Beispiel}
+\newtheorem{kon}[defi]{Konstruktion}
+\newtheorem{nota}[defi]{Notation}
+\newtheorem{cha}[defi]{Charakterisierung}
+\newtheorem{norm}[defi]{Normierung}
+\newtheorem{bem}[defi]{Bemerkung}
+\newtheorem{folg}[defi]{Folgerung}
+\newtheorem{beob}[defi]{Beobachtung}
+\newtheorem{erin}[defi]{Erinnerung}
+\newtheorem{sit}[defi]{Situation}
+%Einheiten
+\newcommand{\ms}{\frac{m}{s}}
+\newcommand{\kmh}{\frac{km}{h}}
+%Mathebefehle
+\newcommand{\beq}{\begin{align}}
+\newcommand{\eeq}{\end{align}}
+\newcommand{\beqn}{\begin{align*}}
+\newcommand{\eeqn}{\end{align*}}
+\newcommand{\td}{\text{d}}
+\newcommand{\ul}{\underline}
+\newcommand{\tTr}{\text{Tr}}
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\braa}{\langle}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\kett}{\rangle}
+\newcommand{\braket}[2]{\langle #1|#2\rangle}
+\newcommand{\mH}{\mathcal{H}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+%Exercise-Paket Umbenennungen
+\usepackage[]{exercise}			%Nach hyperref einbinden! answerdelayed
+\renewcommand{\listexercisename}{Liste der Aufgaben}%
+\renewcommand{\ExerciseName}{Aufgabe}%
+\renewcommand{\AnswerName}{L{\"o}sung zu Aufgabe}%
+\renewcommand{\ExerciseListName}{Aufg.}%
+\renewcommand{\AnswerListName}{L{\"o}sung}%
+\renewcommand{\ExePartName}{Teil}%
+\renewcommand{\ArticleOf}{von\ }%
+%\renewcommand{\ExerciseHeaderTitle}{\ExerciseTitle}
+\renewcommand{\ExerciseHeader}{%
+	\textbf{\large\ExerciseHeaderDifficulty\ExerciseName\ %
+	\ExerciseHeaderNB\normalsize\ExerciseHeaderTitle\ExerciseHeaderOrigin}\medskip}
+\renewcommand{\AnswerHeader}{
+	\newpage\textbf{L{\"o}sung zu \ExerciseName\ \ExerciseHeaderNB}\smallskip}
+
+
+\definecolor{tcback}{rgb}{.95,.95,.95}
+%Farbe für die Lösungen, die die Schüler selbst ausfüllen sollen
+\definecolor{loes}{rgb}{1,1,1}
+\definecolor{loestc}{rgb}{.95,.95,.95}
+%Arbeitsblatt-Modus
+\definecolor{loes}{rgb}{.36,.58,.93}
+\definecolor{loestc}{rgb}{1, .4, 1}
+\tcbset{
+%	frame code={}
+%	center title,
+%	left=0pt,
+%	right=0pt,
+%	top=0pt,
+%	bottom=0pt,
+	colback=tcback,
+%	colframe=white,
+%	width=\dimexpr\textwidth\relax,
+%	enlarge left by=0mm,
+%	boxsep=5pt,
+%	arc=0pt,outer arc=0pt,
+}
+%\sqrt[\leftroot{0}\uproot{2}n]{x}
+\newcommand{\fakesection}[1]{%
+	\par\refstepcounter{section}% Increase section counter
+	\sectionmark{#1}% Add section mark (header)
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}% Add section to ToC
+	% Add more content here, if needed.
+}
+\newcommand{\fakesubsection}[1]{%
+	\par\refstepcounter{subsection}% Increase section counter
+	\subsectionmark{#1}% Add section mark (header)
+	\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}% Add section to ToC
+	% Add more content here, if needed.
+}
+
+\begin{document}
+	\setlength\parindent{0pt} %keine Einrückungen beim Start eines Paragraphen
+
+	%Header
+	\lohead{Mathematik}
+	%\cohead{} %im Arbeitsblatt
+	\rohead{Datum \phantom{00.00.0000}}
+	\lehead{lehead}
+	\cehead{cehead}
+	\rehead{rehead}
+%	\cofoot[plain content]{} %keine Seitenzahlen
+	\cofoot[\pagemark]{\pagemark}
+	\title{Mathematik\\
+		Ein Skript für das Berufskolleg 2}
+	\author{Hermann Maier}
+%	\maketitle
+%	\newpage
+%	\tableofcontents
+%	\newpage
+
+	%\setlength\extrarowheight{10pt} %Horizontales padding für Tabellen
+	\def\grundlagen{./Arbeitsblaetter/Grundlagen}
+	\def\linFkt{./Arbeitsblaetter/LineareFunktionen}
+	\def\quadFkt{./Arbeitsblaetter/QuadratischeFunktionen}
+	\def\ganzFkt{./Arbeitsblaetter/GanzrationaleFunktionen}
+	\def\eFkt{./Arbeitsblaetter/EFunktionen}
+	\def\ableitung{./Arbeitsblaetter/Ableitung}
+%	\fakesection{Grundlagen}
+%	\input{\grundlagen/Mengen.tex}
+%	\newpage
+%	\input{\grundlagen/EinfachesRechnen.tex}
+%	\newpage
+%	\input{\grundlagen/Mitternachtsformel.tex}
+%	\newpage
+%	\cohead{\Large\textbf{Lösungen}}
+%	\fakesubsection{Lösungen}
+%	\shipoutAnswer
+%	\newpage
+%	\fakesection{Lineare Funktionen}
+%	\input{\linFkt/Einfuehrung.tex}
+%	\newpage
+%	\input{\linFkt/Steigungswinkel.tex}
+%	\newpage
+%	\input{\linFkt/Punktprobe.tex}
+%	\newpage
+%	\input{\linFkt/Nullstellen.tex}
+%	\newpage
+%	\input{\linFkt/Lage.tex}
+%	\newpage
+%	\input{\linFkt/Schnittpunkt.tex}
+%	\newpage
+%	\cohead{\Large\textbf{Lösungen}}
+%	\fakesubsection{Lösungen}
+%	\shipoutAnswer
+%	\newpage
+%	\fakesection{Quadratische Funktionen}
+%	\input{\quadFkt/Scheitelform.tex}
+%	\newpage
+%	\input{\quadFkt/Hauptform.tex}
+%	\newpage
+%	\input{\quadFkt/Produktform.tex}
+%	\newpage
+%	\cohead{\Large\textbf{Lösungen}}
+%	\fakesubsection{Lösungen}
+%	\shipoutAnswer
+%	\newpage
+%	\fakesection{Ganzrationale Funktionen}
+%	\input{\ganzFkt/Einfuehrung.tex}
+%	\newpage
+%	\input{\ganzFkt/Potenzfunktionen.tex}
+%	\newpage
+%	\input{\ganzFkt/Hauptform.tex}
+%	\newpage
+%	\input{\ganzFkt/Symmetrie.tex}
+%	\newpage
+%	\input{\ganzFkt/Verhalten.tex}
+%	\newpage
+%	\input{\ganzFkt/Nullstellen.tex}
+%	\newpage
+%	\input{\ganzFkt/Produktform.tex}
+%	\newpage
+%	\cohead{\Large\textbf{Lösungen}}
+%	\fakesubsection{Lösungen}
+%	\shipoutAnswer
+%	\newpage
+%	\fakesection{Exponentialfunktionen}
+%	\input{\eFkt/Einfuehrung.tex}
+%	\newpage
+% 	\input{\eFkt/Begriffe.tex}
+%	\newpage
+% 	\input{\eFkt/WaagrechteAsymptoten.tex}
+% 	\newpage
+% 	\input{\eFkt/Ln.tex}
+% 	\newpage
+% 	\input{\eFkt/FktAuf.tex}
+% 	\newpage
+% 	\input{\eFkt/SchiefeAsymptoten.tex}
+% 	\newpage
+% 	\input{\eFkt/NaehrungsweiseNST.tex}
+% 	\newpage
+% 	\cohead{\Large\textbf{Lösungen}}
+% 	\fakesubsection{Lösungen}
+% 	\shipoutAnswer
+% 	\newpage
+
+ 	\input{\ableitung/MittlereAenderungsrate.tex}
+ 	\newpage
+
+
+
+% 	\cohead{\Large\textbf{Lösungen}}
+%	\fakesubsection{Lösungen}
+%	\shipoutAnswer
+%	\newpage
+
+\cohead{\Large\textbf{Grafisches Ableiten}}
+\fakesubsection{Grafisches Ableiten}
+Die Geschwindigkeit ist ein weiteres Beispiel für eine Änderungsrate. Sie gibt an wie stark sich der Ort mit der Zeit verändert. Betrachten wir einen Ausschnitt einer Fahrt auf der Autobahn:\\
+\begin{minipage}[t]{\textwidth}
+	\centering\includegraphics[width=.9\textwidth]{\ableitung/pics/momentan_Geschwindigkeit.png}
+\end{minipage}\\
+Im obigen Beispiel lässt sich die Durchschnittsgeschwindigkeit in der ersten Stunde wie folgt berechnen: \(\frac{60km-0km}{1h-0h}=60\kmh\). Man kann leicht erkennen, dass die momentane Geschwindigkeit (auf dem Tacho angezeigte Geschwindigkeit) nicht gleich bleibt, da die Kurve sonst eine Gerade sein müsste. Doch wie kann man die momentane Geschwindigkeit z.B. nach \(0,3h\) bestimmen?\\
+Eine mögliche Schätzung wäre natürlich, dass die Geschwindigkeit ca. \(60\kmh\) beträgt, doch diese ist eher ungenau. Rein vom Verlauf der Kurve her, muss die Geschwindigkeit kleiner als \(60\kmh\) sein, da die Kurve bei \(0,3h\) relativ flach verläuft. Eine bessere Schätzung würde man erhalten, indem man die Durchschnittsgeschwindigkeit von \(0,3h\) bis \(1h\) bestimmt: \(\frac{60km-17km}{1h-0,3h}\approx61\kmh\). Das Auto hatte in den letzten 42 Minuten also eine durchschnittliche Geschwindigkeit von \(61\kmh\), was eine sogar noch schlechtere Schätzung ist.\\
+Etwas besser wäre es, die rechte Grenze etwas weiter nach links zu schieben, also nicht den Zeitraum von \(0,3h\) bis \(1h\) zu betrachten, sondern von \(0,3h\) bis \(0,6h\): \(\frac{21km-17km}{0,6h-0,3h}\approx13\kmh\). Diese Schätzung scheint schon deutlich besser zu sein.\\
+Letztlich bestimmen wir die Steigung einer Geraden mit Hilfe eines Steigungsdreiecks, wobei 2 Ecken des Dreiecks auf dem Schaubild der Funktion liegen. Je näher wir die beiden Ecken zusammenschieben, desto näher liegt das Ergebnis an der momentanen Änderungsrate. Mathematisch kann man die 2 Ecken auf einen Punkt zusammenschieben, um die tatsächliche momentane Änderungsrate zu bestimmen. Grafisch wird aus der Geraden dann eine Tangente (vergleiche Tangenten bei der gegenseitigen Lage von Geraden und Parabel). Im obigen Beispiel hätte die Tangente an der Stelle \(0,3h\) eine Steigung von ca. \(12\kmh\), was der auf dem Tacho angezeigten Geschwindigkeit entsprechen würde.\\\newpage
+\begin{tcolorbox}
+	\phantom{ }\\
+	\textcolor{loestc}{Die momentane Änderungsrate bzw. Ableitung einer Funktion an einer Stelle \(x_0\) entspricht der Steigung der Tangenten an dieser Stelle. Die Begriffe momentane Änderungsrate, Ableitung und Steigung (kurz für Tangentensteigung) werden meist synonym verwendet.}\\
+\end{tcolorbox}
+\begin{minipage}{\textwidth}
+	\begin{minipage}{0.49\textwidth}
+		\centering\includegraphics[width=.95\textwidth]{\ableitung/pics/0komma5xquadrat.png}
+	\end{minipage}
+	\begin{minipage}{0.49\textwidth}
+		Wert der Ableitung von \(f(x)=0,5x^2\) grafisch bestimmt:\\
+		An der Stelle \(x_0=1\): Die Tangente an der Stelle \(x=1\) hat eine Steigung von ca. 1, also beträgt die Ableitung 1.\\
+		An der Stelle \(x_1=2\): \textcolor{loes}{Die Tangente an der Stelle \(x=2\) hat eine Steigung von ca. 2, also beträgt die Ableitung 2.}\\
+		An der Stelle \(x_2=0\): \textcolor{loes}{Die Tangente an der Stelle \(x=0\) hat eine Steigung von 0, also beträgt die Ableitung 0.}\\
+		An der Stelle \(x_0=-3\): \textcolor{loes}{Die Tangente an der Stelle \(x=-3\) hat eine Steigung von ca. -3, also beträgt die Ableitung -3.}\\
+	\end{minipage}
+\end{minipage}
+\begin{tcolorbox}
+	\phantom{ }\\
+	\textcolor{loestc}{Wir führen als Symbol für die Ableitung \(f'(x)\), sprich f Strich von x, ein.\\
+	\(f'(1)=2\) (sprich f Strich von 1 gleich 2) bedeutet also, dass die Ableitung von f an der Stelle 1 gleich 2 beträgt. Würde man die Tangente an \(f\) an der Stelle 1 zeichnen, so hätte sie eine Steigung von 2.}\\
+\end{tcolorbox}
+Zusammengefassung: Die momentane Änderungsrate/Ableitung/Steigung einer Funktion gibt also an, wie stark sich die Funktion an einer Stelle ändert (statt innerhalb eines Intervalls wie bei der durchschnittlichen Änderungsrate). Steigt die Funktion, ist die Ableitung positiv, fällt die Funktion ist sie negativ. Je steiler das Schaubild nach oben geht, desto größer ist die Steigung und damit auch die Ableitung. Grafisch lässt sich die Ableitung mit Hilfe der Tangentensteigung abschätzen.
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}{\textwidth}
+	\begin{Exercise}[title={Schätze jeweils die Ableitung an den Stellen -2, 0, 1 und 3 ab.}, label=grafischABlA1]
+\begin{minipage}{\textwidth}
+	\begin{minipage}{0.49\textwidth}
+		\centering\includegraphics[width=.95\textwidth]{\ableitung/pics/grafisch1.png}
+	\end{minipage}
+	\begin{minipage}{0.49\textwidth}
+		\centering\includegraphics[width=.95\textwidth]{\ableitung/pics/grafisch2.png}
+	\end{minipage}
+\end{minipage}\\\phantom{x}\\
+\begin{minipage}{\textwidth}
+	\begin{minipage}{0.49\textwidth}
+		\centering\includegraphics[width=.95\textwidth]{\ableitung/pics/grafisch3.png}
+	\end{minipage}
+	\begin{minipage}{0.49\textwidth}
+		\centering\includegraphics[width=.95\textwidth]{\ableitung/pics/grafisch4.png}
+	\end{minipage}\\
+\end{minipage}
+	\end{Exercise}
+\end{minipage}
+\begin{minipage}{\textwidth}
+	\begin{Exercise}[title={Bestimme jeweils die durchschnittliche Änderungsrate auf den Intervallen \(I_1=[0,\ 2]\) sowie \(I_2=[-2,\ 2]\) und \(I_3=[-1,\ 4]\). Du kannst auf 2 Nachkommastellen runden, falls notwendig.}, label=grafischABlA2]
+		\begin{enumerate}[label=\alph*)]
+			\item \(f_1(x)=3x\)
+			\item \(f_2(x)=-2x^2\)
+			\item \(f_3(x)=x^3-2x^2\)
+			\item \(f_4(x)=e^x\)
+			\item \(f_5(x)=2e^{3x}-4\)
+			\item \(f_6(x)=-0,1x^3\)
+			\item \(f_7(x)=x+10\)
+			\item \(f_8(x)=-e^x+x-2\)
+			\item \(f_9(x)=-\frac{3}{4}x^2+3x\)
+		\end{enumerate}
+	\end{Exercise}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{Answer}[ref=grafischABlA1]\\
+\begin{minipage}{\textwidth}
+	\begin{minipage}{0.49\textwidth}
+		\centering\includegraphics[width=.95\textwidth]{\ableitung/pics/grafisch1Loesung.png}\\
+		\(\textcolor{blue}{f'(-2)\approx-\frac{8}{3}}\)\\
+		\(\textcolor{ForestGreen}{f'(0)\approx0}\)\\
+		\(\textcolor{red}{f'(1)\approx\frac{1}{3}}\)\\
+		\(\textcolor{YellowOrange}{f'(3)\approx9}\)\\
+	\end{minipage}
+	\begin{minipage}{0.49\textwidth}
+		\centering\includegraphics[width=.95\textwidth]{\ableitung/pics/grafisch2Loesung.png}\\
+		\(\textcolor{blue}{f'(-2)\approx1}\)\\
+		\(\textcolor{ForestGreen}{f'(0)\approx0}\)\\
+		\(\textcolor{red}{f'(1)\approx-0,5}\)\\
+		\(\textcolor{YellowOrange}{f'(3)\approx-1,5}\)\\
+	\end{minipage}
+\end{minipage}\\\phantom{x}\\
+\begin{minipage}{\textwidth}
+	\begin{minipage}{0.49\textwidth}
+		\centering\includegraphics[width=.95\textwidth]{\ableitung/pics/grafisch3Loesung.png}\\
+		\(\textcolor{blue}{f'(-2)\approx0,2}\)\\
+		\(\textcolor{ForestGreen}{f'(0)\approx0,5}\)\\
+		\(\textcolor{red}{f'(1)\approx0,8}\)\\
+		\(\textcolor{YellowOrange}{f'(3)\approx2,25}\)\\
+	\end{minipage}
+	\begin{minipage}{0.49\textwidth}
+		\centering\includegraphics[width=.95\textwidth]{\ableitung/pics/grafisch4Loesung.png}\\
+		\(\textcolor{blue}{f'(-2)\approx4,5}\)\\
+		\(\textcolor{ForestGreen}{f'(0)\approx0,5}\)\\
+		\(\textcolor{red}{f'(1)\approx0}\)\\
+		\(\textcolor{YellowOrange}{f'(3)\approx2}\)\\
+	\end{minipage}\\
+\end{minipage}
+\end{Answer}
+\begin{Answer}[ref=grafischABlA1]
+	\begin{enumerate}[label=\alph*)]
+		\item \(f_1(x)=3x\)\\
+		mittlere Änderungsrate auf \(I_1=[0,\ 2]\): \(\frac{6-0}{2-0}=3\)\\
+		mittlere Änderungsrate auf \(I_2=[-2,\ 2]\): \(\frac{6-(-6)}{2-(-2)}=3\)\\
+		mittlere Änderungsrate auf \(I_3=[-1,\ 4]\): \(\frac{12-(-3)}{4-(-1)}=3\)\\
+		Anmerkung: Da es sich um eine Gerade handelt, ist die mittlere Änderungsrate immer gleich der Steigung der Geraden.
+		\item \(f_2(x)=-2x^2\)\\
+		mittlere Änderungsrate auf \(I_1=[0,\ 2]\): \(\frac{-8-0}{2-0}=-4\)\\
+		mittlere Änderungsrate auf \(I_2=[-2,\ 2]\): \(\frac{-8-(-8)}{2-(-2)}=0\)\\
+		mittlere Änderungsrate auf \(I_3=[-1,\ 4]\): \(\frac{-32-(-2)}{4-(-1)}=-6\)\\
+		\item \(f_3(x)=x^3-2x^2\)\\
+		mittlere Änderungsrate auf \(I_1=[0,\ 2]\): \(\frac{0-0}{2-0}=0\)\\
+		mittlere Änderungsrate auf \(I_2=[-2,\ 2]\): \(\frac{0-(-16)}{2-(-2)}=4\)\\
+		mittlere Änderungsrate auf \(I_3=[-1,\ 4]\): \(\frac{32-(-3)}{4-(-1)}=7\)\\
+		\item \(f_4(x)=e^x\)\\
+		mittlere Änderungsrate auf \(I_1=[0,\ 2]\): \(\frac{7,39-1}{2-0}=3,19\)\\
+		mittlere Änderungsrate auf \(I_2=[-2,\ 2]\): \(\frac{7,39-0,14}{2-(-2)}=1,81\)\\
+		mittlere Änderungsrate auf \(I_3=[-1,\ 4]\): \(\frac{54,60-0,37}{4-(-1)}=10,85\)\\
+		\item \(f_5(x)=2e^{3x}-4\)\\
+		mittlere Änderungsrate auf \(I_1=[0,\ 2]\): \(\frac{802,86-(-2)}{2-0}=402,43\)\\
+		mittlere Änderungsrate auf \(I_2=[-2,\ 2]\): \(\frac{802,86-(-4,00)}{2-(-2)}=201,71\)\\
+		mittlere Änderungsrate auf \(I_3=[-1,\ 4]\): \(\frac{325.505,58-(-3,90)}{4-(-1)}=65.101,90\)\\
+		\item \(f_6(x)=-0,1x^3\)\\
+		mittlere Änderungsrate auf \(I_1=[0,\ 2]\): \(\frac{-0,8-0}{2-0}=-0,4\)\\
+		mittlere Änderungsrate auf \(I_2=[-2,\ 2]\): \(\frac{-0,8-0,8}{2-(-2)}=-0,4\)\\
+		mittlere Änderungsrate auf \(I_3=[-1,\ 4]\): \(\frac{-6,4-0,1}{4-(-1)}=-1,3\)\\
+		\item \(f_7(x)=x+10\)\\
+		mittlere Änderungsrate auf \(I_1=[0,\ 2]\): \(\frac{12-10}{2-0}=1\)\\
+		mittlere Änderungsrate auf \(I_2=[-2,\ 2]\): \(\frac{12-8}{2-(-2)}=1\)\\
+		mittlere Änderungsrate auf \(I_3=[-1,\ 4]\): \(\frac{14-9}{4-(-1)}=1\)\\
+		Auch hier hätte man die mittleren Änderungsraten direkt aus der Steigung bestimmen können.
+		\item \(f_8(x)=-e^x+x-2\)\\
+		mittlere Änderungsrate auf \(I_1=[0,\ 2]\): \(\frac{-7,39-(-3)}{2-0}=-2,19\)\\
+		mittlere Änderungsrate auf \(I_2=[-2,\ 2]\): \(\frac{-7,39-(-4,14)}{2-(-2)}=-0,81\)\\
+		mittlere Änderungsrate auf \(I_3=[-1,\ 4]\): \(\frac{-52,60-(-3,37)}{4-(-1)}=-9,85\)\\
+		\item \(f_9(x)=-\frac{3}{4}x^2+3x\)\\
+		mittlere Änderungsrate auf \(I_1=[0,\ 2]\): \(\frac{3-0}{2-0}=1,5\)\\
+		mittlere Änderungsrate auf \(I_2=[-2,\ 2]\): \(\frac{3-(-9)}{2-(-2)}=3\)\\
+		mittlere Änderungsrate auf \(I_3=[-1,\ 4]\): \(\frac{0-(-3,75)}{4-(-1)}=0,75\)\\
+	\end{enumerate}
+\end{Answer}
+
+%\begin{tcolorbox}\centering
+%	\textcolor{loestc}{Das Schaubild einer ganzrationalen Funktion ist\dots\\
+	%		\dots achsensymmetrisch zur y-Achse, wenn alle Hochzahlen gerade oder Null sind.\\
+	%		\dots punksymmetrisch zum Ursprung, wenn alle Hochzahlen ungerade sind.\\
+	%		\dots weder achsensymmetrisch zur y-Achse noch punktsymmetrisch zum Ursprung, wenn die Hochzahlen eine Mischung aus geraden Hochzahlen oder Null und ungeraden Hochzahlen sind.}
+%\end{tcolorbox}
+%\newpage
+%\cohead{\Large\textbf{Lösungen}}
+%\shipoutAnswer
+\end{document}
+
+
+
+%\begin{Exercise}[title={xxxx}, label=xxxx]\\
+%xxxx
+%\end{Exercise}
+%\newpage
+%\begin{Answer}[ref=xxx]\\
+%xxxx
+%\end{Answer}
+%\begin{Exercise}[title=xxxx}, label=xxxx]\\
+%xxxx
+%\end{Exercise}
+%\newpage
+%\begin{Answer}[ref=xxx]\\
+%xxxx
+%\end{Answer}
+
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{\quadFkt/pics/steigungswinkel.png}
+%\end{figure}

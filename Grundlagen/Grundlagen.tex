@@ -1,0 +1,120 @@
+\section{Grundlagen}
+Die folgenden mathematischen Grundkenntnisse sind unabdingbare Voraussetzung zum Verständnis der folgenden Kapitel. 
+\subsection{Mengen}
+Die Mengenlehre ist ein grundlegendes Teilgebiet der Mathematik. Wir werden uns hier nur mit den nötigen Grundlagen der Mengenlehre beschäftigen. Die für uns relevanten Mengen bestehen aus Zahlen:\\
+\begin{tcolorbox}
+\textbf{Zahlenmengen}
+\begin{itemize}
+	\item Die natürlichen Zahlen: ${\N=\{(0), 1; 2; 3; 4; 5; 6; \ldots\}}$\\Die Mathematiker können sich nicht einigen, ob die 0 mit eingeschlossen sein soll. Daher wird meist $\N^*$ für die natürlichen Zahlen ohne die 0 verwendet und $\N_0$ für die natürlichen Zahlen mit der 0.
+	\item Die ganzen Zahlen: ${\Z=\{0; 1; -1; 2; -2; 3; -3; 4; -4;\ldots\}}$\\Ergänzt man die natürlichen Zahlen um das Vorzeichen, so erhält man die ganzen Zahlen.
+	\item Die rationalen Zahlen: ${\Q=\{\frac{n}{m}|n\in\Z, m\in\N\}}$\\Die rationalen Zahlen enthalten alle Zahlen, die sich als Brüche mit einem Zähler aus den ganzen Zahlen und einem Nenner aus den natürlichen Zahlen (natürlich ohne der 0) darstellen lassen.
+	\item Die reellen Zahlen: $\R$\\In den reellen Zahlen $\R$ liegen "`alle"' Zahlen, zumindest alle uns bekannten Zahlen. $\R$ beinhaltet neben $\Q$ auch Zahlen wie $\sqrt{2}$ oder $\pi$.
+\end{itemize}
+\end{tcolorbox}
+Mengen lassen sich auf verschiedene Arten darstellen. Nehmen wir als Beispiele die Menge aller positiven, geraden Zahlen $G$ und die Menge $H$ aller Zahlen, die größer oder gleich $1$ und kleiner $2$ sind:
+\begin{itemize}
+	\item Aufzählung: ${G=\{2; 4; 6; 8; 10;\ldots \}}$
+	\item Einschränkung einer übergeordneten Menge ${G=\{x\in\N|x\text{ ist gerade}\}}$ oder\linebreak[4] ${H=\{x\in\R|-1<=x<2\}}$
+	\item Darstellung als Intervall: $H=[-1;2)$ Dabei steht die eckige Klammer für ein abgeschlossenes Ende, d.h. die Grenze liegt noch im Intervall und die runde Klammer für ein offenes Intervall, d.h. die Grenze liegt nicht mehr im Intervall.
+\end{itemize}
+Liegt eine Zahl in einer Menge, z.B. $-2$ in $\Q$, so schreibt man ${-2\in\Q}$ (Sprich $-2$ ist Element der rationalen Zahlen).
+\subsection{Grundrechenarten und Rechengesetze}
+\begin{tcolorbox}
+\begin{itemize}
+	\item Addition\\$\underbrace{a+b}_{Summe}=c$\\$a$ und $b$ bezeichnet man als Summanden.
+	\item Subtraktion\\$\underbrace{a-b}_{Differenz}=c$
+	\item Multiplikation\\$\underbrace{a\cdot b}_{Produkt}=c$\\$a$ und $b$ bezeichnet man als Faktoren.
+	\item Division\\$\underbrace{a:b}_{Quotient}=c$\\Wir sollten uns das Geteilt-Zeichen abgewöhnen und stattdessen Brüche verwenden: $a:b=\frac{a}{b}$.
+\end{itemize}
+\end{tcolorbox}
+Addition und Multiplikation sind kommutativ, d.h. man kann die Reihenfolge der Summanden bzw. Faktoren vertauschen:
+\begin{align*}
+	a+b&=b+a\\
+	a\cdot b&=b\cdot a
+\end{align*}
+
+\subsection{Binomische Formeln}
+Es gibt 3 binomische Formeln, die für beliebige ${a, b\in\R}$ gelten:
+\begin{tcolorbox}
+\textbf{1. Binomische Formel}
+\begin{align*}
+	(a+b)^2=a^2+2ab+b^2
+\end{align*}
+\textbf{2. Binomische Formel}
+\begin{align*}
+	(a-b)^2=a^2-2ab+b^2
+\end{align*}
+\textbf{3. Binomische Formel}
+\begin{align*}
+	(a+b)\cdot(a-b)=a^2-b^2
+\end{align*}
+\end{tcolorbox}
+\subsection{Bruchrechnen}
+\begin{tcolorbox}
+\begin{defi}
+Um zwei Brüche zu Addieren/Subtrahieren, müssen zuerst beide Brüche auf den gleichen Nenner gebracht werden (Hauptnenner) und dann die Zähler addiert/subtrahiert werden.
+\end{defi}
+\end{tcolorbox}
+\begin{bsp}
+\begin{align*}
+&\frac{1}{2}+\frac{2}{3}=\frac{3}{6}+\frac{4}{6}=\frac{3+4}{6}=\frac{7}{6}\\
+&\frac{7}{4}+\frac{2}{x}=\frac{7x}{4x}+\frac{8}{4x}=\frac{7x+8}{4x}\\
+&\frac{1}{x+1}-\frac{1}{x-1}=\frac{x-1}{(x+1)(x-1)}-\frac{x+1}{(x+1)(x-1)}=\frac{x-1-(x+1)}{x^2-1}=\frac{-2}{x^2-1}
+\end{align*}
+\end{bsp}
+
+\begin{tcolorbox}
+\begin{defi}
+Um zwei Brüche zu Multiplizieren, werden die Zähler miteinander multipliziert und die Nenner miteinander multipliziert. Innerhalb eines Produkts darf direkt gekürzt werden.
+\end{defi}
+\end{tcolorbox}
+\begin{bsp}
+\begin{align*}
+&\frac{1}{2}\cdot\frac{1}{3}=\frac{1\cdot 1}{2\cdot 3}=\frac{1}{6}\\
+&\frac{1}{2}\cdot\frac{2}{3}=\frac{1\cdot 2}{2\cdot 3}=\frac{1\cdot \cancel{2}}{\cancel{2}\cdot 3}=\frac{1}{3}\\
+&\frac{4}{7}\cdot\frac{x}{2}=\frac{\cancel{4}_2\cdot x}{7\cdot \cancel{2}}=\frac{2x}{7}=\frac{2}{7}x
+\end{align*}
+\end{bsp}
+
+\begin{tcolorbox}
+\begin{defi}
+Zwei Brüche werden dividiert, indem mit dem Kehrwert multipliziert wird.
+\end{defi}
+\end{tcolorbox}
+\begin{bsp}
+\begin{align*}
+&\frac{1}{2}:\frac{5}{3}=\frac{1}{2}\cdot\frac{3}{5}=\frac{3}{10}\\
+&\frac{3}{2}:\frac{3}{4}=\frac{3}{2}\cdot\frac{4}{3}=\frac{\cancel{3}\cdot\cancel{4}^2}{\cancel{2}\cdot \cancel{3}}=2\\
+&\frac{7}{4x}:\frac{2}{x}=\frac{7}{4x}\cdot\frac{x}{2}=\frac{7\cdot\cancel{x}}{4\cdot\cancel{x}\cdot 2}=\frac{7}{8}
+\end{align*}
+\end{bsp}
+\subsection{Rechnen mit Variablen}
+Variablen sind in der Mathematik Platzhalter für Zahlen, deren Wert man nicht kennt. Mit ihrer Hilfe kann man allgemeine Zusammenhänge aufstellen, z.B. lautet der Zusammenhang zwischen der Fläche eines Rechtecks und seinen Seitenlängen:
+\begin{tcolorbox}
+	Flächeninhalt eines Rechtecks
+\begin{align*}
+	A&=a\cdot b\\
+	A&: \text{Fläche des Rechtecks}\\
+	a, b&: \text{Seitenlängen des Rechtecks}
+\end{align*}
+\end{tcolorbox}
+Kennt man zwei der drei Größen, kann man die fehlende berechnen. 
+\subsection{Ausklammern}
+Ausklammern oder Vorklammern kann man Zahlen oder auch Variablen. Dabei ändert man den Wert des mathematischen Ausdrucks nicht, sondern lediglich sein Aussehen. Klammert man Variablen vor (im Normalfall $x$), so ist es in den meisten Fällen nicht sinnvoll die Variable öfter als die kleinste Hochzahl vorzuklammern, da dann die Variable im Nenner des Bruches stehen würde.
+\begin{bsp}
+	\begin{align*}
+		&2x^2-4x=x(2x-4)=2x(x-2)\\
+		&10x^3-5x^2+25x=5x(2x^2-x+5)\\
+		&27x^4-18x^2=9x^2(3x^2-2)
+	\end{align*}
+\end{bsp}
+\subsection{Potenzgesetze}
+Für uns ist nur eines der Potenzgesetze relevant:
+\begin{tcolorbox}
+	\begin{defi}
+		Zwei Potenzen mit der gleichen Basis werden multipliziert, indem man die Hochzahlen addiert:
+		\begin{align*}
+		x^a\cdot x^b=x^{a+b}
+	\end{align*}
+	\end{defi}
+\end{tcolorbox}

@@ -1,0 +1,76 @@
+\section{Funktionen}
+\subsection{Grundlagen}
+Wir werden im folgenden die drei Funktionstypen der ganzrationalen Funktionen, der Exponentialfunktionen und der trigonometrischen Funktionen betrachten. Doch zuerst wollen wir uns überlegen was wir unter einer Funktion verstehen wollen und wie wir formal korrekt mit Funktionen umgehen können.
+\begin{tcolorbox}
+\begin{defi}
+Unter einer Funktion verstehen wir eine Abbildung, die von einer Menge in eine andere Menge abbildet. Dabei wird \textbf{jedem} Element bzw. jeder Zahl der Ausgangsmenge (Definitionsmenge genannt) \textbf{genau ein} Element bzw. \textbf{genau eine} Zahl in der Zielmenge (Wertemenge genannt) zugeordnet.
+\end{defi}
+\end{tcolorbox}
+Um verschiedene Funktionen unterscheiden zu können, benennen wir Funktionen. Üblicherweise werden Kleinbuchstaben, z.B. $f$, $g$, $h$, usw. verwendet. Oft werden statt verschiedenen Buchstaben die Funktionen auch einfach durchgezählt mit einem tiefgestellten Index, z.B. $f_1$, $f_2$, $f_3$, usw. Um anzuzeigen welche Menge die Definitionsmenge und welche Menge die Wertemenge ist, verwendet man folgende Schreibweise:
+\begin{align}
+f:\text{Definitionsmenge}\rightarrow\text{Wertemenge}
+\end{align}
+Soweit nicht anders angegeben werden wir Funktionen betrachten, die aus den reellen Zahlen in die reellen Zahlen abbilden, also ${f:\R\rightarrow\R}$. Die Zuordnungsvorschrift kann auf verschiedenen Wegen angegeben werden:
+\begin{itemize}
+	\item Verbal: Jeder Zahl der Definitionsmenge wird das Quadrat dieser Zahl zugeordnet.
+	\item $f(x)=x^2$, dabei ist $f$ der Name der Funktion, $x$ ein beliebiges Element aus der Definitionsmenge und $x^2$ ist das Element der Wertemenge, das $x$ zugeordnet wird.
+	\item $f:x\mapsto x^2$, eine weniger bekannte Schreibweise bei der klarer wird, dass $x$ auf $x^2$ abgebildet wird. Man beachte den Pfeil mit dem kleinen vertikalen Strich.
+\end{itemize}
+Ein Teil der Zuordnungen kann auch als Wertetabelle dargestellt werden:
+\begin{align*}
+\renewcommand\arraystretch{1.5}
+\begin{array}{|c||c|c|c|c|c|}
+	\hline
+	x		&0&1&2&3&4\\
+	\hline
+	f(x)=x^2	&0&1&4&9&16\\
+	\hline
+\end{array}
+\end{align*}
+
+\subsection{Wiederholung: lineare und quadratische Funktionen}
+\begin{tcolorbox}
+Eine Funktion $f(x)$ wird als lineare Funktion bezeichnet, wenn man sie in der folgenden Form darstellen kann:
+\begin{align}
+f(x)=m\cdot x+b \quad m, b \in \R
+\end{align}
+$m$: Steigung 
+$c$: y-Achsenabschnitt
+\end{tcolorbox}
+Die Schaubilder linearer Funktionen sind Geraden. Der y-Achsenabschnitt ist der Funktionswert, der von $f$ an der Stelle $x=0$ angenommen wird. Dieser Wert entspricht dem y-Wert bei dem das Schaubild die y-Achse schneidet.\\
+Die Steigung $m$ kann im Schaubild mit Hilfe des Steigungsdreiecks bestimmt werden:
+\begin{align*}
+m=\frac{\Delta y}{\Delta x}=\frac{\text{Unterschied der }y\text{-Werte}}{\text{Unterschied der }x\text{-Werte}}
+\end{align*}
+Als Beispiele betrachten wir die beiden Funktionen ${f_1(x)=\frac{1}{2}x+1}$ und ${f_2(x)=-2x+3}$:
+\begin{tikzpicture}[scale=1]
+\draw [step=1cm,lightgray,very thin] (-6.9,-6.9) grid (6.9,6.9);
+\foreach \x in {-6,...,-1}
+\draw [very thick] (\x cm,-3pt) -- (\x cm,3pt) node [below=5pt,fill=white] {$\x$};
+\foreach \x in {1,...,6}
+\draw [very thick] (\x cm,-3pt) -- (\x cm,3pt) node [below=5pt,fill=white] {$\x$};
+\foreach \y in {-6,...,-1}
+\draw [very thick] (-3pt,\y cm) -- (3pt,\y cm) node [anchor=west,fill=white] {$\y$};
+\foreach \y in {1,...,6}
+\draw [very thick] (-3pt,\y cm) -- (3pt,\y cm) node [anchor=west,fill=white] {$\y$};
+\draw [->,very thick] (-7,0) -- (7,0);
+\draw [->,very thick] (0,-7) -- (0,7);
+\draw (7,0) node[below=5pt, fill=white] {\textbf{x}};
+\draw (0,7) node[right=5pt, fill=white] {\textbf{y}};
+\draw[name path= f1, very thick,color=red,domain=-7:7] plot (\x, 1/2*\x+1) node[right] {$f_1(x)=\frac{1}{2}x+1$};
+\begin{scope}
+\clip (-7,-7) rectangle (7,7);
+\draw[very thick,color=blue,domain=-7:7] plot (\x, -2*\x+3);
+\end{scope}
+\draw (4,-5) node[left=5pt, color=blue, fill=white] {$f_2(x)=-2x+3$};
+% Steigungsdreieck für f_1
+\path [name path=f1x] (0,2) -- (4,2);
+\draw [name intersections={of=f1 and f1x, by=s}] [very thick, orange] (s) -- (4,2) node[midway, below=4pt, fill=white] {$\Delta x=2$};
+\draw [very thick, orange] (4,2)--(4,3) node [midway, right, fill=white] {$\Delta y=1$};
+\draw [very thick, orange] (-6,-2) -- (-2,-2) node[midway, below=4pt, fill=white] {$\Delta x=4$};
+\draw [very thick, orange] (-2,-2)--(-2,0) node [midway, right, fill=white] {$\Delta y=2$};
+%Steigungsdreieck für f_2
+\draw [very thick, orange] (2,-1) -- (4.5,-1) node[midway, below=0pt, fill=white] {$\Delta x=2,5$};
+\draw [very thick, orange] (4.5,-1)--(4.5,-6) node [midway, right, fill=white] {$\Delta y=-5$};
+\end{tikzpicture}
+Das Steigungsdreieck kann an einer beliebigen Stelle und beliebig groß eingezeichnet werden. Das Verhältnis von $\Delta y$ zu $\Delta x$ und damit die Steigung bleibt immer gleich.
