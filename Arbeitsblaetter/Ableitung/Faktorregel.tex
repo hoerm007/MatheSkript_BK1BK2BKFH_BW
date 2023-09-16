@@ -1,0 +1,37 @@
+\cohead{\Large\textbf{Faktorregel}}
+\fakesubsection{Faktorregel}
+Wir kennen nun die Ableitung der Normalparabel. Es scheint naheliegend, dass die Ableitungen von \(2x^2,\ 3x^2,\ -x^2\) und ähnlichen Funktionen eine zu \(x^2\) ähnliche Ableitung haben. Wir berechnen die Ableitung von \(f_a(x)=ax^2\):\\
+\begin{minipage}[t]{\textwidth}
+	\begin{minipage}{0.4\textwidth}
+		\begin{align*}
+			f_a(x)&=ax^2\\
+			f_a'(x)&=\textcolor{loes}{\lim\limits_{h\to 0}\frac{f_a(x+h)-f_a(x)}{h}}\\
+			&\textcolor{loes}{=\lim\limits_{h\to 0}\frac{a(x+h)^2-ax^2}{h}}\\
+			&\textcolor{loes}{=\lim\limits_{h\to 0}\frac{ax^2+a2hx+ah^2-ax^2}{h}}\\
+			&\textcolor{loes}{=\lim\limits_{h\to 0}\frac{a2hx+ah^2}{h}}\\
+			&\textcolor{loes}{=\lim\limits_{h\to 0}a2x+ah}\\
+			&\textcolor{loes}{=a2x}\\
+		\end{align*}
+	\end{minipage}
+	\begin{minipage}{0.6\textwidth}
+		\textcolor{loes}{\(f(x)=x^2\) und \(f_a(x)=ax^2\) unterscheiden sich nur durch den Faktor \(a\). Das gleiche Verhalten zeigen die Ableitungen. \(f'(x)=2x\) und \(f_a'(x)=a2x\) unterscheiden sich ebenfalls nur durch den Faktor \(a\).}
+	\end{minipage}
+\end{minipage}\\
+Tatsächlich lässt sich ganz allgemein zeigen, dass die Ableitung einer Funktion und einem Faktor \(af(x)\) gleich dem gleichen Faktor mal der Ableitung ist: \((af(x))'=af'(x)\):\\
+\begin{minipage}[t]{\textwidth}
+	\begin{minipage}{0.5\textwidth}
+		\begin{align*}
+			g(x)&=af(x)\\
+			g'(x)&=\textcolor{loes}{\lim\limits_{h\to 0}\frac{af(x+h)-af(x)}{h}}\\
+			&\textcolor{loes}{=a\lim\limits_{h\to 0}\frac{f(x+h)-f(x)}{h}}\\
+			&\textcolor{loes}{=af'(x)}\\
+		\end{align*}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+		\begin{tcolorbox}
+			\phantom{text}\\
+			\textcolor{loestc}{Faktorregel:\\
+				Die Ableitung von \(af(x)\) ist \(af'(x)\).}\\
+		\end{tcolorbox}
+	\end{minipage}
+\end{minipage}\\
