@@ -1,6 +1,6 @@
 \cohead{\Large\textbf{Stammfunktionen}}
 \fakesubsection{Stammfunktionen}
-Eine Funktion \(F(x)\) heißt Stammfunktion von \(f(x)\), wenn die Ableitung von \(F(x)\) gleich der Funktion \(f(x)\) ist:
+So wie wir die Ableitung mit einem Strich markiert haben, bezeichnet man die Stammfunktion normalerweise mit einem Großbuchstaben. Eine Funktion \(F(x)\) heißt Stammfunktion von \(f(x)\), wenn die Ableitung von \(F(x)\) gleich der Funktion \(f(x)\) ist:
 \begin{tcolorbox}
 	\phantom{A}\\
 	\textcolor{loestc}{\(F(x)\) ist eine Stammfunktion von \(f(x)\) genau dann, wenn \(F'(x)=f(x)\) gilt.}\\
@@ -8,7 +8,19 @@ Eine Funktion \(F(x)\) heißt Stammfunktion von \(f(x)\), wenn die Ableitung von
 \textcolor{red}{ACHTUNG:} Es gibt unendlich viele Stammfunktionen zu einer Funktion \(f(x)\):\\
 \textcolor{loes}{Ist \(F(x)\) eine Stammfunktion von \(f(x)\), so ist auch \(F(x)+c,\ c\in\R\) eine Stammfunktion, da die Konstante \(c\) beim Ableiten wegfällt. Das bedeutet, dass man das Schaubild der Stammfunktion beliebig in y-Richtung verschieben und die verschobene Funktion wieder eine Stammfunktion ist.}\\ \\
 So sind z.B. die Funktionen \(F_1(x)=x^3\) und \(F_2(x)=x^3+1\) beide Stammfunktionen zur Funktion \(f(x)=3x^2\) und \(F(x)=x^3+c,\ c\in\R\) sind alle möglichen Stammfunktionen.\\
-
+Nach der Summenregel beim Ableiten können wir auch Stammfunktionen summanden-weise bestimmen. Wir benötigen also nur jeweils eine Regel zum Bestimmen der Stammfunktion von \(ax^n\) und \(ae^{kx}\):
+\begin{align*}
+	f(x)&=ax^n & g(x)&=ae^{kx}\\
+	 \\
+	F(x)&=\textcolor{loes}{\frac{a}{n+1}x^{n+1}} &	G(x)&=\textcolor{loes}{\frac{a}{k}e^{kx}}\\
+\end{align*}
+Die Regeln zum Bilden der Stammfunktion sind also die gleichen wie zum Bilden der Ableitung nur rückwärts. Die Ableitung von \(ax^n\) bestimmt man, indem man 1. mit der Hochzahl multipliziert und 2. die Hochzahl um Eins verringert. Die Stammfunktion bildet man, indem man 1. die Hochzahl um Eins vergrößert und 2. durch die neue Hochzahl dividiert. Für \(e^{kx}\) sind die Regeln noch einfacher. Zum Ableiten multipliziert man mit dem Faktor \(k\), zum Bilden der Stammfunktion dividiert man durch \(k\).\\
+Beispiel: Bestimme alle Stammfunktionen\\
+\begin{align*}
+	f(x)&=5x^4-6x^3+\frac{3}{2}x^2-x+2 & g(x)&=4e^{3x}-2e^{0,5x}+e^{-x}\\
+	\\
+	F(x)&=\textcolor{loes}{x^5-\frac{3}{2}x^4+\frac{1}{2}x^3-\frac{1}{2}x^2+2x+c,\ c\in\R} &	G(x)&=\textcolor{loes}{\frac{4}{3}e^{3x}-4e^{0,5x}-e^{-x}+c,\ c\in\R}\\
+\end{align*}
 \begin{minipage}{\textwidth}
 	\begin{minipage}{.4\textwidth}
 		\begin{Exercise}[title={\raggedright Bestimme jeweils eine Stammfunktion.}, label=stammfunktionenA1]
