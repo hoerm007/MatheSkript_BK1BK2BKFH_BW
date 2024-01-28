@@ -128,8 +128,8 @@
 \definecolor{loes}{rgb}{1,1,1}
 \definecolor{loestc}{rgb}{.95,.95,.95}
 %Arbeitsblatt-Modus
-\definecolor{loes}{rgb}{.0,.13,.8}
-\definecolor{loestc}{rgb}{.6,.0,.1}
+%\definecolor{loes}{rgb}{.0,.13,.8}
+%\definecolor{loestc}{rgb}{.6,.0,.1}
 \tcbset{
 %	frame code={}
 %	center title,
@@ -321,119 +321,159 @@
 % 	\input{\optimierung/Optimierung.tex}
 % 	\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	\input{\integration/Stammfunktionen.tex}
+ 	\input{\integration/Stammfunktionen.tex}
+ 	\newpage
+ 	\input{\integration/Integral_grafisch.tex}
+ 	\newpage
+ 	\input{\integration/Integral_berechnen.tex}
+ 	\newpage
+ 	\input{\integration/Flaechenberechnung.tex}
+ 	\newpage
+ 	\input{\integration/IntGrenze_bestimmen.tex}
+ 	\newpage
+ 	\input{\integration/FlaechZwischenFunktionen.tex}
+ 	\newpage
+% 	\input{\integration/VerhaeltnisVonFlaechen.tex}
 % 	\newpage
-% 	\input{\integration/Integral_grafisch.tex}
-% 	\newpage
-% 	\input{\integration/Integral_berechnen.tex}
-% 	\newpage
-% 	\input{\integration/Flaechenberechnung.tex}
-% 	\newpage
-% 	\input{\integration/IntGrenze_bestimmen.tex}
-% 	\newpage
-
-
-
-\cohead{\Large\textbf{Integrationsgrenze bestimmen}}
-\fakesubsection{Bestimmen von Integrationsgrenzen}
-Eine des Öfteren vorkommende Aufgabenstellung beinhaltet das grafische Abschätzen oder das Berechnen einer Integrationsgrenze. Bei diesem Aufgabentyp ist in der Regel die obere Integrationsgrenze gesucht.\\
-Beispiel: Gegeben ist das Schaubild der Funktion \(f(x)\). Gesucht sind zwei Lösungen \(u>0\), so dass \(\int_0^u f(x) \td x=0\) gilt.\\ \\
+\cohead{\Large\textbf{Verhältnis von Flächen}}
+\fakesubsection{Verhältnis von Flächen}
+\begin{tcolorbox}
+	\textbf{Verhältnis von Flächen:}\\
+	\textcolor{loestc}{Das Verhältnis zweier Flächen lässt sich bestimmen, indem man die beiden Flächen durcheinander teilt, z.B. stehen die beiden Flächen \(A_1=2\) und \(A_2=4\) im Verhältnis \(1:2\), da \(\dfrac{A_1}{A_2}=\dfrac{1}{2}\) gilt.
+	}
+\end{tcolorbox}
 \begin{minipage}{\textwidth}
-	\begin{minipage}{.5\textwidth}\raggedright
-		Grafische Abschätzung:\\
-		\textcolor{loes}{Damit der Wert des Integrals Null ergibt, müssen die Teilflächen oberhalb der \(x\)-Achse und unterhalb der \(x\)-Achse gleich groß sein. Dies ist für \(x_1\approx 1\) und \(x_2\approx 4\) der Fall, wie man sehen kann, wenn man die entsprechenden Flächen im Schaubild markiert.}\\
-		\phantom{text}\\
-		\phantom{text}\\
-		\phantom{text}\\
-		\phantom{text}\\
-		\phantom{text}\\
-		\phantom{text}\\
-		\phantom{text}\\
-		\phantom{text}\\
+	\begin{minipage}{.6\textwidth}\raggedright
+		Beispiele:\\
+		Zeige, dass die Gerade \textcolor{blue}{\(g(x)=-x\)} die von der \(x\)-Achse und der Funktion \textcolor{red}{\(f(x)=x^2-4x\)} eingeschlossene Fläche \(A\) im Verhältnis \(27:37\) teilt:\\
+		\textcolor{loes}{Die zwei Teilflächen lassen sich z.B. wie folgt bestimmen:}
+		\textcolor{loes}{Fläche zwischen \(f(x)\) und der \(x\)-Achse:}.\\
+		\textcolor{loes}{\(\displaystyle A=-\int_0^4 x^2-4x \td x=\frac{32}{3}\)}
+		\textcolor{loes}{Fläche zwischen \(f(x)\) und \(g(x)\):}.\\
+		\textcolor{loes}{\(\displaystyle A_1=\int_0^3 -x-\left(x^2-4x\right) \td x=\frac{9}{2}\)}\\		
+		\textcolor{loes}{Die Fläche, die von der \(x\)-Achse und den beiden Funktionen eingeschlossen wird, beträgt also \(A_2=A-A_1=\tfrac{37}{6}\)}.\\
+		\textcolor{loes}{Damit teilt die Gerade die Fläche \(A\) im Verhältnis \(\dfrac{A_1}{A_2}=\dfrac{27}{37}\)}.\\
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
-		\includegraphics[width=.95\linewidth]{\integration/pics/grenzeBsp1.png}
+	\begin{minipage}{.4\textwidth}
+		\includegraphics[width=.95\linewidth]{\integration/pics/VerhaeltnisBsp1.png}
 	\end{minipage}
 \end{minipage}\vspace{\baselineskip}\\
-Ist die Funktionsgleichung bekannt, so kann man die Lösung auch berechnen. Im Beispiel ist \(f(x)=x^2-\frac{10}{3}x+\frac{4}{3}\):\\
-\textcolor{loes}{Wir lösen die oben gegebene Gleichung:}
-\begin{align*}
-	\textcolor{loes}{\int_0^u f(x) \td x}&=\textcolor{loes}{0}\\
-	\textcolor{loes}{\int_0^u x^2-\frac{10}{3}x+\frac{4}{3} \td x}&=\textcolor{loes}{0}\\
-	\textcolor{loes}{\left[\frac{1}{3}x^3-\frac{5}{3}x^2+\frac{4}{3}x \right]_0^u}&=\textcolor{loes}{0}\\
-	\textcolor{loes}{\frac{1}{3}u^3-\frac{5}{3}u^2+\frac{4}{3}u}&=\textcolor{loes}{0}\\
-	\textcolor{loes}{u\left(\frac{1}{3}u^2-\frac{5}{3}u+\frac{4}{3}\right)}&=\textcolor{loes}{0}\\	
-	\textcolor{loes}{\text{S.v.N.: }u_0=0\text{ oder }\frac{1}{3}u^2-\frac{5}{3}u+\frac{4}{3}}&=\textcolor{loes}{0}
-\end{align*}
-\textcolor{loes}{Die Mitternachtsformel liefert \(u_1=1\) und \(u_2=4\). Da laut Aufgabenstellung \(u>0\) sein soll, sind nur \(u_1\) und \(u_2\) zulässige Lösungen.}
+\begin{minipage}{\textwidth}
+	\begin{minipage}{.4\textwidth}
+		\includegraphics[width=.95\linewidth]{\integration/pics/VerhaeltnisBsp2.png}
+	\end{minipage}
+	\begin{minipage}{.6\textwidth}\raggedright
+		Bestimme in welchem Verhältnis die \(y\)-Achse die von \textcolor{red}{\(f(x)=-1,5x^2+3x+4,5\)} und der \(x-\)Achse eingeschlossenen Fläche teilt.\\
+		\textcolor{loes}{Die zwei Teilflächen lassen sich z.B. wie folgt bestimmen:}\\
+		\textcolor{loes}{Flächeninhalt der linken der beiden Teilflächen:}.\\
+		\textcolor{loes}{\(\displaystyle A_1=-\int_{-1}^0 -1,5x^2+3x+4,5 \td x=\frac{5}{2}\)}\\
+		\textcolor{loes}{Flächeninhalt der rechten der beiden Teilflächen:}.\\
+		\textcolor{loes}{\(\displaystyle A_2=-\int_0^3 -1,5x^2+3x+4,5 \td x=\frac{27}{2}\)}\\
+		\textcolor{loes}{Damit teilt die \(y\)-Achse die Fläche zwischen der Funktion und der \(x\)-Achse im Verhältnis \(\dfrac{A_1}{A_2}=\dfrac{5}{27}\)}.\\
+	\end{minipage}
+\end{minipage}\vspace{\baselineskip}\\
 \newpage
 
-\begin{Exercise}[title={\raggedright\normalfont Schätze jeweils ein \(u\) graphisch ab und berechne dann die Lösung. Das gesuchte \(u\) soll immer größer als die untere Grenze sein:}, label=intGrenzeA1]\\
+\begin{Exercise}[title={\raggedright\normalfont Gegeben sind die Gerade \(x=1\) und die Funktion \(f(x)=-\frac{1}{2}x^2+3x\), ihr Schaubild sei \(K_f\) Die Fläche \(A\) sei die von \(K_f\) und der \(x\)-Achse eingeschlossene Fläche.}, label=verhaltnisFlaechenA1]
+\begin{enumerate}[label=\alph*)]
+	\item Zeichne \(K_f\) und die Gerade \(x=1\) in ein Koordinatensystem.
+	\item Zeige, dass die Gerade \(x=1\) die Fläche \(A\) im Verhältnis 2:25 teilt.
+\end{enumerate}
+\end{Exercise}
+
+\begin{Exercise}[title={\raggedright\normalfont Gegeben sind die Funktion \(g(x)=\frac{1}{6}x^3+\frac{1}{2}x^2\) und ihr Schaubild \(K_g\).}, label=verhaltnisFlaechenA2]\\
 \begin{minipage}{\textwidth}
-	\begin{minipage}{.5\textwidth}\raggedright
-		\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze1.png}
-		\[\int_0^u-x+1 \td x=-1\]
+	\begin{minipage}{.6\textwidth}
+		\includegraphics[width=.95\linewidth]{\integration/pics/VerhaeltnisAuf2.png}
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
-		\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze2.png}
-		\[\int_{-1}^u-x^2 \td x=-3\]
-	\end{minipage}\vspace{\baselineskip}\\\vspace{\baselineskip}\\
-	\begin{minipage}{.5\textwidth}\raggedright
-		\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze3.png}
-		\[\int_0^u-\tfrac{1}{20}x^3+\tfrac{6}{5}x \td x=2,2\]
-	\end{minipage}
-	\begin{minipage}{.5\textwidth}
-		\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze4.png}
-		\[\int_0^u e^{0,5x} \td x=4\]
-	\end{minipage}\vspace{\baselineskip}\\\vspace{\baselineskip}\\
-	\begin{minipage}{.5\textwidth}\raggedright
-		\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze5.png}
-		\[\int_{-1}^u 2e^{-\tfrac{1}{3}x} \td x=5\]
-	\end{minipage}
-	\begin{minipage}{.5\textwidth}
-		\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze6.png}
-		\[\int_0^u x^3-3x^2+\tfrac{3}{2}x \td x=0\]
+	\begin{minipage}{.4\textwidth}\raggedright
+		\begin{enumerate}[label=\alph*)]
+			\item \(K_g\), die \(x\)-Achse und die Gerade \(x=-4\) schließen 2 Flächen ein. Zeige, dass diese gleich groß sind.
+			\item \(K_g\), die \(x\)-Achse und die Gerade \(x=2\) schließen 2 Flächen ein. Zeige, dass diese im Verhältnis 16:9 stehen.		
+		\end{enumerate}
 	\end{minipage}
 \end{minipage}
 \end{Exercise}
 
+\begin{Exercise}[title={\raggedright\normalfont Gegeben sind die Funktion \(h(x)=-\frac{1}{18}x^3+\frac{1}{2}x^2\) und ihr Schaubild \(K_h\).}, label=verhaltnisFlaechenA3]\\
+	\begin{minipage}{\textwidth}
+		\begin{minipage}{.4\textwidth}\raggedright
+			\begin{enumerate}[label=\alph*)]
+				\item Zeige, dass die von \(K_h\) und der \(x\)-Achse eingeschlossene Fläche \(A\) den Flächeninhalt \(\frac{243}{8}\) hat.
+				\item Zeichne die Gerade \(i(x)=-\frac{1}{2}x+\frac{9}{2}\) ein. Der Schnittpunkt der Geraden \(i(x)\) mit \(K_h\) ist \(S(3\vert 3)\).\\
+				Zeige, dass die Gerade die Fläche \(A\) im Verhältnis 16:11 teilt.					
+			\end{enumerate}
+		\end{minipage}
+		\begin{minipage}{.6\textwidth}
+			\includegraphics[width=.95\linewidth]{\integration/pics/VerhaeltnisAuf3.png}
+		\end{minipage}
+	\end{minipage}
+\end{Exercise}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Answer}[ref=intGrenzeA1]\\
-	Die grafisch abgeschätzten Lösungen sollten jeweils bis auf \(\pm0,3\) mit den berechneten Lösungen übereinstimmen. Lösungen in Klammer lösen zwar die Gleichung, sind aber nicht größer als die untere Grenze.\\
+\begin{Answer}[ref=verhaltnisFlaechenA1]\\
 \begin{minipage}{\textwidth}
-	\begin{minipage}{.5\textwidth}\raggedright
-		\[\int_0^u-x+1 \td x=-1\]
-		\[u_1=1+\sqrt{3}\ \left(\text{und }u_2=1-\sqrt{3}\right)\] 
+	\begin{minipage}{.4\textwidth}
+		\includegraphics[width=.95\linewidth]{\integration/pics/VerhaeltnisAuf1.png}
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
-		\[\int_{-1}^u-x^2 \td x=-3\]
-		\[u_1=2\]
-	\end{minipage}\vspace{\baselineskip}\\\vspace{\baselineskip}\\
-	\begin{minipage}{.5\textwidth}\raggedright
-		\[\int_0^u-\tfrac{1}{20}x^3+\tfrac{6}{5}x \td x=2,2\]
-		\[u_1=2, u_2=\sqrt{44}\ \left(\text{und }u_3=-2,\ u_4=-\sqrt{44}\right)\]
-	\end{minipage}
-	\begin{minipage}{.5\textwidth}
-		\[\int_0^u e^{0,5x} \td x=4\]
-		\[u_1=2\ln(3)\]
-	\end{minipage}\vspace{\baselineskip}\\\vspace{\baselineskip}\\
-	\begin{minipage}{.5\textwidth}\raggedright
-		\[\int_{-1}^u 2e^{-\tfrac{1}{3}x} \td x=5\]
-		\[u_1=-3\ln\left(e^{\tfrac{1}{3}}-\frac{5}{6}\right)\]
-	\end{minipage}
-	\begin{minipage}{.5\textwidth}
-		\[\int_0^u x^3-3x^2+\tfrac{3}{2}x \td x=0\]
-		\[u_1=1,\ u_2=3\ \left(\text{und }u_3=0\right)\] 
+	\begin{minipage}{.6\textwidth}\raggedright
+		Die zwei Teilflächen lassen sich z.B. wie folgt bestimmen:\\
+		Flächeninhalt der linken der beiden Teilflächen:.\\
+		\(\displaystyle A_1=\int_{0}^1 -\frac{1}{2}x^2+3x \td x=\frac{4}{3}\)\\
+		Flächeninhalt der rechten der beiden Teilflächen:.\\
+		\(\displaystyle A_2=-\int_1^6 -\frac{1}{2}x^2+3x \td x=\frac{50}{3}\)\\
+		Damit teilt die Gerade \(x=1\) die Fläche zwischen der Funktion und der \(x\)-Achse im Verhältnis \(\dfrac{A_1}{A_2}=\dfrac{2}{25}\).\\
 	\end{minipage}
 \end{minipage}
 \end{Answer}
-
+\begin{Answer}[ref=verhaltnisFlaechenA2]\\
+\begin{enumerate}[label=\alph*)]
+	\item Berechnen der beiden Flächen:
+	\begin{align*}
+		-\int_{-4}^{-3}\frac{1}{6}x^3+\frac{1}{2}x^2 \td x&=\frac{9}{8}\\
+		\int_{-3}^{0}\frac{1}{6}x^3+\frac{1}{2}x^2 \td x&=\frac{9}{8}
+	\end{align*}
+	Die beiden Flächen haben also beide den gleichen Flächeninhalt von \(\frac{9}{8}\).
+	\item Berechnen der beiden Flächen:
+	\begin{align*}
+		\int_{-3}^{0}\frac{1}{6}x^3+\frac{1}{2}x^2 \td x&=\frac{9}{8}\\		
+		\int_{0}^{2}\frac{1}{6}x^3+\frac{1}{2}x^2 \td x&=2
+	\end{align*}
+	Die beiden Flächen stehen also im Verhältnis \(\dfrac{2}{9/8}=\dfrac{16}{9}\).	
+\end{enumerate}
+\end{Answer}
+\begin{Answer}[ref=verhaltnisFlaechenA3]\\
+	\begin{enumerate}[label=\alph*)]
+		\item Berechnen die Fläche \(A\):
+		\[A=\int_0^9 -\frac{1}{18}x^3+\frac{1}{2}x^2 \td x=\frac{243}{8}\]
+		\item Berechnen der beiden Flächen:\\
+		\begin{minipage}{\textwidth}
+			\begin{minipage}{.5\textwidth}\raggedright
+				\[A_2=\int_3^9 -\frac{1}{18}x^3+\frac{1}{2}x^2-\left(-\frac{1}{2}x+\frac{9}{2}\right) \td x=18\]
+				Die Fläche \(A_1\) ergibt sich dann aus
+				\[A_1=A-A_2=\frac{243}{8}-18=\frac{99}{8}\]
+				Die Gerade teilt die Fläche \(A\) also im Verhältnis \(\dfrac{A_2}{A_1}=\dfrac{18}{99/8}=\dfrac{16}{11}\)
+			\end{minipage}
+			\begin{minipage}{.5\textwidth}
+				\includegraphics[width=.95\linewidth]{\integration/pics/VerhaeltnisAuf3_Loesung.png}
+			\end{minipage}
+		\end{minipage}	
+	\end{enumerate}
+\end{Answer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\newpage
 %\cohead{\Large\textbf{Lösungen}}
 %\fakesubsection{Lösungen}
 %\shipoutAnswer
 \end{document}
+
+\begin{enumerate}[label=\alph*)]
+	\setcounter{enumi}{3}
+	\item \(a=-1\) und \(b=2\)
+	\item \(a=-1\) und \(b=1\)
+	\item \(a=0\) und \(b=2\)
+\end{enumerate}
+
 
 \begin{Exercise}[title={\raggedright xxxxxxxxxxxxxxxxxxxxxxxxx}, label=xxxxxxxxxxxxxxxxxxxx]\\
 	\begin{minipage}{\textwidth}
