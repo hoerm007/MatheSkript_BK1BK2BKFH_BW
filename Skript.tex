@@ -347,8 +347,9 @@
 % 	\input{\trigonometrie/EigenschaftenSinCos.tex}
 % 	\newpage
 % 	\input{\trigonometrie/AllgSinusUndCosinus.tex}
-% 	\newpage#
-%%%%%%%%%%%%%%%%%%%%%% Extrem- und Wendepunkte !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+% 	\newpage
+% 	\input{\trigonometrie/TrigonometrieExtremWende.tex}
+% 	\newpage
 % 	\input{\trigonometrie/SinCosGleichungenOhneXStreckung.tex}
 % 	\newpage
 % 	\input{\trigonometrie/SinCosGleichungenMitXStreckung.tex}
@@ -356,113 +357,100 @@
 
 
 
-\cohead{\Large\textbf{Extrem- und Wendepunkte}}
-\fakesubsection{Extrem- und Wendepunkte der trigonometrischen Funktionen}
-Das Standardverfahren zum Bestimmen von Extrem- und Wendepunkten über das Bestimmen der Nullstellen der ersten und zweiten Ableitung (mit Vorzeichenwechsel) kann auch bei trigonometrischen Funktionen der Form \(a\sin(bx)+d\) oder \(a\cos(bx)+d\) angewendet werden. Dazu macht man sich folgende Eigenschaften zu Nutze:
-\begin{enumerate}
-	\item Abstand auf der \(x\)-Achse:\\ \textcolor{loes}{Die Hoch-, Tief- und Wendepunkte wechseln sich auf der \(x\)-Achse im Abstand einer Viertel Periode ab.}
-	\item \(y\)-Werte:\\ \textcolor{loes}{Der \(y\)-Wert der Wendepunkte ist gleich dem Mittelwert \(d\).\\Die \(y\)-Werte der Hoch- und Tiefpunkte liegen bei \(d\pm a\).} 
-\end{enumerate}
-Mit Hilfe einer Skizze lassen sich so die Extrem- und Wendepunkte leicht bestimmen. Bsp. 1: Bestimme die Extrem- und Wendepunkte der Funktion \(f(x)=3\sin(\pi x)+1\).\\ \\
+\cohead{\Large\textbf{Integrationsgrenze bestimmen}}
+\fakesubsection{Bestimmen von Integrationsgrenzen}
+Eine des Öfteren vorkommende Aufgabenstellung beinhaltet das grafische Abschätzen oder das Berechnen einer Integrationsgrenze. Bei diesem Aufgabentyp ist in der Regel die obere Integrationsgrenze gesucht.\\
+Beispiel: Gegeben ist das Schaubild der Funktion \(f(x)\). Gesucht sind zwei Lösungen \(u>0\), so dass \(\int_0^u f(x) \td x=0\) gilt.\\ \\
 \begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-		\includegraphics[width=.95\linewidth]{\trigonometrie/pics/Extrempunkte_empty.png}\\
-	\end{minipage}}%
-	\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-		\textcolor{loes}{
-			Mittelwert \(d=1\)\\
-			Periode \(p=\frac{2\pi}{b}=2\)\\
-			Amplitude \(a=3\)\\
-			Der erste Wendepunkt liegt bei \(x_0=0\) und die Wendepunkte wiederholen sich im Abstand der halben Periode:\\
-			Wendepunkte: \(W_k\left(k\vert 1\right),\ k\in\Z\)\\
-			Der erste Hochpunkt folgt auf den ersten Wendepunkt im Abstand von \(\frac{p}{4}=\frac{1}{2}\). Hochpunkte wiederholen sich im Abstand einer vollen Periode:\\
-			Hochpunkte \(H_k\left(\frac{1}{2}+2k\vert 4\right)\)\\
-			}
-	\end{minipage}}
-\end{minipage}
-\textcolor{loes}{Der erste Tiefpunkt folgt auf den ersten Hochpunkt im Abstand einer halben Periode, also bei \(x=\frac{1}{2}+1=\frac{3}{2}\): 
-	Tiefpunkte \(T_k\left(\frac{3}{2}\vert -2\right)\)}\\ \\
-Bsp. 2: Bestimme die Extrem- und Wendepunkte der Funktion \(f(x)=-\cos(0,5 x)-2\).\\ \\
-\begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-			\textcolor{loes}{
-				Mittelwert \(d=-2\)\\
-				Periode \(p=\frac{2\pi}{b}=4\pi\)\\
-				Amplitude \(a=1\)\\
-				Da \(a\) negativ ist, liegt der erste Tiefpunkt bei \(x_0=0\):\\
-				Tiefpunkte: \(T_k\left(4\pi k\vert -3\right),\ k\in\Z\)\\
-				Der erste Wendepunkt folgt auf den Tiefpunkt im Abstand von \(\frac{p}{4}=\pi\):\\
-				Wendepunkte \(W_k\left(\pi+2\pi k\vert -2\right)\)\\
-				Der Hochpunkt folgt wiederum im Abstand von \(\pi\) auf den Wendepunkt, der bei \(x=\pi\) liegt:\\
-				Hochpunkte: \(H_k\left(2\pi+4\pi k\vert -1\right)\)
-			}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-			\includegraphics[width=.95\linewidth]{\trigonometrie/pics/Extrempunkte_empty2.png}\\
-	\end{minipage}}%
-\end{minipage}
+	\begin{minipage}{.5\textwidth}\raggedright
+		Grafische Abschätzung:\\
+		\textcolor{loes}{Damit der Wert des Integrals Null ergibt, müssen die Teilflächen oberhalb der \(x\)-Achse und unterhalb der \(x\)-Achse gleich groß sein. Dies ist für \(x_1\approx 1\) und \(x_2\approx 4\) der Fall, wie man sehen kann, wenn man die entsprechenden Flächen im Schaubild markiert.}\\
+		\phantom{text}\\
+		\phantom{text}\\
+		\phantom{text}\\
+		\phantom{text}\\
+		\phantom{text}\\
+		\phantom{text}\\
+		\phantom{text}\\
+		\phantom{text}\\
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\includegraphics[width=.95\linewidth]{\integration/pics/grenzeBsp1.png}
+	\end{minipage}
+\end{minipage}\vspace{\baselineskip}\\
+Ist die Funktionsgleichung bekannt, so kann man die Lösung auch berechnen. Im Beispiel ist \(f(x)=x^2-\frac{10}{3}x+\frac{4}{3}\):\\
+\textcolor{loes}{Wir lösen die oben gegebene Gleichung:}
+\begin{align*}
+	\textcolor{loes}{\int_0^u f(x) \td x}&\textcolor{loes}{=0}\\
+	\textcolor{loes}{\int_0^u x^2-\frac{10}{3}x+\frac{4}{3} \td x}&\textcolor{loes}{=0}\\
+	\textcolor{loes}{\left[\frac{1}{3}x^3-\frac{5}{3}x^2+\frac{4}{3}x \right]_0^u}&\textcolor{loes}{=0}\\
+	\textcolor{loes}{\frac{1}{3}u^3-\frac{5}{3}u^2+\frac{4}{3}u}&\textcolor{loes}{=0}\\
+	\textcolor{loes}{u\left(\frac{1}{3}u^2-\frac{5}{3}u+\frac{4}{3}\right)}&\textcolor{loes}{=0}\\	
+	\textcolor{loes}{\text{S.v.N.: }u_0=0\text{ oder }\frac{1}{3}u^2-\frac{5}{3}u+\frac{4}{3}}&\textcolor{loes}{=0}
+\end{align*}
+\textcolor{loes}{Die Mitternachtsformel liefert \(u_1=1\) und \(u_2=4\). Da laut Aufgabenstellung \(u>0\) sein soll, sind nur \(u_1\) und \(u_2\) zulässige Lösungen.}
 \newpage
-\begin{Exercise}[title={\raggedright\normalfont Bestimme jeweils alle Lösungen:}, label=sincosGleichungenAllgA1]
-\begin{enumerate}[label=\alph*)]
-	\item \(-3\sinn{2x}=\frac{3}{2}\)
-	\item \(4\sinn{2\pi x}=1+\sqrt{5}\)
-	\item \(\coss{0,5x}=\frac{1}{2}\)
-	\item \(\coss{\frac{\pi}{2}x}=-1\)
-	\item \(4\sinn{3\pi x}=-1\)
-	\item \(0,5\coss{5x}+2=3\)
-	\item \(-5\sinn{\frac{2}{3}x}=3\)
-	\item \(\coss{\frac{5}{4}x}-3=-2,5\)
-	\item \(5\sinn{3\pi x}=0\)
-	\item \(4\sinn{\frac{3\pi}{2}x}=1\)
-	\item \(\frac{1}{3}\coss{2x}=-\frac{1}{8}\)
-	\item \(-\sinn{6\pi x}+1,6=1,3\)
-	\item \(0,5\coss{\frac{\pi}{6}x}=0,6\)
-	\item \(-3\coss{0,2x}+2=\frac{3}{2}\)
-	\item \(-\frac{1}{7}\coss{\pi x}-\frac{1}{5}=-\frac{1}{10}\)
-	\item \(-6\sinn{\frac{1}{\pi}x}-3=1\)
-	\item \(2\sinn{2,5x}-4=-3,1\)
-	\item \(4\coss{8x}=-2\sqrt{2}\)
-	\item \(3\coss{\frac{5\pi}{8}x}-\frac{1}{4}=-1\)
-	\item \(4\sinn{3x}+6=-10\)
-	\item \(4\coss{\frac{3\pi}{4}x}-12=-10,8\)
-	\item \(2\sinn{6x}+2=2\)
-	\item \(-\frac{3}{4}\coss{\frac{3}{8}x}+\frac{1}{8}=\frac{1}{2}\)
-	\item \(-\frac{25}{13}\sinn{5\pi x}-\frac{5}{2}=-\frac{5}{7}\)
-	\item \(\frac{5}{3}\sinn{\frac{5\pi}{3}x}+\frac{8}{3}=\frac{5}{3}\)
-	\item \(-\frac{9}{4}\coss{\frac{1}{3}x}-1=0\)
-\end{enumerate}
+
+\begin{Exercise}[title={\raggedright\normalfont Schätze jeweils ein \(u\) graphisch ab und berechne dann die Lösung. Das gesuchte \(u\) soll immer größer als die untere Grenze sein:}, label=intGrenzeA1]\\
+	\begin{minipage}{\textwidth}
+		\begin{minipage}{.5\textwidth}
+			\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze1.png}
+			\[\int_0^u-\tfrac{1}{2}x+\tfrac{1}{2} \td x=-1\]
+		\end{minipage}
+		\begin{minipage}{.5\textwidth}
+			\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze2.png}
+			\[\int_{-1}^u-0,5x^2 \td x=-1,5\]
+		\end{minipage}\vspace{\baselineskip}\\
+		\begin{minipage}{.5\textwidth}
+			\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze3.png}
+			\[\int_0^u-\tfrac{1}{20}x^3+\tfrac{6}{5}x \td x=2,2\]
+		\end{minipage}
+		\begin{minipage}{.5\textwidth}
+			\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze4.png}
+			\[\int_0^u e^{0,5x} \td x=4\]
+		\end{minipage}\vspace{\baselineskip}\\
+		\begin{minipage}{.5\textwidth}
+			\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze5.png}
+			\[\int_{-1}^u 2e^{-\tfrac{1}{3}x} \td x=5\]
+			\phantom{Finde 2 verschiedene \(u>0\).}
+		\end{minipage}
+		\begin{minipage}{.5\textwidth}
+			\includegraphics[width=.8\linewidth]{\integration/pics/intGrenze6.png}
+			\[\int_0^u \tfrac{1}{2}x^3-\tfrac{3}{2}x^2+\tfrac{3}{4}x \td x=0\]
+			\centering{Finde 2 verschiedene \(u>0\).}
+		\end{minipage}
+	\end{minipage}
 \end{Exercise}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Answer}[ref=sincosGleichungenAllgA1]
-\begin{enumerate}[label=\alph*)]
-	\item \(x_k=-\frac{\pi}{12} +\pi k\text{ oder }x_k=\frac{7\pi}{12} +\pi k,\ k\in\Z\)
-	\item \(x_k=-\frac{1}{20} + k\text{ oder }x_k=\frac{7}{20} + k,\ k\in\Z\)
-	\item \(x_k=\pm \frac{2\pi}{3} +4\pi k,\ k\in\Z\)
-	\item \(x_k=\pm 2 +4 k,\ k\in\Z\)
-	\item \(x_k=\frac{1}{3\pi}\arcsinn{-\frac{1}{4}} +\frac{2}{3} k\approx -0,03+\frac{2}{3} k\text{ oder }x_k=\frac{1}{3}-\frac{1}{3\pi}\arcsinn{-\frac{1}{4}} +\frac{2}{3} k\approx 0,36+\frac{2}{3} k,\ k\in\Z\)
-	\item keine Lösungen
-	\item \(x_k=\frac{3}{2}\arcsinn{-\frac{3}{5}} +3\pi k\approx -0,97+3\pi k\text{ oder }x_k=\frac{3\pi}{2}-\frac{3}{2}\arcsinn{-\frac{3}{5}} +3\pi k\approx 5,68+3\pi k,\ k\in\Z\)
-	\item \(x_k=\pm \frac{4\pi}{15} +\frac{8}{5}\pi k,\ k\in\Z\)
-	\item \(x_k=\frac{2}{3} k\text{ oder }x_k=\frac{1}{2} +\frac{2}{3} k,\ k\in\Z\)
-	\item \(x_k=\frac{2}{3\pi}\arcsinn{\frac{1}{4}} +\frac{4}{3} k\approx 0,05+\frac{4}{3} k\text{ oder }x_k=\frac{2}{3}-\frac{2}{3\pi}\arcsinn{\frac{1}{4}} +\frac{4}{3} k\approx 0,61+\frac{4}{3} k,\ k\in\Z\)
-	\item \(x_k=\pm \frac{1}{2}\arccoss{-\frac{3}{8}} +\pi k\approx\pm 0,98 +\pi k,\ k\in\Z\)
-	\item \(x_k=\frac{1}{6\pi}\arcsinn{0,3} +\frac{1}{3} k\approx 0,02+\frac{1}{3} k\text{ oder }x_k=\frac{1}{6}-\frac{1}{6\pi}\arcsinn{0,3} +\frac{1}{3} k\approx 0,15+\frac{1}{3} k,\ k\in\Z\)
-	\item keine Lösungen
-	\item \(x_k=\pm 5\arccoss{\frac{1}{6}} +10\pi k\approx\pm 7,02 +10\pi k,\ k\in\Z\)
-	\item \(x_k=\pm \frac{1}{\pi}\arccoss{-\frac{7}{10}} +2k\approx\pm 0,75 +2k,\ k\in\Z\)
-	\item \(x_k=\pi\arcsinn{\frac{2}{3}} +2\pi^2 k\approx 2,29+2\pi^2 k\text{ oder }x_k=\pi^2-\pi\arcsinn{\frac{2}{3}} +2\pi^2 k\approx 7,58+2\pi^2 k,\ k\in\Z\)
-	\item \(x_k=0,4\arcsinn{0,45} +0,8\pi k\approx 0,19+0,8\pi k\text{ oder }x_k=0,4\pi-0,4\arcsinn{0,45} +0,8\pi k\approx 1,07+0,8\pi k,\ k\in\Z\)
-	\item \(x_k=\pm \frac{3\pi}{32} +\frac{\pi}{4} k,\ k\in\Z\)
-	\item \(x_k=\pm \frac{8}{5\pi}\arccoss{-\frac{1}{4}} +\frac{16}{5} k\approx\pm 0,93 +\frac{16}{5} k,\ k\in\Z\)
-	\item keine Lösungen
-	\item \(x_k=\pm \frac{4}{3\pi}\arccoss{\frac{3}{10}} +\frac{8}{3} k\approx\pm 0,54 +\frac{8}{3} k,\ k\in\Z\)
-	\item \(x_k=\frac{\pi}{3} k\text{ oder }x_k=\frac{\pi}{6} +\frac{\pi}{3} k,\ k\in\Z\)
-	\item \(x_k=\pm \frac{16}{9}\pi +\frac{16}{3}\pi k,\ k\in\Z\)
-	\item \(x_k=\frac{1}{5\pi}\arcsinn{-\frac{13}{14}} +\frac{2}{5} k\approx -0,08+\frac{2}{5} k\text{ oder }x_k=\frac{1}{5}-\frac{1}{5\pi}\arcsinn{-\frac{13}{14}} +\frac{2}{5} k\approx 0,28+\frac{2}{5} k,\ k\in\Z\)
-	\item \(x_k=\frac{3}{5\pi}\arcsinn{-\frac{3}{5}} +\frac{6}{5} k\approx -0,12+\frac{6}{5} k\text{ oder }x_k=\frac{6}{5}-\frac{3}{5\pi}\arcsinn{-\frac{3}{5}} +\frac{6}{5} k\approx 1,32+\frac{6}{5} k,\ k\in\Z\)
-	\item \(x_k=\pm 3\arccoss{-\frac{4}{9}} +6\pi k\approx \pm 6,09 +6\pi k,\ k\in\Z\)
-\end{enumerate}
+\begin{Answer}[ref=intGrenzeA1]\\
+	Die grafisch abgeschätzten Lösungen sollten jeweils bis auf \(\pm0,3\) mit den berechneten Lösungen übereinstimmen. Lösungen in Klammer lösen zwar die Gleichung, sind aber nicht größer als die untere Grenze.\\
+	\begin{minipage}{\textwidth}
+		\begin{minipage}{.5\textwidth}\raggedright
+			\[\int_0^u-\frac{1}{2}x+\frac{1}{2} \td x=-1\]
+			\[u_1=1+\sqrt{5}\approx3,24\ \left(\text{und }u_2=1-\sqrt{5}\right)\] 
+		\end{minipage}
+		\begin{minipage}{.5\textwidth}
+			\[\int_{-1}^u-0,5x^2 \td x=-1,5\]
+			\[u_1=2\]
+		\end{minipage}\vspace{\baselineskip}\\\vspace{\baselineskip}\\
+		\begin{minipage}{.5\textwidth}\raggedright
+			\[\int_0^u-\tfrac{1}{20}x^3+\tfrac{6}{5}x \td x=2,2\]
+			\[u_1=2, u_2=\sqrt{44}\ \left(\text{und }u_3=-2,\ u_4=-\sqrt{44}\right)\]
+		\end{minipage}
+		\begin{minipage}{.5\textwidth}
+			\[\int_0^u e^{0,5x} \td x=4\]
+			\[u_1=2\ln(3)\]
+		\end{minipage}\vspace{\baselineskip}\\\vspace{\baselineskip}\\
+		\begin{minipage}{.5\textwidth}\raggedright
+			\[\int_{-1}^u 2e^{-\tfrac{1}{3}x} \td x=5\]
+			\[u_1=-3\ln\left(e^{\tfrac{1}{3}}-\frac{5}{6}\right)\]
+		\end{minipage}
+		\begin{minipage}{.5\textwidth}
+			\[\int_0^u \frac{1}{2}x^3-\frac{3}{2}x^2+\tfrac{3}{4}x \td x=0\]
+			\[u_1=1,\ u_2=3\ \left(\text{und }u_3=0\right)\] 
+		\end{minipage}
+	\end{minipage}
 \end{Answer}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
