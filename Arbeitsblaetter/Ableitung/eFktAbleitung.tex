@@ -1,17 +1,32 @@
 \cohead{\Large\textbf{Abl. von e-Fkt.}}
 \fakesubsection{Ableitung von e-Funktionen}
 Die Faktor- und Summenregel gelten analog auch für e-Funktionen. Funktionen vom Typ\linebreak \(f(x)=ae^{kx}\) lassen sich wie folgt ableiten:
-\begin{tcolorbox}
-	\phantom{text}\\
-	\textcolor{loestc}{Ableitung von e-Funktionen:\\
-		Eine Funktion vom Typ \(f(x)=ae^{kx}\) hat die Ableitung \(f'(x)=ake^{kx}\).\\
-		Es wird also nur der Faktor \(k\) nach unten geholt, alles andere bleibt gleich.}\\
-\end{tcolorbox}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bigskip
+
 \begin{minipage}{\textwidth}
+    \begin{minipage}{0.3\textwidth}
+        \begin{align*}
+            f(x)&=a\cdot e^{kx}\\
+            f'(x)&=\textcolor{loes}{a\cdot k\cdot e^{kx}}
+        \end{align*}
+    \end{minipage}%
+    \begin{minipage}{0.7\textwidth}
+        \begin{tcolorbox}
+	       \textbf{Ableitung von e-Funktionen:}
+
+            \textcolor{loestc}{Eine Funktion vom Typ \(f(x)=ae^{kx}\) hat die Ableitung \(f'(x)=ake^{kx}\).}
+
+            \textcolor{loestc}{Es wird also nur der Faktor \(k\) nach unten geholt, alles andere bleibt gleich.}
+        \end{tcolorbox}
+    \end{minipage}%
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{Exercise}[title={\raggedright Berechne jeweils allgemein die Ableitung \(f'(x)\)}, label=efktAblA1]
+
 		\begin{minipage}{\textwidth}
-			\begin{minipage}{0.49\textwidth}
+			\begin{minipage}{0.5\textwidth}
 				\begin{enumerate}[label=\alph*)]
 					\item \(f_1(x)=e^x\)
 					\item \(f_2(x)=-e^{-x}+e^x\)
@@ -22,8 +37,8 @@ Die Faktor- und Summenregel gelten analog auch für e-Funktionen. Funktionen vom
 					\item \(f_7(x)=-e^{3x}-2e^{x}+5\)
 					\item \(f_8(x)=0,5e^{4x}-2e^{2x}+e^x\)
 				\end{enumerate}
-			\end{minipage}
-			\begin{minipage}{0.49\textwidth}
+			\end{minipage}%
+			\begin{minipage}{0.5\textwidth}
 				\begin{enumerate}[label=\alph*)]
 					\setcounter{enumi}{8}
 					\item \(f_9(x)=3e^{-2x}-e^{-x}\)
@@ -35,12 +50,12 @@ Die Faktor- und Summenregel gelten analog auch für e-Funktionen. Funktionen vom
 					\item \(f_{15}(x)=3e^x-4e\)
 					\item \(f_{16}(x)=3e^x-e^{3x}\)
 				\end{enumerate}
-			\end{minipage}
+			\end{minipage}%
 		\end{minipage}
 	\end{Exercise}
-\end{minipage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Answer}[ref=efktAblA1]\\
+\begin{Answer}[ref=efktAblA1]
+
 	\begin{minipage}{\textwidth}
 		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
@@ -53,7 +68,7 @@ Die Faktor- und Summenregel gelten analog auch für e-Funktionen. Funktionen vom
 				\item \(f_7'(x)=-3e^{3x}-2e^{x}\)
 				\item \(f_8'(x)=2e^{4x}-4e^{2x}+e^x\)
 			\end{enumerate}
-		\end{minipage}
+		\end{minipage}%
 		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
 				\setcounter{enumi}{8}
@@ -66,6 +81,6 @@ Die Faktor- und Summenregel gelten analog auch für e-Funktionen. Funktionen vom
 				\item \(f_{15}'(x)=3e^x\) (\(e\) ohne \(x\) fällt weg)
 				\item \(f_{16}'(x)=3e^x-3e^{3x}\)
 			\end{enumerate}
-		\end{minipage}
-	\end{minipage}\\  \\
+		\end{minipage}%
+	\end{minipage}
 \end{Answer}

@@ -1,86 +1,124 @@
 \cohead{\Large\textbf{Extrempunkte}}
 \fakesubsection{Extrem- und Sattelpunkte}
-\textbf{Hochpunkt}\\
-Ein Hochpunkt hat den größten Funktionswert in seiner Umgebung.\\
+\textbf{Hochpunkt}
+
+Ein Hochpunkt hat den größten Funktionswert in seiner Umgebung.
+
+\medskip
+
 \begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{\begin{minipage}{0.345\linewidth}
+	\adjustbox{valign=t, padding = 0ex 0ex 2ex 0ex}{\begin{minipage}{\textwidth/\real{3}-2ex}
 			\centering\includegraphics[width=\textwidth]{\ableitung/pics/HPBsp.png}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.345\linewidth}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding = 0ex 0ex 2ex 0ex}{\begin{minipage}{\textwidth/\real{3}-2ex}
 			\centering\includegraphics[width=\textwidth]{\ableitung/pics/HPBspAbl.png}
-	\end{minipage}}
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}{\textwidth/\real{3}}
+        \textcolor{loes}{Der Hochpunkt tritt am Übergang von monoton wachsend zu monoton fallend von \(f(x)\) und damit an der NST mit +-VZW der Ableitung auf.}
+    \end{minipage}}%
 \end{minipage}
-\textcolor{loes}{Der Hochpunkt tritt am Übergang von monoton wachsend zu monoton fallend von \(f(x)\) und damit an der NST mit +-VZW der Ableitung auf.}\\
-\textbf{Tiefpunkt}\\
-Ein Tiefpunkt hat den kleinsten Funktionswert in seiner Umgebung.\\
+
+\bigskip
+
+\textbf{Tiefpunkt}
+
+Ein Tiefpunkt hat den kleinsten Funktionswert in seiner Umgebung.
+
+\medskip
+
 \begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{\begin{minipage}{0.345\linewidth}
+	\adjustbox{valign=t, padding = 0ex 0ex 2ex 0ex}{\begin{minipage}{\textwidth/\real{3}-2ex}
 			\centering\includegraphics[width=\textwidth]{\ableitung/pics/TPBsp.png}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.345\linewidth}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding = 0ex 0ex 2ex 0ex}{\begin{minipage}{\textwidth/\real{3}-2ex}
 			\centering\includegraphics[width=\textwidth]{\ableitung/pics/TPBspAbl.png}
-	\end{minipage}}
+	\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{\textwidth/\real{3}}
+        \textcolor{loes}{Der Tiefpunkt tritt am Übergang von monoton fallend zu monoton wachsend von \(f(x)\) und damit an der NST mit -+VZW der Ableitung auf.}
+    \end{minipage}}%
 \end{minipage}
-\textcolor{loes}{Der Tiefpunkt tritt am Übergang von monoton fallend zu monoton wachsend von \(f(x)\) und damit an der NST mit -+VZW der Ableitung auf.}\\
-\textbf{Sattelpunkt}\\
-Ein Sattelpunkt ist kein Extrempunkt, jedoch ist die Ableitung am Sattelpunkt ebenfalls Null.\\
+
+\bigskip
+
+\textbf{Sattelpunkt}
+
+Ein Sattelpunkt ist kein Extrempunkt, jedoch ist die Ableitung am Sattelpunkt ebenfalls Null.
+
+\medskip
+
 \begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{\begin{minipage}{0.345\linewidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 2ex 0ex}{\begin{minipage}{\textwidth/\real{3}-2ex}
 			\centering\includegraphics[width=\textwidth]{\ableitung/pics/SPBsp.png}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.345\linewidth}
+	\end{minipage}}%
+    \adjustbox{valign=t, padding = 0ex 0ex 2ex 0ex}{\begin{minipage}{\textwidth/\real{3}-2ex}
 			\centering\includegraphics[width=\textwidth]{\ableitung/pics/SPBspAbl.png}
-	\end{minipage}}
+	\end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{\textwidth/\real{3}}
+            \textcolor{loes}{Ein Sattelpunkt tritt auf, wenn die Ableitung eine NST ohne VZW hat.}
+    \end{minipage}}%
 \end{minipage}
-\textcolor{loes}{Ein Sattelpunkt tritt auf, wenn die Ableitung eine NST ohne VZW hat.}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{tabular}{p{.33\textwidth}p{.33\textwidth}p{.33\textwidth}}
+{\setlength{\tabcolsep}{0pt}
+\begin{tabular}{p{\textwidth/\real{3}}p{\textwidth/\real{3}}p{\textwidth/\real{3}}}
 	Hochpunkt HP&Tiefpunkt TP&Sattelpunkt SP\\
 	\midrule
 	\multicolumn{3}{c}{\textcolor{loes}{NST in der Ableitung: \(f'(x)=0\)}}\vspace{1cm}\\
 	\textcolor{loes}{NST mit +-VZW}&\textcolor{loes}{NST mit -+VZW}&\textcolor{loes}{NST ohne VZW}\\
 	\bottomrule
-\end{tabular}\\ \\
+\end{tabular}}
+
+\bigskip
+
 Eine Möglichkeit auf den VZW der Ableitung zu prüfen ist die zweite Ableitung \(f''(x)\):
-Ist \(x_0\) eine NST der ersten Ableitung \(f'(x_0)=0\) so gilt:\\ \\
+
+Ist \(x_0\) eine NST der ersten Ableitung \(f'(x_0)=0\) so gilt:
+
+\bigskip
+
 \begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{\begin{minipage}{0.66\linewidth}
+	\adjustbox{valign=t}{\begin{minipage}{0.7\textwidth}
 			\(f''(x_0)<0\): \textcolor{loes}{\(f(x)\) hat bei \(x_0\) einen Hochpunkt. Da die zweite Ableitung negativ ist, muss die erste Ableitung bei \(x_0\) fallen, d.h. von oben nach unten verlaufen. Daher hat die erste Ableitung einen +-VZW und \(f(x)\) damit einen Hochpunkt.}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.33\linewidth}
-			\centering\includegraphics[width=.7\textwidth]{\ableitung/pics/AblNST2.png}
-	\end{minipage}}
-\end{minipage}\\
-\vspace{.5cm}\\
+	\end{minipage}}%
+	\adjustbox{valign=t, padding = 3ex 0ex 0ex 0ex}{\begin{minipage}{0.3\textwidth-3ex}
+			\centering\includegraphics[width=\textwidth]{\ableitung/pics/AblNST2.png}
+	\end{minipage}}%
+\end{minipage}
+
+\vspace{2.5ex}
+
 \begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{\begin{minipage}{0.66\linewidth}
+	\adjustbox{valign=t}{\begin{minipage}{0.7\textwidth}
 			\(f''(x_0)>0\): \textcolor{loes}{\(f(x)\) hat bei \(x_0\) einen Tiefpunkt. Da die zweite Ableitung positiv ist, muss die erste Ableitung bei \(x_0\) steigen, d.h. von unten nach oben verlaufen. Daher hat die erste Ableitung einen -+VZW und \(f(x)\) damit einen Tiefpunkt.}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.33\linewidth}
-			\centering\includegraphics[width=.7\textwidth]{\ableitung/pics/AblNST1.png}
-	\end{minipage}}
-\end{minipage}\\
-\vspace{.5cm}\\
+	\end{minipage}}%
+	\adjustbox{valign=t, padding = 3ex 0ex 0ex 0ex}{\begin{minipage}{0.3\textwidth-3ex}
+			\centering\includegraphics[width=\textwidth]{\ableitung/pics/AblNST1.png}
+	\end{minipage}}%
+\end{minipage}
+
+\vspace{2.5ex}
+
 \begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{\begin{minipage}{0.66\linewidth}
+	\adjustbox{valign=t}{\begin{minipage}{0.7\textwidth}
 			\(f''(x_0)=0\): \textcolor{loes}{Keine Aussage möglich! \(f(x)\) kann bei \(x_0\) einen HP, TP oder SP haben. Der VZW muss auf andere Art und Weise geprüft werden!}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.33\linewidth}
-			\centering\includegraphics[width=.7\textwidth]{\ableitung/pics/AblNST4.png}
-	\end{minipage}}
-\end{minipage}\\
-\vspace{.5cm}\\
+	\end{minipage}}%
+	\adjustbox{valign=t, padding = 3ex 0ex 0ex 0ex}{\begin{minipage}{0.3\textwidth-3ex}
+			\centering\includegraphics[width=\textwidth]{\ableitung/pics/AblNST4.png}
+	\end{minipage}}%
+\end{minipage}
+
+\vspace{2.5ex}
+
 \begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{\begin{minipage}{0.33\linewidth}
-			\centering\includegraphics[width=.7\textwidth]{\ableitung/pics/AblNST3.png}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.33\linewidth}
-			\centering\includegraphics[width=.7\textwidth]{\ableitung/pics/AblNST5.png}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.33\linewidth}
-			\centering\includegraphics[width=.7\textwidth]{\ableitung/pics/AblNST6.png}
-	\end{minipage}}
+	\adjustbox{valign=t}{\begin{minipage}{0.3\textwidth-3ex}
+			\centering\includegraphics[width=\textwidth]{\ableitung/pics/AblNST3.png}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding = .05\textwidth+4.5ex 0ex 0ex 0ex}{\begin{minipage}{0.3\textwidth-3ex}
+			\centering\includegraphics[width=\textwidth]{\ableitung/pics/AblNST5.png}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding = .05\textwidth+4.5ex 0ex 0ex 0ex}{\begin{minipage}{0.3\textwidth-3ex}
+			\centering\includegraphics[width=\textwidth]{\ableitung/pics/AblNST6.png}
+	\end{minipage}}%
 \end{minipage}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

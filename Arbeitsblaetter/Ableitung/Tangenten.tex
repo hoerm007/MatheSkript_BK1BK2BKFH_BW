@@ -2,35 +2,52 @@
 \fakesubsection{Tangentengleichungen bestimmen}
 Damit eine Gerade \(g(x)=mx+b\) eine Tangente an der Stelle \(x_0\) an das Schaubild einer Funktion \(f(x)\) ist, müssen 2 Bedingungen erfüllt sein:
 \begin{tcolorbox}
+
+    \bigskip
+
 	\textcolor{loestc}{Die Steigung der Funktion an der Stelle \(x_0\) muss der Steigung der Geraden entsprechen:
 		\[m=f'(x_0)\]}
 \end{tcolorbox}
 \begin{tcolorbox}
+
+    \bigskip
+
 	\textcolor{loestc}{Die Funktionswerte der Geraden und der Funktion an der Stelle \(x_0\) müssen gleich sein:
 		\[g(x_0)=f(x_0)\]}
 \end{tcolorbox}
 Beispiel: Bestimme die Tangente an die Funktion \(f(x)=\frac{1}{2}x^2-x-1\) an der Stelle \(x_0=2\).\vspace{0.5cm}
 \begin{minipage}{\textwidth}
-	\begin{minipage}{0.5\textwidth}
+	\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth+2ex}
 		\begin{enumerate}
-			\item Gleiche Steigungen an der Stelle \(x_0=2\):\\
-			\\
-			\textcolor{loes}{\(f'(x)=x-1\) und damit \(m=f'(2)=1\)}\\
-			\\
-			\\
-			\item Gleiche Funktionswerte an der Stelle \(x_0=2\):\\
+			\item Gleiche Steigungen an der Stelle \(x_0=2\):
+
+            \bigskip
+
+            \bigskip
+
+			\textcolor{loes}{\(f'(x)=x-1\) und damit \(m=f'(2)=1\)}
+
+            \bigskip
+
+            \bigskip
+
+			\item Gleiche Funktionswerte an der Stelle \(x_0=2\):
+
+            \smallskip
+
 			\begin{align*}
 				\textcolor{loes}{g(2)}&\textcolor{loes}{=f(2)}\\
 				\textcolor{loes}{1\cdot 2+b}&\textcolor{loes}{=\frac{1}{2}\cdot 2^2-2-1}\\
 				\textcolor{loes}{2+b}&\textcolor{loes}{=-1\ \vert\ -2}\\
 				\textcolor{loes}{b}&\textcolor{loes}{=-3}
 			\end{align*}
+
+            \textcolor{loes}{Damit ergibt sich \(g(x)=x-3\)}
 		\end{enumerate}
-		\textcolor{loes}{Damit ergibt sich \(g(x)=x-3\)}
-	\end{minipage}
-	\begin{minipage}{0.5\textwidth}
-		\centering\includegraphics[width=.9\textwidth]{\ableitung/pics/tangenteBsp.png}
-	\end{minipage}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding=2ex 0ex 0ex 0ex}{\begin{minipage}{0.5\textwidth-4ex}
+		\centering\includegraphics[width=\textwidth]{\ableitung/pics/tangenteBsp.png}
+	\end{minipage}}%
 \end{minipage}\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Exercise}[title={\raggedright Bestimme jeweils die Tangentengleichung.}, label=tangentenBestimmenA1]
@@ -53,7 +70,7 @@ Beispiel: Bestimme die Tangente an die Funktion \(f(x)=\frac{1}{2}x^2-x-1\) an d
 	\end{enumerate}
 \end{Exercise}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Answer}[ref=tangentenBestimmenA1]\\
+\begin{Answer}[ref=tangentenBestimmenA1]
 	\begin{enumerate}[label=\alph*)]
 		\item \(g(x)=2x+2\)
 		\item \(g(x)=9x+8\)

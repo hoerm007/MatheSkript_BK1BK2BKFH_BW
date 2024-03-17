@@ -1,41 +1,53 @@
 \cohead{\Large\textbf{Wendepunkte}}
 \fakesubsection{Wendepunkte}
 Als Wendepunkte bezeichnet man die Punkte einer Funktion an denen die Krümmung wechselt, also die Funktion von einer Linkskurve in eine Rechtskurve übergeht oder umgekehrt. Oder anders ausgedrückt, eine Funktion hat genau dann einen Wendepunkt, wenn die zweite Ableitung eine Nullstelle mit Vorzeichenwechsel hat.\\
-Die folgenden drei Aussagen sind äquivalent:\\ \\
+Die folgenden drei Aussagen sind äquivalent:
+
+\bigskip
+
 \begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{
-		\begin{tcolorbox}[width=.31\textwidth] \vspace{1cm}
-			\textcolor{loestc}{Das Schaubild von \(f(x)\) hat bei \(x_0\) einen Wendepunkt.\\ \\}
-		\end{tcolorbox}
-	}
-	\adjustbox{valign=t}{
-		\begin{tcolorbox}[width=.31\textwidth]\vspace{1cm}
-			\textcolor{loestc}{Das Schaubild von \(f'(x)\) hat bei \(x_0\) einen Extrempunkt.\\ \\}
-		\end{tcolorbox}
-	}
-	\adjustbox{valign=t}{
-		\begin{tcolorbox}[width=.31\textwidth]\vspace{1cm}
-			\textcolor{loestc}{Das Schaubild von \(f''(x)\) hat bei \(x_0\) eine Nullstelle mit Vorzeichenwechsel.\\}
-		\end{tcolorbox}
-	}
-\end{minipage}\\
-\\Beispiel:\\
+	\adjustbox{valign=t}{\begin{minipage}{\textwidth/\real{3}-1ex}
+		\begin{tcolorbox}[width=\textwidth, height=4cm, valign=center]
+			\textcolor{loestc}{Das Schaubild von \(f(x)\) hat bei \(x_0\) einen Wendepunkt.}
+		\end{tcolorbox}\end{minipage}}%
+	\adjustbox{valign=t, padding=1.5ex 0ex 0ex 0ex}{\begin{minipage}{\textwidth/\real{3}-1ex}
+		\begin{tcolorbox}[width=\textwidth, height=4cm, valign=center]
+			\textcolor{loestc}{Das Schaubild von \(f'(x)\) hat bei \(x_0\) einen Extrempunkt.}
+		\end{tcolorbox}\end{minipage}}%
+	\adjustbox{valign=t, padding=1.5ex 0ex 0ex 0ex}{\begin{minipage}{\textwidth/\real{3}-1ex}
+		\begin{tcolorbox}[width=\textwidth, height=4cm, valign=center]
+			\textcolor{loestc}{Das Schaubild von \(f''(x)\) hat bei \(x_0\) eine Nullstelle mit Vorzeichenwechsel.}
+		\end{tcolorbox}\end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+Beispiel:
+
+\bigskip
+
 \begin{minipage}{\textwidth}
-	\adjustbox{valign=t}{\begin{minipage}{0.33\textwidth}
-			\centering\includegraphics[width=\textwidth]{\ableitung/pics/WP_funktion.png}\\
-			\(f(x)=\frac{1}{6}x^3-\frac{1}{2}x^2-\frac{3}{2}x+1\)\\
+	\adjustbox{valign=t}{\begin{minipage}{\textwidth/\real{3}-1ex}
+			\centering\includegraphics[width=\textwidth]{\ableitung/pics/WP_funktion.png}
+
+			\(f(x)=\frac{1}{6}x^3-\frac{1}{2}x^2-\frac{3}{2}x+1\)
+
 			\textcolor{loes}{Das Schaubild von \(f(x\) hat bei \(x_0\)=1 einen Wendepunkt.}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.33\textwidth}
-			\centering\includegraphics[width=\textwidth]{\ableitung/pics/WP_ableitung.png}\\
-			\(f'(x)=\frac{1}{2}x^2-x-\frac{3}{2}\)\\
+	\end{minipage}}%
+	\adjustbox{valign=t, padding=1.5ex 0ex 0ex 0ex}{\begin{minipage}{\textwidth/\real{3}-1ex}
+			\centering\includegraphics[width=\textwidth]{\ableitung/pics/WP_ableitung.png}
+
+			\(f'(x)=\frac{1}{2}x^2-x-\frac{3}{2}\)
+
 			\textcolor{loes}{Das Schaubild von \(f'(x\) hat bei \(x_0\)=1 einen Extrempunkt.}
-	\end{minipage}}
-	\adjustbox{valign=t}{\begin{minipage}{0.33\textwidth}
-			\centering\includegraphics[width=\textwidth]{\ableitung/pics/WP_zwableitung.png}\\
-			\(f''(x)=x-1\)\\
+	\end{minipage}}%
+	\adjustbox{valign=t, padding=1.5ex 0ex 0ex 0ex}{\begin{minipage}{\textwidth/\real{3}-1ex}
+			\centering\includegraphics[width=\textwidth]{\ableitung/pics/WP_zwableitung.png}
+
+			\(f''(x)=x-1\)
+
 			\textcolor{loes}{Das Schaubild von \(f''(x\) hat bei \(x_0\)=1 eine Nullstelle mit Vorzeichenwechsel.}
-	\end{minipage}}
+	\end{minipage}}%
 \end{minipage}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

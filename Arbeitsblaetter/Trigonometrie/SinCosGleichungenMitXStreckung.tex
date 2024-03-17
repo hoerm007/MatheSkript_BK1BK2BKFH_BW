@@ -1,79 +1,182 @@
 \cohead{\Large\textbf{Trigonometrische Gleichungen}}
-\fakesubsection{Trigonometrische Gleichungen mit Streckung in \(x\)-Richtung}
-Wir können Gleichungen der Form \(\cos(bx)=r\) bzw. \(\sin(bx)=r\) lösen, indem wir die gleichen Schritte durchführen wie beim Lösen von Gleichungen der Form \(\cos(x)=r\) bzw. \(\sin(x)=r\). Es sind lediglich zwei Extraschritte notwendig:\\ \\
+\fakesubsection{Trigonometrische Gleichungen mit Streckung in \textit{x}-Richtung}
+Wir können Gleichungen der Form \(\cos(bx)=r\) bzw. \(\sin(bx)=r\) lösen, indem wir die gleichen Schritte durchführen wie beim Lösen von Gleichungen der Form \(\cos(x)=r\) bzw. \(\sin(x)=r\). Es sind lediglich zwei Extraschritte notwendig:
+
+\bigskip
+
 \begin{minipage}{\textwidth}
 	\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
 			Beispiel: \(2\cos(\pi x)-\sqrt{2}=0\)
-			\begin{enumerate}
-				\item Gleichung zu \(\cos(bx)=r\) umformen
-				\begin{align*}
-					\textcolor{loes}{2\cos(\pi x)-\sqrt{2}}&\textcolor{loes}{=0\ \vert +\sqrt{2}}\\
-					\textcolor{loes}{2\cos(\pi x)}&\textcolor{loes}{=\sqrt{2}\ \vert :2}\\
-					\textcolor{loes}{\cos(\pi x)}&\textcolor{loes}{=\frac{\sqrt{2}}{2}}
-				\end{align*}
-				\item Substitution \(bx=z\)
-				\begin{align*}
-					\textcolor{loes}{\cos(\pi x)}&\textcolor{loes}{=\frac{\sqrt{2}}{2}\ \bigg\vert\text{ Sub. }z=\pi x}\\
-					\textcolor{loes}{\cos(z)}&\textcolor{loes}{=\frac{\sqrt{2}}{2}}
-				\end{align*}
-				\item Erste Lösung mit \(\cos^{-1}\) bestimmen
-				\begin{align*}
-					\textcolor{loes}{\cos(z)}&\textcolor{loes}{=\frac{\sqrt{2}}{2}\ \vert \cos^{-1}}\\
-					\textcolor{loes}{z_1}&\textcolor{loes}{=\arccoss{\frac{\sqrt{2}}{2}}}\\
-					\textcolor{loes}{z_1}&\textcolor{loes}{=\frac{\pi}{4}}					
-				\end{align*}	
-				\item Zweite Lösung für \(z\) aus Symmetrie
-				\begin{align*}
-					\textcolor{loes}{z_2}&\textcolor{loes}{=-z_1=-\frac{\pi}{4}}					
-				\end{align*}	
-				\item Alle Lösungen bestimmen
-				\begin{align*}
-					\textcolor{loes}{z_k}&\textcolor{loes}{=\pm\frac{\pi}{4}+2\pi k,\ k\in\Z}					
-				\end{align*}
-				\item Rücksubstitution
-				\begin{align*}
-					\textcolor{loes}{\pi x_k}&\textcolor{loes}{=\pm\frac{\pi}{4}+2\pi k\ \vert :\pi}\\	
-					\textcolor{loes}{x_k}&\textcolor{loes}{=\pm\frac{1}{4}+2 k}				
-				\end{align*}
-			\end{enumerate}
-	\end{minipage}}%
-	\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-			Beispiel: \(4\sin(0,25x)-1=1\phantom{\sqrt{2}}\)
-			\begin{enumerate}
-				\item Gleichung zu \(\sin(bx)=r\) umformen
-				\begin{align*}
-					\textcolor{loes}{4\sin(0,25 x)-1}&\textcolor{loes}{=1\ \vert +1}\phantom{\sqrt{2}}\\
-					\textcolor{loes}{4\sin(0,25 x)}&\textcolor{loes}{=2\ \vert :4}\phantom{\sqrt{2}}\\
-					\textcolor{loes}{\sin(0,25 x)}&\textcolor{loes}{=0,5}\phantom{\frac{\sqrt{2}}{2}}
-				\end{align*}
-				\item Substitution \(bx=z\)
-				\begin{align*}
-					\textcolor{loes}{\sin(0,25 x)}&\textcolor{loes}{=0,5\ \big\vert\text{ Sub. }z=0,25 x}\phantom{\bigg\vert\frac{\sqrt{2}}{2}}\\
-					\textcolor{loes}{\sin(z)}&\textcolor{loes}{=0,5}\phantom{\frac{\sqrt{2}}{2}}
-				\end{align*}
-				\item Erste Lösung mit \(\sin^{-1}\) bestimmen
-				\begin{align*}
-					\textcolor{loes}{\sin(z)}&\textcolor{loes}{=0,5\ \vert \sin^{-1}}\phantom{\frac{\sqrt{2}}{2}}\\
-					\textcolor{loes}{z_1}&\textcolor{loes}{=\arcsinn{0,5}}\phantom{\arccoss{\frac{\sqrt{2}}{2}}}\\
-					\textcolor{loes}{z_1}&\textcolor{loes}{=\frac{\pi}{6}}					
-				\end{align*}	
-				\item Zweite Lösung für \(z\) aus Symmetrie
-				\begin{align*}
-					\textcolor{loes}{z_2}&\textcolor{loes}{=\pi-z_1=\frac{5\pi}{6}}					
-				\end{align*}	
-				\item Alle Lösungen bestimmen
-				\begin{align*}
-					\textcolor{loes}{z_k}&\textcolor{loes}{=\frac{\pi}{6}+2\pi k\text{ oder }z_k=\frac{5\pi}{6}+2\pi k,\ k\in\Z}					
-				\end{align*}
-				\item Rücksubstitution
-				\begin{align*}
-					\textcolor{loes}{0,25 x_k}&\textcolor{loes}{=\frac{\pi}{6}+2\pi k\text{ oder }0,25 x_k=\frac{5\pi}{6}+2\pi k\ \vert\cdot 4}\\
-					\textcolor{loes}{x_k}&\textcolor{loes}{=\frac{2\pi}{3}+8\pi k\text{ oder }x_k=\frac{10\pi}{3}+8\pi k}
-				\end{align*}
-			\end{enumerate}
-	\end{minipage}}
+    \end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            Beispiel: \(4\sin(0,25x)-1=1\phantom{\sqrt{2}}\)
+    \end{minipage}}%
 \end{minipage}
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+        \begin{enumerate}
+            \item Gleichung zu \(\cos(bx)=r\) umformen
+            \begin{align*}
+                \textcolor{loes}{2\cos(\pi x)-\sqrt{2}}&\textcolor{loes}{\;=0\ \vert +\sqrt{2}}\\
+                \textcolor{loes}{2\cos(\pi x)}&\textcolor{loes}{\;=\sqrt{2}\ \vert :2}\\
+                \textcolor{loes}{\cos(\pi x)}&\textcolor{loes}{\;=\frac{\sqrt{2}}{2}}
+            \end{align*}
+        \end{enumerate}
+    \end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+        \begin{enumerate}
+            \item Gleichung zu \(\sin(bx)=r\) umformen
+            \begin{align*}
+                \textcolor{loes}{4\sin(0,25 x)-1}&\textcolor{loes}{\;=1\ \vert +1}\phantom{\sqrt{2}}\\
+                \textcolor{loes}{4\sin(0,25 x)}&\textcolor{loes}{\;=2\ \vert :4}\phantom{\sqrt{2}}\\
+                \textcolor{loes}{\sin(0,25 x)}&\textcolor{loes}{\;=0,5}\phantom{\frac{\sqrt{2}}{2}}
+            \end{align*}
+        \end{enumerate}
+    \end{minipage}}%
+
+    \vspace{1cm}
+
+\end{minipage}
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            \begin{enumerate}
+                \setcounter{enumi}{1}
+                \item Substitution \(bx=z\)
+                \begin{align*}
+                    \textcolor{loes}{\cos(\pi x)}&\textcolor{loes}{\;=\frac{\sqrt{2}}{2}\ \bigg\vert\text{ Sub. }z=\pi x}\\
+                    \textcolor{loes}{\cos(z)}&\textcolor{loes}{\;=\frac{\sqrt{2}}{2}}
+                \end{align*}
+            \end{enumerate}
+    \end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            \begin{enumerate}
+            \setcounter{enumi}{1}
+                \item Substitution \(bx=z\)
+                \begin{align*}
+                    \textcolor{loes}{\sin(0,25 x)}&\textcolor{loes}{\;=0,5\ \big\vert\text{ Sub. }z=0,25 x}\phantom{\bigg\vert\frac{\sqrt{2}}{2}}\\
+                    \textcolor{loes}{\sin(z)}&\textcolor{loes}{\;=0,5}\phantom{\frac{\sqrt{2}}{2}}
+                \end{align*}
+            \end{enumerate}
+    \end{minipage}}%
+
+\vspace{1cm}
+
+\end{minipage}
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            \begin{enumerate}
+                \setcounter{enumi}{2}
+                \item Erste Lösung mit \(\cos^{-1}\) bestimmen
+                \begin{align*}
+                    \textcolor{loes}{\cos(z)}&\textcolor{loes}{\;=\frac{\sqrt{2}}{2}\ \vert \cos^{-1}}\\
+                    \textcolor{loes}{z_1}&\textcolor{loes}{\;=\arccoss{\frac{\sqrt{2}}{2}}}\\
+                    \textcolor{loes}{z_1}&\textcolor{loes}{\;=\frac{\pi}{4}}
+                \end{align*}
+            \end{enumerate}
+    \end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            \begin{enumerate}
+                \setcounter{enumi}{2}
+                \item Erste Lösung mit \(\sin^{-1}\) bestimmen
+                \begin{align*}
+                    \textcolor{loes}{\sin(z)}&\textcolor{loes}{\;=0,5\ \vert \sin^{-1}}\phantom{\frac{\sqrt{2}}{2}}\\
+                    \textcolor{loes}{z_1}&\textcolor{loes}{\;=\arcsinn{0,5}}\phantom{\arccoss{\frac{\sqrt{2}}{2}}}\\
+                    \textcolor{loes}{z_1}&\textcolor{loes}{\;=\frac{\pi}{6}}
+                \end{align*}
+            \end{enumerate}
+    \end{minipage}}%
+
+\vspace{1cm}
+
+\end{minipage}
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            \begin{enumerate}
+                \setcounter{enumi}{3}
+                \item Zweite Lösung für \(z\) aus Symmetrie
+                \begin{align*}
+                    \textcolor{loes}{z_2}&\textcolor{loes}{\;=-z_1=-\frac{\pi}{4}}
+                \end{align*}
+            \end{enumerate}
+    \end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            \begin{enumerate}
+                \setcounter{enumi}{3}
+                \item Zweite Lösung für \(z\) aus Symmetrie
+                \begin{align*}
+                    \textcolor{loes}{z_2}&\textcolor{loes}{\;=\pi-z_1=\frac{5\pi}{6}}
+                \end{align*}
+            \end{enumerate}
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            \begin{enumerate}
+                \setcounter{enumi}{4}
+                \item Alle Lösungen bestimmen
+                \begin{align*}
+                    \textcolor{loes}{z_k}&\textcolor{loes}{\;=\pm\frac{\pi}{4}+2\pi k,\ k\in\Z}
+                \end{align*}
+            \end{enumerate}
+    \end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            \begin{enumerate}
+                \setcounter{enumi}{4}
+                \item Alle Lösungen bestimmen
+                \begin{align*}
+                    \textcolor{loes}{z_k}&\textcolor{loes}{\;=\frac{\pi}{6}+2\pi k\text{ oder }z_k=\frac{5\pi}{6}+2\pi k,\ k\in\Z}
+                \end{align*}
+            \end{enumerate}
+    \end{minipage}}%
+
+\vspace{1cm}
+
+\end{minipage}
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            \begin{enumerate}
+                \setcounter{enumi}{5}
+                \item Rücksubstitution
+                \begin{align*}
+                    \textcolor{loes}{\pi x_k}&\textcolor{loes}{\;=\pm\frac{\pi}{4}+2\pi k\ \vert :\pi}\\
+                    \textcolor{loes}{x_k}&\textcolor{loes}{\;=\pm\frac{1}{4}+2 k}
+                \end{align*}
+            \end{enumerate}
+    \end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+            \begin{enumerate}
+                \setcounter{enumi}{5}
+                \item Rücksubstitution
+                \begin{align*}
+                    \textcolor{loes}{0,25 x_k}&\textcolor{loes}{\;=\frac{\pi}{6}+2\pi k\ \vert\ \cdot 4}\\
+                    \textcolor{loes}{x_k}&\textcolor{loes}{\;=\frac{2\pi}{3}+8\pi k\text{ oder }}\\
+                    \textcolor{loes}{0,25 x_k}&\textcolor{loes}{\;=\frac{5\pi}{6}+2\pi k\ \vert\cdot 4}\\
+                    \textcolor{loes}{x_k}&\textcolor{loes}{\;=\frac{10\pi}{3}+8\pi k}
+                \end{align*}
+            \end{enumerate}
+    \end{minipage}}%
+\end{minipage}
+
 \newpage
+
 \begin{Exercise}[title={\raggedright\normalfont Bestimme jeweils alle Lösungen:}, label=sincosGleichungenAllgA1]
 	\begin{enumerate}[label=\alph*)]
 		\item \(-3\sinn{2x}=\frac{3}{2}\)
@@ -124,7 +227,9 @@ Wir können Gleichungen der Form \(\cos(bx)=r\) bzw. \(\sin(bx)=r\) lösen, inde
 		\item \(x_k=\pm 5\arccoss{\frac{1}{6}} +10\pi k\approx\pm 7,02 +10\pi k,\ k\in\Z\)
 		\item \(x_k=\pm \frac{1}{\pi}\arccoss{-\frac{7}{10}} +2k\approx\pm 0,75 +2k,\ k\in\Z\)
 		\item \(x_k=\pi\arcsinn{\frac{2}{3}} +2\pi^2 k\approx 2,29+2\pi^2 k\text{ oder }x_k=\pi^2-\pi\arcsinn{\frac{2}{3}} +2\pi^2 k\approx 7,58+2\pi^2 k,\ k\in\Z\)
-		\item \(x_k=0,4\arcsinn{0,45} +0,8\pi k\approx 0,19+0,8\pi k\text{ oder }x_k=0,4\pi-0,4\arcsinn{0,45} +0,8\pi k\approx 1,07+0,8\pi k,\ k\in\Z\)
+		\item \(x_k=0,4\arcsinn{0,45} +0,8\pi k\approx 0,19+0,8\pi k\text{ oder }\)
+
+        \(x_k=0,4\pi-0,4\arcsinn{0,45} +0,8\pi k\approx 1,07+0,8\pi k,\ k\in\Z\)
 		\item \(x_k=\pm \frac{3\pi}{32} +\frac{\pi}{4} k,\ k\in\Z\)
 		\item \(x_k=\pm \frac{8}{5\pi}\arccoss{-\frac{1}{4}} +\frac{16}{5} k\approx\pm 0,93 +\frac{16}{5} k,\ k\in\Z\)
 		\item keine Lösungen

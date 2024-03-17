@@ -1,50 +1,63 @@
 \cohead{\Large\textbf{Nullstellen}}
 \fakesubsection{Nullstellen}
 Für die meisten ganzrationalen Funktionen lassen sich die Nullstellen nicht exakt bestimmen, es sei denn die Funktionsgleichung hat eine bestimmte Form. Wir werden drei neue Verfahren zum Bestimmen von Nullstellen bzw. Lösen von Gleichungen kennen lernen. Doch zuerst ein wichtiger Satz zur Anzahl der Nullstellen:
+
 \begin{tcolorbox}\centering
 	\textcolor{loestc}{\vspace{0.3cm}\\Eine ganzrationale Funktion \(f(x)\) vom Grad \(n\) hat \textbf{maximal} \(n\) Nullstellen.\\ \vspace{0.5cm}}
 \end{tcolorbox}
-\textbf{0. Mitternachtsformel}\\
-Die Mitternachtsformel zum Lösen von quadratischen Gleichungen kennen wir bereits.\\
-\textbf{1. Nach \(x^n\) auflösen und Wurzelziehen}\\
+
+\textbf{0. Mitternachtsformel}
+
+Die Mitternachtsformel zum Lösen von quadratischen Gleichungen kennen wir bereits.
+
+\textbf{1. Nach \(x^n\) auflösen und Wurzelziehen}
+
 Dieses Verfahren kann nur dann angewendet werden, wenn die Gleichung auf folgende Form gebracht werden kann: \(ax^n+b=0\)\\
-Wir lösen nach \(x^n\) auf, d.h. \(x^n\) steht alleine auf einer Seite. Dann ziehen wir die \(n\)-te Wurzel \(\sqrt[\leftroot{0}\uproot{2}n]{\phantom{x}}\).\\
+Wir lösen nach \(x^n\) auf, d.h. \(x^n\) steht alleine auf einer Seite. Dann ziehen wir die \(n\)-te Wurzel \(\sqrt[\leftroot{0}\uproot{2}n]{\phantom{x}}\).
+
 Beispiel: Bestimme die Nullstelle der Funktion \(f(x)=2x^3+16\).
-\textcolor{loes}{\begin{align*}\large
+{\large\textcolor{loes}{\begin{align*}
 		2x^3+16&=0\ \vert\ -16\\
 		2x^3&=-16\ \vert\ :2\\
 		x^3&=-8\ \vert\ \sqrt[\leftroot{0}\uproot{2}3]{\phantom{x}}\\
 		x&=\sqrt[\leftroot{0}\uproot{2}3]{-8}\\
 		x_1&=-2
-\end{align*}}
-Zur Anwendung höherer Wurzeln siehe den folgenden Einschub.\\
-\textbf{2. Möglichst viele \(x\) Vorklammern und SvN}\\
-Dieses Verfahren kann nur dann angewendet werden, wenn jeder Summand über mindestens ein \(x\) verfügt. Wir klammern so viele \(x\) wie möglich vor (kleinste Hochzahl) und wenden dann den Satz vom Nullprodukt an.\\
+\end{align*}}}
+Zur Anwendung höherer Wurzeln siehe den folgenden Einschub.
+
+\textbf{2. Möglichst viele \(x\) Vorklammern und SvN}
+
+Dieses Verfahren kann nur dann angewendet werden, wenn jeder Summand über mindestens ein \(x\) verfügt. Wir klammern so viele \(x\) wie möglich vor (kleinste Hochzahl) und wenden dann den Satz vom Nullprodukt an.
+
 Beispiel: Bestimme die Nullstelle der Funktion \(f(x)=2x^4-10x^3+12x^2\).
-\textcolor{loes}{\begin{align*}\large
+{\large\textcolor{loes}{\begin{align*}
 		2x^4-10x^3+12x^2&=0\\
 		x^2\left(2x^2-10x+12\right) &=0\\
 		\text{SvN: Entweder }x_1&=0 \text{ oder }2x^2-10x+12=0\\
 		x_{2/3}&=\frac{10\pm\sqrt{100-4\cdot 2\cdot 12}}{2\cdot 2}=\frac{10\pm 2}{4}\\
 		x_2&=2,\quad x_3=3
-\end{align*}}\newpage
-\textbf{3. Substitution hin zu einer quadratischen Gleichung}\\
-Der Begriff Substitution kommt aus dem Lateinischen und bedeutet Ersetzen oder Austauschen. Dieses Verfahren kann nur dann angewendet werden, wenn der Funktionsterm von der Form \(ax^{2n}+bx^n+c\) ist, d.h. es müssen drei Summanden sein, einer ohne \(x\) und bei den beiden anderen muss die eine Hochzahl doppelt so groß sein wie die andere Hochzahl.\\
-Wir ersetzen immer das \(x\) mit der kleineren Hochzahl durch eine andere Variable, meist \(z\) genannt.\\
+\end{align*}}}\newpage
+\textbf{3. Substitution hin zu einer quadratischen Gleichung}
+
+Der Begriff Substitution kommt aus dem Lateinischen und bedeutet Ersetzen oder Austauschen. Dieses Verfahren kann nur dann angewendet werden, wenn der Funktionsterm von der Form \(ax^{2n}+bx^n+c\) ist, d.h. es müssen drei Summanden sein, einer ohne \(x\) und bei den beiden anderen muss die eine Hochzahl doppelt so groß sein wie die andere Hochzahl.
+
+Wir ersetzen immer das \(x\) mit der kleineren Hochzahl durch eine andere Variable, meist \(z\) genannt.
+
 Beispiel: Bestimme die Nullstelle der Funktion \(f(x)=2x^4-4x^2-16\).
-\textcolor{loes}{\begin{align*}\large
+{\large\textcolor{loes}{\begin{align*}
 		2x^4-4x^2-16&=0\ \vert\ \text{Sub. }x^2=z\\
 		2z^2-4z-16&=0\\
 		z_{1/2}&=\frac{4\pm\sqrt{16-4\cdot 2\cdot \left( -16\right) }}{2\cdot 2}=\frac{4\pm 12}{4}\\
 		z_1&=4,\quad z_2=-2\\
 		\text{Rücksub.: }z_1:\ x^2&=4\ \vert\ \sqrt{\phantom{x}}\quad z_2:\ x^2=-2\ \Lightning\\
 		x_{1/2}&=\pm2
-\end{align*}}
+\end{align*}}}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Exercise}[title={Berechne die Nullstellen}, label=ganzNSTA1]\\
+\begin{Exercise}[title={Berechne die Nullstellen}, label=ganzNSTA1]
+	
 	\begin{minipage}{\textwidth}
-		\begin{minipage}{0.49\textwidth}
+		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
 				\item \(f(x)=x^3-2x^2-8x\)
 				\item \(f(x)=x^4-20x^2+64\)
@@ -60,8 +73,8 @@ Beispiel: Bestimme die Nullstelle der Funktion \(f(x)=2x^4-4x^2-16\).
 				\item \(f(x)=125x^3+27\)
 				\item \(f(x)=\frac{1}{8}x^7-\frac{19}{8}x^4-27x\)
 			\end{enumerate}
-		\end{minipage}
-		\begin{minipage}{0.49\textwidth}
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
 				\setcounter{enumi}{13}
 				\item \(f(x)=0,5x^4-5x^3+12,5x^2\)
@@ -78,14 +91,15 @@ Beispiel: Bestimme die Nullstelle der Funktion \(f(x)=2x^4-4x^2-16\).
 				\item \(f(x)=144x^4-337x^2+144\)
 				\item \(f(x)=4x^6+15x^4-4x^2\)
 			\end{enumerate}
-		\end{minipage}
+		\end{minipage}%
 	\end{minipage}
 \end{Exercise}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Answer}[ref=ganzNSTA1]\\
+\begin{Answer}[ref=ganzNSTA1]
+	
 	\begin{minipage}{\textwidth}
-		\begin{minipage}{0.49\textwidth}
+		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
 				\item \(x_1=0,\ x_2=-2,\ x_3=4\)
 				\item \(x_{1/2}=\pm 2,\ x_{3/4}=\pm 4\)
@@ -101,8 +115,8 @@ Beispiel: Bestimme die Nullstelle der Funktion \(f(x)=2x^4-4x^2-16\).
 				\item \(x_1=-\frac{3}{5}\)
 				\item \(x_1=0,\ x_2=-2,\ x_3=3\)
 			\end{enumerate}
-		\end{minipage}
-		\begin{minipage}{0.49\textwidth}
+		\end{minipage}%
+		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
 				\setcounter{enumi}{13}
 				\item \(x_1=0,\ x_2=5\)
@@ -119,6 +133,6 @@ Beispiel: Bestimme die Nullstelle der Funktion \(f(x)=2x^4-4x^2-16\).
 				\item \(x_{1/2}=\pm\frac{3}{4},\ x_{3/4}=\pm\frac{4}{3}\)
 				\item \(x_1=0,\ x_{2/3}=\pm\frac{1}{2}\)
 			\end{enumerate}
-		\end{minipage}
+		\end{minipage}%
 	\end{minipage}
 \end{Answer}

@@ -1,35 +1,41 @@
 \cohead{\Large\textbf{Summenregel}}
 \fakesubsection{Summenregel}
-Wir wissen nun wie man Potenzfunktionen ableiten kann. Ganzrationale Funktionen sind jedoch oft eine Summe aus mehreren Potenzfunktionen. Ganzrationale Funktionen lassen sich einfach ableiten mit Hilfe der Summenregel. Dazu leiten wir die Summe aus zwei Funktionen allgemein ab:\\
+Wir wissen nun wie man Potenzfunktionen ableiten kann. Ganzrationale Funktionen sind jedoch oft eine Summe aus mehreren Potenzfunktionen. Ganzrationale Funktionen lassen sich einfach ableiten mit Hilfe der Summenregel. Dazu leiten wir die Summe aus zwei Funktionen allgemein ab:
 \begin{align*}
 	k(x)&=f(x)+g(x)\\
 	k'(x)&=\textcolor{loes}{\lim\limits_{h\to 0}\frac{f(x+h)+g(x+h)-(f(x)+g(x)}{h}}\\
 	&\textcolor{loes}{=\lim\limits_{h\to 0}\frac{f(x+h)+g(x+h)-f(x)-g(x}{h}}\\
 	&\textcolor{loes}{=\lim\limits_{h\to 0}\frac{f(x+h)-f(x)+g(x+h)-g(x)}{h}}\\
 	&\textcolor{loes}{=\lim\limits_{h\to 0}\frac{f(x+h)-f(x)}{h}+\lim\limits_{h\to 0}\frac{g(x+h)-g(x)}{h}}\\
-	&\textcolor{loes}{=f'(x)+g'(x)}\\
+	&\textcolor{loes}{=f'(x)+g'(x)}
 \end{align*}
+
+\vspace{2cm}
+
 Die Summenregel gibt vor, wie man Funktionen ableiten kann, die aus einer Summe bestehen:
-\begin{minipage}[t]{\textwidth}
-	\begin{minipage}{0.29\textwidth}
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+	\begin{minipage}{0.3\textwidth}
 		\begin{align*}
 			k(x)&=f(x)+g(x)\\
-			k'(x)&=\textcolor{loes}{f'(x)+g'(x)}\\
+			k'(x)&=\textcolor{loes}{f'(x)+g'(x)}
 		\end{align*}
-	\end{minipage}
-	\begin{minipage}{0.69\textwidth}
+	\end{minipage}%
+	\begin{minipage}{0.7\textwidth}
 		\begin{tcolorbox}
-			\phantom{text}\\
-			\textcolor{loestc}{Summenregel:\\
-				Besteht eine Funktion aus mehreren Summanden, so kann man die einzelnen Summanden nacheinander ableiten.}\\
+			\textbf{Summenregel:}
+
+				\textcolor{loestc}{Besteht eine Funktion aus mehreren Summanden, so kann man die einzelnen Summanden nacheinander ableiten.}
 		\end{tcolorbox}
-	\end{minipage}
-\end{minipage}\\
+	\end{minipage}%
+\end{minipage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{minipage}{\textwidth}
 	\begin{Exercise}[title={\raggedright Berechne jeweils allgemein die Ableitung \(f'(x)\)}, label=summenregelA1]
+
 		\begin{minipage}{\textwidth}
-			\begin{minipage}{0.49\textwidth}
+			\begin{minipage}{0.5\textwidth}
 				\begin{enumerate}[label=\alph*)]
 					\item \(f_1(x)=2x^3-4x\)
 					\item \(f_2(x)=2x^4+4\)
@@ -40,8 +46,8 @@ Die Summenregel gibt vor, wie man Funktionen ableiten kann, die aus einer Summe 
 					\item \(f_7(x)=-\frac{3}{2}x^4+x^3-2x\)
 					\item \(f_8(x)=4x^4+3x^3-2x^2\)
 				\end{enumerate}
-			\end{minipage}
-			\begin{minipage}{0.49\textwidth}
+			\end{minipage}%
+			\begin{minipage}{0.5\textwidth}
 				\begin{enumerate}[label=\alph*)]
 					\setcounter{enumi}{8}
 					\item \(f_9(x)=1.5x^4-2,3x^2+5\)
@@ -53,10 +59,9 @@ Die Summenregel gibt vor, wie man Funktionen ableiten kann, die aus einer Summe 
 					\item \(f_{15}(x)=(x+1)^2\)
 					\item \(f_{16}(x)=(x+3)(x-4)\)
 				\end{enumerate}
-			\end{minipage}
+			\end{minipage}%
 		\end{minipage}
 	\end{Exercise}
-\end{minipage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Answer}[ref=summenregelA1]\\
 	\begin{minipage}{\textwidth}
@@ -71,7 +76,7 @@ Die Summenregel gibt vor, wie man Funktionen ableiten kann, die aus einer Summe 
 				\item \(f_7'(x)=-6x^3+3x^2-2\)
 				\item \(f_8'(x)=16x^3+9x^2-4x\)
 			\end{enumerate}
-		\end{minipage}
+		\end{minipage}%
 		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
 				\setcounter{enumi}{8}
@@ -84,7 +89,10 @@ Die Summenregel gibt vor, wie man Funktionen ableiten kann, die aus einer Summe 
 				\item \(f_{15}'(x)=2x+2\)
 				\item \(f_{16}'(x)=2x-1\)
 			\end{enumerate}
-		\end{minipage}
-	\end{minipage}\\  \\
+		\end{minipage}%
+	\end{minipage}
+
+    \bigskip
+
 	Anmerkung: Bei n), o) und p) muss man zuerst ausmultiplizieren bevor man ableiten kann
 \end{Answer}

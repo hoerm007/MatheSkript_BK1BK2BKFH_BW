@@ -1,28 +1,34 @@
 \cohead{\Large\textbf{Stammfunktionen}}
 \fakesubsection{Stammfunktionen}
 So wie wir die Ableitung mit einem Strich markiert haben, bezeichnet man die Stammfunktion normalerweise mit einem Großbuchstaben. Eine Funktion \(F(x)\) heißt Stammfunktion von \(f(x)\), wenn die Ableitung von \(F(x)\) gleich der Funktion \(f(x)\) ist:
-\begin{tcolorbox}
-	\phantom{A}\\
-	\textcolor{loestc}{\(F(x)\) ist eine Stammfunktion von \(f(x)\) genau dann, wenn \(F'(x)=f(x)\) gilt.}\\
+\begin{tcolorbox}[height=3cm,valign=center]
+	\textcolor{loestc}{\(F(x)\) ist eine Stammfunktion von \(f(x)\) genau dann, wenn \(F'(x)=f(x)\) gilt.}
 \end{tcolorbox}
-\textcolor{red}{ACHTUNG:} Es gibt unendlich viele Stammfunktionen zu einer Funktion \(f(x)\):\\
-\textcolor{loes}{Ist \(F(x)\) eine Stammfunktion von \(f(x)\), so ist auch \(F(x)+c,\ c\in\R\) eine Stammfunktion, da die Konstante \(c\) beim Ableiten wegfällt. Das bedeutet, dass man das Schaubild der Stammfunktion beliebig in y-Richtung verschieben und die verschobene Funktion wieder eine Stammfunktion ist.}\\ \\
-So sind z.B. die Funktionen \(F_1(x)=x^3\) und \(F_2(x)=x^3+1\) beide Stammfunktionen zur Funktion \(f(x)=3x^2\) und \(F(x)=x^3+c,\ c\in\R\) sind alle möglichen Stammfunktionen.\\
+\textcolor{red}{ACHTUNG:} Es gibt unendlich viele Stammfunktionen zu einer Funktion \(f(x)\):
+
+\textcolor{loes}{Ist \(F(x)\) eine Stammfunktion von \(f(x)\), so ist auch \(F(x)+c,\ c\in\R\) eine Stammfunktion, da die Konstante \(c\) beim Ableiten wegfällt. Das bedeutet, dass man das Schaubild der Stammfunktion beliebig in y-Richtung verschieben und die verschobene Funktion wieder eine Stammfunktion ist.}
+
+\bigskip
+
+So sind z.B. die Funktionen \(F_1(x)=x^3\) und \(F_2(x)=x^3+1\) beide Stammfunktionen zur Funktion \(f(x)=3x^2\) und \(F(x)=x^3+c,\ c\in\R\) sind alle möglichen Stammfunktionen.
+
 Nach der Summenregel beim Ableiten können wir auch Stammfunktionen summanden-weise bestimmen. Wir benötigen also nur jeweils eine Regel zum Bestimmen der Stammfunktion von \(ax^n\) und \(ae^{kx}\):
 \begin{align*}
 	f(x)&=ax^n & g(x)&=ae^{kx}\\
 	 \\
-	F(x)&=\textcolor{loes}{\frac{a}{n+1}x^{n+1}} &	G(x)&=\textcolor{loes}{\frac{a}{k}e^{kx}}\\
+	F(x)&=\textcolor{loes}{\frac{a}{n+1}x^{n+1}} &	G(x)&=\textcolor{loes}{\frac{a}{k}e^{kx}}
 \end{align*}
-Die Regeln zum Bilden der Stammfunktion sind also die gleichen wie zum Bilden der Ableitung nur rückwärts. Die Ableitung von \(ax^n\) bestimmt man, indem man 1. mit der Hochzahl multipliziert und 2. die Hochzahl um Eins verringert. Die Stammfunktion bildet man, indem man 1. die Hochzahl um Eins vergrößert und 2. durch die neue Hochzahl dividiert. Für \(e^{kx}\) sind die Regeln noch einfacher. Zum Ableiten multipliziert man mit dem Faktor \(k\), zum Bilden der Stammfunktion dividiert man durch \(k\).\\
-Beispiel: Bestimme alle Stammfunktionen\\
+Die Regeln zum Bilden der Stammfunktion sind also die gleichen wie zum Bilden der Ableitung nur rückwärts. Die Ableitung von \(ax^n\) bestimmt man, indem man 1. mit der Hochzahl multipliziert und 2. die Hochzahl um Eins verringert. Die Stammfunktion bildet man, indem man 1. die Hochzahl um Eins vergrößert und 2. durch die neue Hochzahl dividiert. Für \(e^{kx}\) sind die Regeln noch einfacher. Zum Ableiten multipliziert man mit dem Faktor \(k\), zum Bilden der Stammfunktion dividiert man durch \(k\).
+
+Beispiel: Bestimme alle Stammfunktionen
+
 \begin{align*}
 	f(x)&=5x^4-6x^3+\frac{3}{2}x^2-x+2 & g(x)&=4e^{3x}-2e^{0,5x}+e^{-x}\\
 	\\
 	F(x)&=\textcolor{loes}{x^5-\frac{3}{2}x^4+\frac{1}{2}x^3-\frac{1}{2}x^2+2x+c,\ c\in\R} &	G(x)&=\textcolor{loes}{\frac{4}{3}e^{3x}-4e^{0,5x}-e^{-x}+c,\ c\in\R}\\
 \end{align*}
 \begin{minipage}{\textwidth}
-	\begin{minipage}{.4\textwidth}
+	\adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.5\textwidth-4ex}
 		\begin{Exercise}[title={\raggedright Bestimme jeweils eine Stammfunktion.}, label=stammfunktionenA1]
 			\begin{enumerate}[label=\alph*)]
 				\item \(f_1(x)=3x^4-2x^3+x^2-4\)
@@ -40,11 +46,8 @@ Beispiel: Bestimme alle Stammfunktionen\\
 				\item \(f_{13}(x)=\frac{4}{5}e^{-\frac{5}{8}x}\)
 			\end{enumerate}
 		\end{Exercise}
-	\end{minipage}
-	\begin{minipage}{.1\textwidth}
-		\phantom{text}
-	\end{minipage}
-	\begin{minipage}{.4\textwidth}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-4ex}
 		\begin{Exercise}[title={\raggedright Bestimme jeweils alle Stammfunktionen.}, label=stammfunktionenA2]
 			\begin{enumerate}[label=\alph*)]
 				\item \(f_1(x)=-2x^5-2x^4-x^3+1\)
@@ -62,10 +65,12 @@ Beispiel: Bestimme alle Stammfunktionen\\
 				\item \(f_{13}(x)=\frac{4}{9}e^{-\frac{6}{7}x}\)
 			\end{enumerate}
 		\end{Exercise}
-	\end{minipage}
+	\end{minipage}}%
 \end{minipage}
-\begin{Exercise}[title={\raggedright Bestimme jeweils die Stammfunktion, deren Schaubild durch den angegebenen Punkt P verläuft.}, label=stammfunktionenA3]\\
-	\begin{minipage}{.5\textwidth}
+
+\begin{Exercise}[title={\raggedright Bestimme jeweils die Stammfunktion, deren Schaubild durch den angegebenen Punkt P verläuft.}, label=stammfunktionenA3]
+
+	\adjustbox{valign=t}{\begin{minipage}{.5\textwidth}
 		\begin{enumerate}[label=\alph*)]
 			\item \(f_1(x)=\frac{4}{3}x^3-4x+1,\ P(-3|4)\)
 			\item \(f_2(x)=2x^3-\frac{18}{5}x^2+\frac{2}{3},\ P(2|1)\)
@@ -74,8 +79,8 @@ Beispiel: Bestimme alle Stammfunktionen\\
 			\item \(f_5(x)=6x^2-20x+3,\ P(5|25)\)
 			\item \(f_6(x)=2,4x^3+0,8x-5,\ P(2|3)\)
 		\end{enumerate}
-	\end{minipage}
-	\begin{minipage}{.5\textwidth}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-4ex}
 		\begin{enumerate}[label=\alph*)]
 			\setcounter{enumi}{6}
 			\item \(f_7(x)=7,2x^2-3,6x-3,8,\ P(-1|0)\)
@@ -85,7 +90,7 @@ Beispiel: Bestimme alle Stammfunktionen\\
 			\item \(f_{11}(x)=0,5e^{0,5x}-2,\ P(2|0)\)
 			\item \(f_{12}(x)=-\frac{3}{8}e^{\frac{1}{4}x}+2,\ P(4|8)\)
 		\end{enumerate}
-	\end{minipage}
+	\end{minipage}}%
 \end{Exercise}
 
 

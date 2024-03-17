@@ -29,7 +29,7 @@
 \usepackage[T1]{fontenc}		%Umlaute
 
 
-
+\usepackage{showframe} %Zeichnet Rahmen ein, um overfull Box-Warnungen beheben zu können
 
 \usepackage{ulem}
 %\uline{important} underlined text
@@ -65,7 +65,7 @@
 
 \usepackage{marvosym} %\Lightning
 \usepackage{multirow}
-\renewcommand{\mvchr}[1]{\Large{\mbox{\mvs\symbol{#1}}}} %\Lightning in math mode
+\renewcommand{\mvchr}[1]{{\mbox{\mvs\symbol{#1}}}} %\Lightning in math mode
 
 \usetikzlibrary{intersections}
 
@@ -100,10 +100,10 @@
 \newcommand{\ket}[1]{\vert#1\rangle}
 \newcommand{\kett}{\rangle}
 \newcommand{\braket}[2]{\langle #1\vert#2\rangle}
-\newcommand{\sinn}[1]{\sin\hspace{-2pt}\left(#1\right)}
-\newcommand{\arcsinn}[1]{\sin^{-1}\hspace{-3pt}\left(#1\right)}
-\newcommand{\coss}[1]{\cos\hspace{-2pt}\left(#1\right)}
-\newcommand{\arccoss}[1]{\cos^{-1}\hspace{-3pt}\left(#1\right)}
+\newcommand{\sinn}[1]{\sin\hspace{-1pt}\left(#1\right)}
+\newcommand{\arcsinn}[1]{\sin^{-1}\hspace{-2pt}\left(#1\right)}
+\newcommand{\coss}[1]{\cos\hspace{-1pt}\left(#1\right)}
+\newcommand{\arccoss}[1]{\cos^{-1}\hspace{-2pt}\left(#1\right)}
 \newcommand{\mH}{\mathcal{H}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
@@ -162,11 +162,27 @@
 	% Add more content here, if needed.
 }
 
+%Kein hässlicher Abstand vor Klammer auf/zu mit \left(..\right)
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+%Kein vertikaler Abstand vor/nach Mathegruppen
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
 %\sqrt[\leftroot{0}\uproot{1}n]{y} für bessere Wurzeln
 
 \begin{document}
 	\setlength\parindent{0pt} %keine Einrückungen beim Start eines Paragraphen
-
+    \setlength\tabcolsep{6pt}
 	%Header
 	\lohead{Mathematik}
 	%\cohead{} %im Arbeitsblatt
@@ -177,12 +193,12 @@
 %	\cofoot[plain content]{} %keine Seitenzahlen
 	\cofoot[\pagemark]{\pagemark}
 	\title{Mathematik\\
-		Ein Skript für das Berufskolleg 1}
+		Ein Skript für das Berufskolleg}
 	\author{Hermann Maier}
-%	\maketitle
-%	\newpage
-%	\tableofcontents
-%	\newpage
+	\maketitle
+	\newpage
+	\tableofcontents
+	\newpage
 
 	%\setlength\extrarowheight{10pt} %Horizontales padding für Tabellen
 	\def\grundlagen{./Arbeitsblaetter/Grundlagen}
@@ -196,277 +212,287 @@
 	\def\integration{./Arbeitsblaetter/Integration}
 	\def\trigonometrie{./Arbeitsblaetter/Trigonometrie}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	\fakesection{Grundlagen}
-%	\input{\grundlagen/Mengen.tex}
-%	\newpage
-%	\input{\grundlagen/EinfachesRechnen.tex}
-%	\newpage
-%	\input{\grundlagen/Mitternachtsformel.tex}
-%	\newpage
-%	\cohead{\Large\textbf{Lösungen}}
-%	\fakesubsection{Lösungen}
-%	\shipoutAnswer
-%	\newpage
-%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	\fakesection{Lineare Funktionen}
-%	\input{\linFkt/Begriffe.tex}
-%	\newpage
-%	\input{\linFkt/Einfuehrung.tex}
-%	\newpage
-%	\input{\linFkt/Punktprobe.tex}
-%	\newpage
-%	\input{\linFkt/Nullstellen.tex}
-%	\newpage
-%	\input{\linFkt/Lage.tex}
-%	\newpage
-%	\input{\linFkt/Schnittpunkt.tex}
-%	\newpage
-%	\cohead{\Large\textbf{Lösungen}}
-%	\fakesubsection{Lösungen}
-%	\shipoutAnswer
-%	\newpage
-%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	\fakesection{Quadratische Funktionen}
-%	\input{\quadFkt/Scheitelform.tex}
-%	\newpage
-%	\input{\quadFkt/Hauptform.tex}
-%	\newpage
-%	\input{\quadFkt/Produktform.tex}
-%	\newpage
-%	\cohead{\Large\textbf{Lösungen}}
-%	\fakesubsection{Lösungen}
-%	\shipoutAnswer
-%	\newpage
-%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	\fakesection{Ganzrationale Funktionen}
-%	\input{\ganzFkt/Einfuehrung.tex}
-%	\newpage
-%	\input{\ganzFkt/Potenzfunktionen.tex}
-%	\newpage
-%	\input{\ganzFkt/Hauptform.tex}
-%	\newpage
-%	\input{\ganzFkt/Symmetrie.tex}
-%	\newpage
-%	\input{\ganzFkt/Verhalten.tex}
-%	\newpage
-%	\input{\ganzFkt/Nullstellen.tex}
-%	\newpage
-%	\input{\ganzFkt/Wurzeln.tex}
-%	\newpage
-%	\input{\ganzFkt/Produktform.tex}
-%	\newpage
-%	\cohead{\Large\textbf{Lösungen}}
-%	\fakesubsection{Lösungen}
-%	\shipoutAnswer
-%	\newpage
-%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	\fakesection{Exponentialfunktionen}
-%	\input{\eFkt/Einfuehrung.tex}
-%	\newpage
-% 	\input{\eFkt/Begriffe.tex}
-%	\newpage
-% 	\input{\eFkt/WaagrechteAsymptoten.tex}
-% 	\newpage
-% 	\input{\eFkt/Ln.tex}
-% 	\newpage
-% 	\input{\eFkt/FktAuf.tex}
-% 	\newpage
-% 	\input{\eFkt/SchiefeAsymptoten.tex}
-% 	\newpage
-% 	\input{\eFkt/NaehrungsweiseNST.tex}
-% 	\newpage
-% 	\cohead{\Large\textbf{Lösungen}}
-% 	\fakesubsection{Lösungen}
-% 	\shipoutAnswer
-% 	\newpage
- 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	\input{\ableitung/MittlereAenderungsrate.tex}
-% 	\newpage
-% 	\input{\ableitung/GrafischesAbleitung.tex}
-% 	\newpage
-% 	\input{\ableitung/MomentanPunktweise.tex}
-% 	\newpage
-% 	\input{\ableitung/MomentanAllg.tex}
-% 	\newpage
-% 	\input{\ableitung/Ableitungsregeln.tex}
-% 	\newpage
-% 	\input{\ableitung/Faktorregel.tex}
-% 	\newpage
-% 	\input{\ableitung/Potenzregel.tex}
-% 	\newpage
-% 	\input{\ableitung/Summenregel.tex}
-% 	\newpage
-% 	\input{\ableitung/eFktAbleitung.tex}
-% 	\newpage
-% 	\input{\ableitung/SchaubilderDerAbleitung.tex}
-% 	\newpage
-% 	\input{\ableitung/Tangenten.tex}
-% 	\newpage
-% 	\input{\ableitung/Normalen.tex}
-% 	\newpage
-% 	\input{\ableitung/Beruehren.tex}
-% 	\newpage
-% 	\input{\ableitung/Monotonie.tex}
-% 	\newpage
-% 	\input{\ableitung/HoehereAbleitungen.tex}
-% 	\newpage
-% 	\input{\ableitung/Extrempunkte.tex}
-% 	\newpage
-% 	\input{\ableitung/Kruemmung.tex}
-% 	\newpage
-% 	\input{\ableitung/Wendepunkte.tex}
-% 	\newpage
-% 	\input{\ableitung/FktGleichungenAufstellen.tex} %TODO Aufgaben erstellen
-% 	\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	\input{\lgs/xxxxxxxxxxx.tex} %TODO 
-% 	\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	\input{\optimierung/Optimierung.tex}
-% 	\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	\input{\integration/Stammfunktionen.tex}
-% 	\newpage
-% 	\input{\integration/Integral_grafisch.tex}
-% 	\newpage
-% 	\input{\integration/Integral_berechnen.tex}
-% 	\newpage
-% 	\input{\integration/Flaechenberechnung.tex}
-% 	\newpage
-% 	\input{\integration/IntGrenze_bestimmen.tex}
-% 	\newpage
-% 	\input{\integration/FlaechZwischenFunktionen.tex}
-% 	\newpage
-% 	\input{\integration/VerhaeltnisVonFlaechen.tex}
-%% 	\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 	\input{\trigonometrie/Bogenmass.tex}
-% 	\newpage
-% 	\input{\trigonometrie/DefinitionSinCos.tex}
-% 	\newpage
-% 	\input{\trigonometrie/EigenschaftenSinCos.tex}
-% 	\newpage
-% 	\input{\trigonometrie/AllgSinusUndCosinus.tex}
-% 	\newpage
-% 	\input{\trigonometrie/TrigonometrieExtremWende.tex}
-% 	\newpage
-% 	\input{\trigonometrie/SinCosGleichungenOhneXStreckung.tex}
-% 	\newpage
-% 	\input{\trigonometrie/SinCosGleichungenMitXStreckung.tex}
-% 	\newpage
-% 	\input{\trigonometrie/TrigoAbleitung.tex}
-% 	\newpage
-% 	\input{\trigonometrie/TrigoStammfunktionen.tex}
-% 	\newpage
+	\fakesection{Grundlagen}
+	\input{\grundlagen/Mengen.tex}
+	\newpage
+	\input{\grundlagen/EinfachesRechnen.tex}
+	\newpage
+	\input{\grundlagen/Mitternachtsformel.tex}
+	\newpage
+%%	\cohead{\Large\textbf{Lösungen}}
+%%	\fakesubsection{Lösungen}
+%%	\shipoutAnswer
+%%	\newpage
+%%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\fakesection{Lineare Funktionen}
+	\input{\linFkt/Begriffe.tex}
+	\newpage
+	\input{\linFkt/Einfuehrung.tex}
+	\newpage
+	\input{\linFkt/Punktprobe.tex}
+	\newpage
+	\input{\linFkt/Nullstellen.tex}
+	\newpage
+	\input{\linFkt/Lage.tex}
+	\newpage
+	\input{\linFkt/Schnittpunkt.tex}
+	\newpage
+%%%	\cohead{\Large\textbf{Lösungen}}
+%%%	\fakesubsection{Lösungen}
+%%%	\shipoutAnswer
+%%%	\newpage
+%%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\fakesection{Quadratische Funktionen}
+	\input{\quadFkt/Scheitelform.tex}
+	\newpage
+	\input{\quadFkt/Hauptform.tex}
+	\newpage
+	\input{\quadFkt/Produktform.tex}
+	\newpage
+%%%	\cohead{\Large\textbf{Lösungen}}
+%%%	\fakesubsection{Lösungen}
+%%%	\shipoutAnswer
+%%%	\newpage
+%%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\fakesection{Ganzrationale Funktionen}
+	\input{\ganzFkt/Einfuehrung.tex}
+	\newpage
+	\input{\ganzFkt/Potenzfunktionen.tex}
+	\newpage
+	\input{\ganzFkt/Hauptform.tex}
+	\newpage
+	\input{\ganzFkt/Symmetrie.tex}
+	\newpage
+	\input{\ganzFkt/Verhalten.tex}
+	\newpage
+	\input{\ganzFkt/Nullstellen.tex}
+	\newpage
+	\input{\ganzFkt/Wurzeln.tex}
+	\newpage
+	\input{\ganzFkt/Produktform.tex}
+	\newpage
+%%%	\cohead{\Large\textbf{Lösungen}}
+%%%	\fakesubsection{Lösungen}
+%%%	\shipoutAnswer
+%%%	\newpage
+%%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\fakesection{Exponentialfunktionen}
+	\input{\eFkt/Einfuehrung.tex}
+	\newpage
+ 	\input{\eFkt/Begriffe.tex}
+	\newpage
+ 	\input{\eFkt/WaagrechteAsymptoten.tex}
+ 	\newpage
+ 	\input{\eFkt/Ln.tex}
+ 	\newpage
+ 	\input{\eFkt/FktAuf.tex}
+ 	\newpage
+ 	\input{\eFkt/SchiefeAsymptoten.tex}
+ 	\newpage
+ 	\input{\eFkt/NaehrungsweiseNST.tex}
+ 	\newpage
+%%% 	\cohead{\Large\textbf{Lösungen}}
+%%% 	\fakesubsection{Lösungen}
+%%% 	\shipoutAnswer
+%%% 	\newpage
+%% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	\input{\ableitung/MittlereAenderungsrate.tex}
+ 	\newpage
+ 	\input{\ableitung/GrafischesAbleitung.tex}
+ 	\newpage
+ 	\input{\ableitung/MomentanPunktweise.tex}
+ 	\newpage
+ 	\input{\ableitung/MomentanAllg.tex}
+ 	\newpage
+ 	\input{\ableitung/Ableitungsregeln.tex}
+ 	\newpage
+ 	\input{\ableitung/Faktorregel.tex}%TODO underfull boxes
+ 	\newpage
+ 	\input{\ableitung/Potenzregel.tex}
+ 	\newpage
+ 	\input{\ableitung/Summenregel.tex}
+ 	\newpage
+ 	\input{\ableitung/eFktAbleitung.tex}
+ 	\newpage
+ 	\input{\ableitung/SchaubilderDerAbleitung.tex}
+ 	\newpage
+ 	\input{\ableitung/Tangenten.tex}
+ 	\newpage
+ 	\input{\ableitung/Normalen.tex}
+ 	\newpage
+ 	\input{\ableitung/Beruehren.tex}
+ 	\newpage
+ 	\input{\ableitung/Monotonie.tex}
+ 	\newpage
+ 	\input{\ableitung/HoehereAbleitungen.tex}
+ 	\newpage
+ 	\input{\ableitung/Extrempunkte.tex}
+ 	\newpage
+ 	\input{\ableitung/Kruemmung.tex}
+ 	\newpage
+ 	\input{\ableitung/Wendepunkte.tex}
+ 	\newpage
+ 	\input{\ableitung/FktGleichungenAufstellen.tex} %TODO Aufgaben erstellen
+ 	\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 	\input{\lgs/xxxxxxxxxxx.tex}%TODO LGS erstellen
+%%% 	\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	\input{\optimierung/Optimierung.tex}
+ 	\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	\input{\integration/Stammfunktionen.tex}
+ 	\newpage
+ 	\input{\integration/Integral_grafisch.tex}
+ 	\newpage
+ 	\input{\integration/Integral_berechnen.tex}%TODO overfull hbox? Könnte auch an fehlender Ref fehlen
+ 	\newpage
+ 	\input{\integration/Flaechenberechnung.tex}
+ 	\newpage
+ 	\input{\integration/IntGrenze_bestimmen.tex}
+ 	\newpage
+ 	\input{\integration/FlaechZwischenFunktionen.tex}
+ 	\newpage
+ 	\input{\integration/VerhaeltnisVonFlaechen.tex}
+ 	\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	\input{\trigonometrie/Bogenmass.tex}
+ 	\newpage
+ 	\input{\trigonometrie/DefinitionSinCos.tex}
+ 	\newpage
+ 	\input{\trigonometrie/EigenschaftenSinCos.tex}
+ 	\newpage
+ 	\input{\trigonometrie/AllgSinusUndCosinus.tex}
+ 	\newpage
+ 	\input{\trigonometrie/TrigonometrieExtremWende.tex}
+ 	\newpage
+ 	\input{\trigonometrie/SinCosGleichungenOhneXStreckung.tex}
+ 	\newpage
+ 	\input{\trigonometrie/SinCosGleichungenMitXStreckung.tex}
+ 	\newpage
+ 	\input{\trigonometrie/TrigoAbleitung.tex}
+ 	\newpage
+ 	\input{\trigonometrie/TrigoStammfunktionen.tex}
+ 	\newpage
 
 
-\cohead{\Large\textbf{Stammfunktionen trig. Funktionen}}
-\fakesubsection{Stammfunktionen trigonometrischer Funktionen}
-\begin{tcolorbox}
-	\textbf{Regeln zum Bilden der Stammfunktion für Sinus und Cosinus
-	\begin{align*}
-		f(x)&=a\cdot\sinn{bx}&g(x)&=a\cdot\coss{bx}\\
-		\textcolor{loestc}{F(x)}&\textcolor{loestc}{=-\frac{a}{b}\cdot\coss{bx}}&\textcolor{loestc}{G(x)}&\textcolor{loestc}{=\frac{a}{b}\cdot\sinn{bx}}\\
-	\end{align*}
-	}
-\end{tcolorbox}
-Beispiele:
-\begin{align*}
-	f_1(x)&=2\cdot\sinn{3x}&g_1(x)&=4\cdot\coss{0,5x}\\
-	F_1(x)&=\textcolor{loes}{-\frac{2}{3}\cdot\coss{3x}}&G_1(x)&=\textcolor{loes}{8\cdot\sinn{0,5x}}\\
-	f_2(x)&=-\frac{1}{2}\cdot\sinn{\pi x}&g_2(x)&=-\coss{x}\\
-	F_2(x)&=\textcolor{loes}{\frac{1}{2\pi}\cdot\coss{\pi x}}&G_2(x)&=\textcolor{loes}{-\sinn{x}}\\
-\end{align*}
+%\cohead{\Large\textbf{Stammfunktionen trig. Funktionen}}
+%\fakesubsection{Stammfunktionen trigonometrischer Funktionen}
+%\begin{tcolorbox}
+%	\textbf{Regeln zum Bilden der Stammfunktion für Sinus und Cosinus
+%	\begin{align*}
+%		f(x)&=a\cdot\sinn{bx}&g(x)&=a\cdot\coss{bx}\\
+%		\textcolor{loestc}{F(x)}&\textcolor{loestc}{=-\frac{a}{b}\cdot\coss{bx}}&\textcolor{loestc}{G(x)}&\textcolor{loestc}{=\frac{a}{b}\cdot\sinn{bx}}\\
+%	\end{align*}
+%	}
+%\end{tcolorbox}
+%Beispiele:
+%\begin{align*}
+%	f_1(x)&=2\cdot\sinn{3x}&g_1(x)&=4\cdot\coss{0,5x}\\
+%	F_1(x)&=\textcolor{loes}{-\frac{2}{3}\cdot\coss{3x}}&G_1(x)&=\textcolor{loes}{8\cdot\sinn{0,5x}}\\
+%	f_2(x)&=-\frac{1}{2}\cdot\sinn{\pi x}&g_2(x)&=-\coss{x}\\
+%	F_2(x)&=\textcolor{loes}{\frac{1}{2\pi}\cdot\coss{\pi x}}&G_2(x)&=\textcolor{loes}{-\sinn{x}}\\
+%\end{align*}
+%
+%
+%\begin{Exercise}[title={\raggedright\normalfont Bestimme jeweils eine Stammfunktion}, label=trigStammfunktionA1]\\
+%	\begin{minipage}{\textwidth}
+%		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+%				\begin{enumerate}[label=\alph*)]
+%					\item \(f_1(x)=-3\sinn{2x}\)
+%					\item \(f_2(x)=4\pi\sinn{2\pi x}\)
+%					\item \(f_3(x)=\coss{0,5x}\)
+%					\item \(f_4(x)=-2\coss{\frac{\pi}{2}x}\)
+%					\item \(f_5(x)=4\pi\sinn{3\pi x}\)
+%					\item \(f_6(x)=0,5\coss{5x}+2\)
+%					\item \(f_7(x)=-4\sinn{\frac{2}{3}x}\)
+%					\item \(f_8(x)=\coss{\frac{5}{4}x}-3\)
+%					\item \(f_9(x)=5\sinn{3\pi x}\)
+%					\item \(f_{10}(x)=\frac{3}{4}\sinn{\frac{3\pi}{2}x}\)
+%					\item \(f_{11}(x)=\frac{1}{3}\coss{2x}\)
+%					\item \(f_{12}(x)=-\sinn{6\pi x}+1,6\)
+%					\item \(f_{13}(x)=0,5\coss{\frac{\pi}{6}x}\)
+%				\end{enumerate}
+%		\end{minipage}}%
+%		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+%				\begin{enumerate}[label=\alph*)]
+%					\setcounter{enumi}{13}
+%					\item \(f_{14}(x)=-3\coss{0,2x}+2\)
+%					\item \(f_{15}(x)=-\frac{1}{7}\coss{\pi x}-\frac{1}{5}\)
+%					\item \(f_{16}(x)=-6\sinn{\frac{1}{\pi}x}-3\)
+%					\item \(f_{17}(x)=2\sinn{2,5x}-4\)
+%					\item \(f_{18}(x)=4\coss{8x}\)
+%					\item \(f_{19}(x)=-3\coss{\frac{5\pi}{8}x}-\frac{1}{4}\)
+%					\item \(f_{20}(x)=-4\sinn{3x}+6\)
+%					\item \(f_{21}(x)=4\coss{\frac{3\pi}{4}x}-12\)
+%					\item \(f_{22}(x)=2\sinn{6x}+2\)
+%					\item \(f_{23}(x)=-\frac{3}{4}\coss{\frac{3}{8}x}+\frac{1}{8}\)
+%					\item \(f_{24}(x)=-\frac{10}{11}\sinn{5\pi x}-\frac{5}{2}\)
+%					\item \(f_{25}(x)=\frac{15}{7}\sinn{\frac{5\pi}{3}x}+\frac{8}{3}\)
+%					\item \(f_{26}(x)=-\frac{9}{4}\coss{\frac{1}{3}x}-1\)
+%				\end{enumerate}
+%		\end{minipage}}
+%	\end{minipage}
+%\end{Exercise}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{Answer}[ref=trigStammfunktionA1]\\
+%	Für alle Stammfunktionen wurde die Integrationskonstante Null gewählt (\(c=0\)).\\
+%	\begin{minipage}{\textwidth}
+%		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+%				\begin{enumerate}[label=\alph*)]
+%					\item \(F_1(x)=\frac{3}{2}\coss{2x}\)
+%					\item \(F_2(x)=-2\coss{2\pi x}\)
+%					\item \(F_3(x)=2\sinn{0,5x}\)
+%					\item \(F_4(x)=-\frac{4}{\pi}\sinn{\frac{\pi}{2}x}\)
+%					\item \(F_5(x)=-\frac{4}{3}\coss{3\pi x}\)
+%					\item \(F_6(x)=0,1\sinn{5x}+2x\)
+%					\item \(F_7(x)=6\coss{\frac{2}{3}x}\)
+%					\item \(F_8(x)=\frac{4}{5}\sinn{\frac{5}{4}x}-3x\)
+%					\item \(F_9(x)=-\frac{5}{3\pi}\coss{3\pi x}\)
+%					\item \(F_{10}(x)=-\frac{1}{2\pi}\coss{\frac{3\pi}{2}x}\)
+%					\item \(F_{11}(x)=\frac{1}{6}\sinn{2x}\)
+%					\item \(F_{12}(x)=\frac{1}{6\pi}\coss{6\pi x}+1,6x\)
+%					\item \(F_{13}(x)=\frac{3}{\pi}\sinn{\frac{\pi}{6}x}\)
+%				\end{enumerate}
+%		\end{minipage}}%
+%		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+%				\begin{enumerate}[label=\alph*)]
+%					\setcounter{enumi}{13}
+%					\item \(F_{14}(x)=-15\sinn{0,2x}+2x\)
+%					\item \(F_{15}(x)=-\frac{1}{7\pi}\sinn{\pi x}-\frac{1}{5}x\)
+%					\item \(F_{16}(x)=6\pi\coss{\frac{1}{\pi}x}-3x\)
+%					\item \(F_{17}(x)=-\frac{4}{5}\coss{2,5x}-4x\)
+%					\item \(F_{18}(x)=0,5\sinn{8x}\)
+%					\item \(F_{19}(x)=-\frac{24}{5\pi}\coss{\frac{5\pi}{8}x}-\frac{1}{4}x\)
+%					\item \(F_{20}(x)=\frac{4}{3}\coss{3x}+6x\)
+%					\item \(F_{21}(x)=\frac{16}{3\pi}\sinn{\frac{3\pi}{4}x}-12x\)
+%					\item \(F_{22}(x)=-\frac{1}{3}\coss{6x}+2x\)
+%					\item \(F_{23}(x)=-2\coss{\frac{3}{8}x}+\frac{1}{8}x\)
+%					\item \(F_{24}(x)=\frac{2}{11\pi}\coss{5\pi x}-\frac{5}{2}x\)
+%					\item \(F_{25}(x)=-\frac{9}{7\pi}\coss{\frac{5\pi}{3}x}+\frac{8}{3}x\)
+%					\item \(F_{26}(x)=-\frac{27}{4}\sinn{\frac{1}{3}x}-x\)
+%				\end{enumerate}
+%		\end{minipage}}
+%	\end{minipage}
+%\end{Answer}
 
-
-\begin{Exercise}[title={\raggedright\normalfont Bestimme jeweils eine Stammfunktion}, label=trigStammfunktionA1]\\
-	\begin{minipage}{\textwidth}
-		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-				\begin{enumerate}[label=\alph*)]
-					\item \(f_1(x)=-3\sinn{2x}\)
-					\item \(f_2(x)=4\pi\sinn{2\pi x}\)
-					\item \(f_3(x)=\coss{0,5x}\)
-					\item \(f_4(x)=-2\coss{\frac{\pi}{2}x}\)
-					\item \(f_5(x)=4\pi\sinn{3\pi x}\)
-					\item \(f_6(x)=0,5\coss{5x}+2\)
-					\item \(f_7(x)=-4\sinn{\frac{2}{3}x}\)
-					\item \(f_8(x)=\coss{\frac{5}{4}x}-3\)
-					\item \(f_9(x)=5\sinn{3\pi x}\)
-					\item \(f_{10}(x)=\frac{3}{4}\sinn{\frac{3\pi}{2}x}\)
-					\item \(f_{11}(x)=\frac{1}{3}\coss{2x}\)
-					\item \(f_{12}(x)=-\sinn{6\pi x}+1,6\)
-					\item \(f_{13}(x)=0,5\coss{\frac{\pi}{6}x}\)
-				\end{enumerate}
-		\end{minipage}}%
-		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-				\begin{enumerate}[label=\alph*)]
-					\setcounter{enumi}{13}
-					\item \(f_{14}(x)=-3\coss{0,2x}+2\)
-					\item \(f_{15}(x)=-\frac{1}{7}\coss{\pi x}-\frac{1}{5}\)
-					\item \(f_{16}(x)=-6\sinn{\frac{1}{\pi}x}-3\)
-					\item \(f_{17}(x)=2\sinn{2,5x}-4\)
-					\item \(f_{18}(x)=4\coss{8x}\)
-					\item \(f_{19}(x)=-3\coss{\frac{5\pi}{8}x}-\frac{1}{4}\)
-					\item \(f_{20}(x)=-4\sinn{3x}+6\)
-					\item \(f_{21}(x)=4\coss{\frac{3\pi}{4}x}-12\)
-					\item \(f_{22}(x)=2\sinn{6x}+2\)
-					\item \(f_{23}(x)=-\frac{3}{4}\coss{\frac{3}{8}x}+\frac{1}{8}\)
-					\item \(f_{24}(x)=-\frac{10}{11}\sinn{5\pi x}-\frac{5}{2}\)
-					\item \(f_{25}(x)=\frac{15}{7}\sinn{\frac{5\pi}{3}x}+\frac{8}{3}\)
-					\item \(f_{26}(x)=-\frac{9}{4}\coss{\frac{1}{3}x}-1\)
-				\end{enumerate}
-		\end{minipage}}
-	\end{minipage}
-\end{Exercise}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{Answer}[ref=trigStammfunktionA1]\\
-	Für alle Stammfunktionen wurde die Integrationskonstante Null gewählt (\(c=0\)).\\
-	\begin{minipage}{\textwidth}
-		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-				\begin{enumerate}[label=\alph*)]
-					\item \(F_1(x)=\frac{3}{2}\coss{2x}\)
-					\item \(F_2(x)=-2\coss{2\pi x}\)
-					\item \(F_3(x)=2\sinn{0,5x}\)
-					\item \(F_4(x)=-\frac{4}{\pi}\sinn{\frac{\pi}{2}x}\)
-					\item \(F_5(x)=-\frac{4}{3}\coss{3\pi x}\)
-					\item \(F_6(x)=0,1\sinn{5x}+2x\)
-					\item \(F_7(x)=6\coss{\frac{2}{3}x}\)
-					\item \(F_8(x)=\frac{4}{5}\sinn{\frac{5}{4}x}-3x\)
-					\item \(F_9(x)=-\frac{5}{3\pi}\coss{3\pi x}\)
-					\item \(F_{10}(x)=-\frac{1}{2\pi}\coss{\frac{3\pi}{2}x}\)
-					\item \(F_{11}(x)=\frac{1}{6}\sinn{2x}\)
-					\item \(F_{12}(x)=\frac{1}{6\pi}\coss{6\pi x}+1,6x\)
-					\item \(F_{13}(x)=\frac{3}{\pi}\sinn{\frac{\pi}{6}x}\)
-				\end{enumerate}
-		\end{minipage}}%
-		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-				\begin{enumerate}[label=\alph*)]
-					\setcounter{enumi}{13}
-					\item \(F_{14}(x)=-15\sinn{0,2x}+2x\)
-					\item \(F_{15}(x)=-\frac{1}{7\pi}\sinn{\pi x}-\frac{1}{5}x\)
-					\item \(F_{16}(x)=6\pi\coss{\frac{1}{\pi}x}-3x\)
-					\item \(F_{17}(x)=-\frac{4}{5}\coss{2,5x}-4x\)
-					\item \(F_{18}(x)=0,5\sinn{8x}\)
-					\item \(F_{19}(x)=-\frac{24}{5\pi}\coss{\frac{5\pi}{8}x}-\frac{1}{4}x\)
-					\item \(F_{20}(x)=\frac{4}{3}\coss{3x}+6x\)
-					\item \(F_{21}(x)=\frac{16}{3\pi}\sinn{\frac{3\pi}{4}x}-12x\)
-					\item \(F_{22}(x)=-\frac{1}{3}\coss{6x}+2x\)
-					\item \(F_{23}(x)=-2\coss{\frac{3}{8}x}+\frac{1}{8}x\)
-					\item \(F_{24}(x)=\frac{2}{11\pi}\coss{5\pi x}-\frac{5}{2}x\)
-					\item \(F_{25}(x)=-\frac{9}{7\pi}\coss{\frac{5\pi}{3}x}+\frac{8}{3}x\)
-					\item \(F_{26}(x)=-\frac{27}{4}\sinn{\frac{1}{3}x}-x\)
-				\end{enumerate}
-		\end{minipage}}
-	\end{minipage}
-\end{Answer}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\cohead{\Large\textbf{Lösungen}}
-\fakesubsection{Lösungen}
-\shipoutAnswer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%\cohead{\Large\textbf{Lösungen}}
+%\fakesubsection{Lösungen}
+%\shipoutAnswer
 \end{document}
+
+\begin{minipage}{\textwidth}
+	\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+
+	\end{minipage}}%
+	\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
+			I
+	\end{minipage}}%
+\end{minipage}%
+
 
 \begin{enumerate}[label=\alph*)]
 	\setcounter{enumi}{3}
@@ -488,7 +514,7 @@ Beispiele:
 					\setcounter{enumi}{13}
 					\item
 				\end{enumerate}
-		\end{minipage}}
+		\end{minipage}}%
 	\end{minipage}
 \end{Exercise}
 \begin{Answer}[ref=xxxxxxxxxxxxxxxxxxx]\\
