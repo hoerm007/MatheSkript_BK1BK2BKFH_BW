@@ -10,7 +10,7 @@
 
 
 \pagestyle{scrheadings} %KOMA-Script mit Kopf-Fuß-Zeilen
-\usepackage{hyperref}			%Hyperlinks setzen
+\usepackage[hidelinks]{hyperref}			%Hyperlinks setzen
 \usepackage{babel}				%Silbentrennung mit ngerman
 
 \usepackage{booktabs} 			% For prettier tables
@@ -29,7 +29,7 @@
 \usepackage[T1]{fontenc}		%Umlaute
 
 
-\usepackage{showframe} %Zeichnet Rahmen ein, um overfull Box-Warnungen beheben zu können
+%\usepackage{showframe} %Zeichnet Rahmen ein, um overfull Box-Warnungen beheben zu können
 
 \usepackage{ulem}
 %\uline{important} underlined text
@@ -56,6 +56,7 @@
 \usepackage{pgfmath}
 \usepackage{systeme}				% Für LGS
 \sysdelim..							% Keine geschweifte Klammer neben LGS
+\usepackage{gauss}
 
 \usepackage{bm}						%\bm{xxx} for bold in math mode
 
@@ -65,6 +66,7 @@
 
 \usepackage{marvosym} %\Lightning
 \usepackage{multirow}
+\usepackage{etoolbox}
 \renewcommand{\mvchr}[1]{{\mbox{\mvs\symbol{#1}}}} %\Lightning in math mode
 
 \usetikzlibrary{intersections}
@@ -134,6 +136,12 @@
 %Arbeitsblatt-Modus
 \definecolor{loes}{rgb}{.0,.13,.8}
 \definecolor{loestc}{rgb}{.6,.0,.1}
+
+\newtoggle{qrcode}
+\toggletrue{qrcode}
+\togglefalse{qrcode}
+%\iftoggle{qrcode}{true}{false}
+
 \tcbset{
 %	frame code={}
 %	center title,
@@ -168,7 +176,7 @@
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 %Kein vertikaler Abstand vor/nach Mathegruppen
-\usepackage{etoolbox}
+
 \newcommand{\zerodisplayskips}{%
 	\setlength{\abovedisplayskip}{0pt}%
 	\setlength{\belowdisplayskip}{0pt}%
@@ -181,6 +189,8 @@
 %\sqrt[\leftroot{0}\uproot{1}n]{y} für bessere Wurzeln
 
 \begin{document}
+    \newlength{\imgheight}
+    \newlength{\qrheight}
 	\setlength\parindent{0pt} %keine Einrückungen beim Start eines Paragraphen
     \setlength\tabcolsep{6pt}
 	%Header
@@ -195,10 +205,10 @@
 	\title{Mathematik\\
 		Ein Skript für das Berufskolleg}
 	\author{Hermann Maier}
-	\maketitle
-	\newpage
-	\tableofcontents
-	\newpage
+%	\maketitle
+%	\newpage
+%	\tableofcontents
+%	\newpage
 
 	%\setlength\extrarowheight{10pt} %Horizontales padding für Tabellen
 	\def\grundlagen{./Arbeitsblaetter/Grundlagen}
@@ -212,269 +222,339 @@
 	\def\integration{./Arbeitsblaetter/Integration}
 	\def\trigonometrie{./Arbeitsblaetter/Trigonometrie}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\fakesection{Grundlagen}
-	\input{\grundlagen/Mengen.tex}
-	\newpage
-	\input{\grundlagen/EinfachesRechnen.tex}
-	\newpage
-	\input{\grundlagen/Mitternachtsformel.tex}
-	\newpage
+%	\fakesection{Grundlagen}
+%	\input{\grundlagen/Mengen.tex}
+%	\newpage
+%	\input{\grundlagen/EinfachesRechnen.tex}
+%	\newpage
+%	\input{\grundlagen/Mitternachtsformel.tex}
+%	\newpage
 %%	\cohead{\Large\textbf{Lösungen}}
 %%	\fakesubsection{Lösungen}
 %%	\shipoutAnswer
 %%	\newpage
 %%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\fakesection{Lineare Funktionen}
-	\input{\linFkt/Begriffe.tex}
-	\newpage
-	\input{\linFkt/Einfuehrung.tex}
-	\newpage
-	\input{\linFkt/Punktprobe.tex}
-	\newpage
-	\input{\linFkt/Nullstellen.tex}
-	\newpage
-	\input{\linFkt/Lage.tex}
-	\newpage
-	\input{\linFkt/Schnittpunkt.tex}
-	\newpage
+%	\fakesection{Lineare Funktionen}
+%	\input{\linFkt/Begriffe.tex}
+%	\newpage
+%	\input{\linFkt/Einfuehrung.tex}
+%	\newpage
+%	\input{\linFkt/Punktprobe.tex}
+%	\newpage
+%	\input{\linFkt/Nullstellen.tex}
+%	\newpage
+%	\input{\linFkt/Lage.tex}
+%	\newpage
+%	\input{\linFkt/Schnittpunkt.tex}
+%	\newpage
 %%%	\cohead{\Large\textbf{Lösungen}}
 %%%	\fakesubsection{Lösungen}
 %%%	\shipoutAnswer
 %%%	\newpage
 %%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\fakesection{Quadratische Funktionen}
-	\input{\quadFkt/Scheitelform.tex}
-	\newpage
-	\input{\quadFkt/Hauptform.tex}
-	\newpage
-	\input{\quadFkt/Produktform.tex}
-	\newpage
+%	\fakesection{Quadratische Funktionen}
+%	\input{\quadFkt/Scheitelform.tex}
+%	\newpage
+%	\input{\quadFkt/Hauptform.tex}
+%	\newpage
+%	\input{\quadFkt/Produktform.tex}
+%	\newpage
 %%%	\cohead{\Large\textbf{Lösungen}}
 %%%	\fakesubsection{Lösungen}
 %%%	\shipoutAnswer
 %%%	\newpage
 %%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\fakesection{Ganzrationale Funktionen}
-	\input{\ganzFkt/Einfuehrung.tex}
-	\newpage
-	\input{\ganzFkt/Potenzfunktionen.tex}
-	\newpage
-	\input{\ganzFkt/Hauptform.tex}
-	\newpage
-	\input{\ganzFkt/Symmetrie.tex}
-	\newpage
-	\input{\ganzFkt/Verhalten.tex}
-	\newpage
-	\input{\ganzFkt/Nullstellen.tex}
-	\newpage
-	\input{\ganzFkt/Wurzeln.tex}
-	\newpage
-	\input{\ganzFkt/Produktform.tex}
-	\newpage
+%	\fakesection{Ganzrationale Funktionen}
+%	\input{\ganzFkt/Einfuehrung.tex}
+%	\newpage
+%	\input{\ganzFkt/Potenzfunktionen.tex}
+%	\newpage
+%	\input{\ganzFkt/Hauptform.tex}
+%	\newpage
+%	\input{\ganzFkt/Symmetrie.tex}
+%	\newpage
+%	\input{\ganzFkt/Verhalten.tex}
+%	\newpage
+%	\input{\ganzFkt/Nullstellen.tex}
+%	\newpage
+%	\input{\ganzFkt/Wurzeln.tex}
+%	\newpage
+%	\input{\ganzFkt/Produktform.tex}
+%	\newpage
 %%%	\cohead{\Large\textbf{Lösungen}}
 %%%	\fakesubsection{Lösungen}
 %%%	\shipoutAnswer
 %%%	\newpage
 %%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\fakesection{Exponentialfunktionen}
-	\input{\eFkt/Einfuehrung.tex}
-	\newpage
- 	\input{\eFkt/Begriffe.tex}
-	\newpage
- 	\input{\eFkt/WaagrechteAsymptoten.tex}
- 	\newpage
- 	\input{\eFkt/Ln.tex}
- 	\newpage
- 	\input{\eFkt/FktAuf.tex}
- 	\newpage
- 	\input{\eFkt/SchiefeAsymptoten.tex}
- 	\newpage
- 	\input{\eFkt/NaehrungsweiseNST.tex}
- 	\newpage
+%	\fakesection{Exponentialfunktionen}
+%	\input{\eFkt/Einfuehrung.tex}
+%	\newpage
+% 	\input{\eFkt/Begriffe.tex}
+%	\newpage
+% 	\input{\eFkt/WaagrechteAsymptoten.tex}
+% 	\newpage
+% 	\input{\eFkt/Ln.tex}
+% 	\newpage
+% 	\input{\eFkt/FktAuf.tex}
+% 	\newpage
+% 	\input{\eFkt/SchiefeAsymptoten.tex}
+% 	\newpage
+% 	\input{\eFkt/NaehrungsweiseNST.tex}
+% 	\newpage
 %%% 	\cohead{\Large\textbf{Lösungen}}
 %%% 	\fakesubsection{Lösungen}
 %%% 	\shipoutAnswer
 %%% 	\newpage
 %% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 	\input{\ableitung/MittlereAenderungsrate.tex}
- 	\newpage
- 	\input{\ableitung/GrafischesAbleitung.tex}
- 	\newpage
- 	\input{\ableitung/MomentanPunktweise.tex}
- 	\newpage
- 	\input{\ableitung/MomentanAllg.tex}
- 	\newpage
- 	\input{\ableitung/Ableitungsregeln.tex}
- 	\newpage
- 	\input{\ableitung/Faktorregel.tex}%TODO underfull boxes
- 	\newpage
- 	\input{\ableitung/Potenzregel.tex}
- 	\newpage
- 	\input{\ableitung/Summenregel.tex}
- 	\newpage
- 	\input{\ableitung/eFktAbleitung.tex}
- 	\newpage
- 	\input{\ableitung/SchaubilderDerAbleitung.tex}
- 	\newpage
- 	\input{\ableitung/Tangenten.tex}
- 	\newpage
- 	\input{\ableitung/Normalen.tex}
- 	\newpage
- 	\input{\ableitung/Beruehren.tex}
- 	\newpage
- 	\input{\ableitung/Monotonie.tex}
- 	\newpage
- 	\input{\ableitung/HoehereAbleitungen.tex}
- 	\newpage
- 	\input{\ableitung/Extrempunkte.tex}
- 	\newpage
- 	\input{\ableitung/Kruemmung.tex}
- 	\newpage
- 	\input{\ableitung/Wendepunkte.tex}
- 	\newpage
- 	\input{\ableitung/FktGleichungenAufstellen.tex} %TODO Aufgaben erstellen
- 	\newpage
+%    \fakesection{Differentialrechnung}
+% 	\input{\ableitung/MittlereAenderungsrate.tex}
+% 	\newpage
+% 	\input{\ableitung/GrafischesAbleitung.tex}
+% 	\newpage
+% 	\input{\ableitung/MomentanPunktweise.tex}
+% 	\newpage
+% 	\input{\ableitung/MomentanAllg.tex}
+% 	\newpage
+% 	\input{\ableitung/Ableitungsregeln.tex}
+% 	\newpage
+% 	\input{\ableitung/Faktorregel.tex}%TODO underfull boxes
+% 	\newpage
+% 	\input{\ableitung/Potenzregel.tex}
+% 	\newpage
+% 	\input{\ableitung/Summenregel.tex}
+% 	\newpage
+% 	\input{\ableitung/eFktAbleitung.tex}
+% 	\newpage
+% 	\input{\ableitung/SchaubilderDerAbleitung.tex}
+% 	\newpage
+% 	\input{\ableitung/Tangenten.tex}
+% 	\newpage
+% 	\input{\ableitung/Normalen.tex}
+% 	\newpage
+% 	\input{\ableitung/Beruehren.tex}
+% 	\newpage
+% 	\input{\ableitung/Monotonie.tex}
+% 	\newpage
+% 	\input{\ableitung/HoehereAbleitungen.tex}
+% 	\newpage
+% 	\input{\ableitung/Extrempunkte.tex}
+% 	\newpage
+% 	\input{\ableitung/Kruemmung.tex}
+% 	\newpage
+% 	\input{\ableitung/Wendepunkte.tex}
+% 	\newpage
+% 	\input{\ableitung/FktGleichungenAufstellen.tex} %TODO Aufgaben erstellen
+% 	\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% 	\input{\lgs/xxxxxxxxxxx.tex}%TODO LGS erstellen
+%%%     \fakesection{Lineare Gleichungssysteme}
+%%% 	\input{\lgs/LGSEinfuehrung.tex}%TODO LGS erstellen
 %%% 	\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \fakesection{Optimierung}
  	\input{\optimierung/Optimierung.tex}
- 	\newpage
+% 	\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 	\input{\integration/Stammfunktionen.tex}
- 	\newpage
- 	\input{\integration/Integral_grafisch.tex}
- 	\newpage
- 	\input{\integration/Integral_berechnen.tex}%TODO overfull hbox? Könnte auch an fehlender Ref fehlen
- 	\newpage
- 	\input{\integration/Flaechenberechnung.tex}
- 	\newpage
- 	\input{\integration/IntGrenze_bestimmen.tex}
- 	\newpage
- 	\input{\integration/FlaechZwischenFunktionen.tex}
- 	\newpage
- 	\input{\integration/VerhaeltnisVonFlaechen.tex}
- 	\newpage
+%    \fakesection{Integration}
+% 	\input{\integration/Stammfunktionen.tex}
+% 	\newpage
+% 	\input{\integration/Integral_grafisch.tex}
+% 	\newpage
+% 	\input{\integration/Integral_berechnen.tex}%overfull hbox, falls ref fehlt, kein Problem
+% 	\newpage
+% 	\input{\integration/Flaechenberechnung.tex}
+% 	\newpage
+% 	\input{\integration/IntGrenze_bestimmen.tex}
+% 	\newpage
+% 	\input{\integration/FlaechZwischenFunktionen.tex}
+% 	\newpage
+% 	\input{\integration/VerhaeltnisVonFlaechen.tex}
+% 	\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 	\input{\trigonometrie/Bogenmass.tex}
- 	\newpage
- 	\input{\trigonometrie/DefinitionSinCos.tex}
- 	\newpage
- 	\input{\trigonometrie/EigenschaftenSinCos.tex}
- 	\newpage
- 	\input{\trigonometrie/AllgSinusUndCosinus.tex}
- 	\newpage
- 	\input{\trigonometrie/TrigonometrieExtremWende.tex}
- 	\newpage
- 	\input{\trigonometrie/SinCosGleichungenOhneXStreckung.tex}
- 	\newpage
- 	\input{\trigonometrie/SinCosGleichungenMitXStreckung.tex}
- 	\newpage
- 	\input{\trigonometrie/TrigoAbleitung.tex}
- 	\newpage
- 	\input{\trigonometrie/TrigoStammfunktionen.tex}
- 	\newpage
+% 	\input{\trigonometrie/Bogenmass.tex}
+% 	\newpage
+% 	\input{\trigonometrie/DefinitionSinCos.tex}
+% 	\newpage
+% 	\input{\trigonometrie/EigenschaftenSinCos.tex}
+% 	\newpage
+% 	\input{\trigonometrie/AllgSinusUndCosinus.tex}
+% 	\newpage
+% 	\input{\trigonometrie/TrigonometrieExtremWende.tex}
+% 	\newpage
+% 	\input{\trigonometrie/SinCosGleichungenOhneXStreckung.tex}
+% 	\newpage
+% 	\input{\trigonometrie/SinCosGleichungenMitXStreckung.tex}
+% 	\newpage
+% 	\input{\trigonometrie/TrigoAbleitung.tex}
+% 	\newpage
+% 	\input{\trigonometrie/TrigoStammfunktionen.tex}
+% 	\newpage
 
 
-%\cohead{\Large\textbf{Stammfunktionen trig. Funktionen}}
-%\fakesubsection{Stammfunktionen trigonometrischer Funktionen}
-%\begin{tcolorbox}
-%	\textbf{Regeln zum Bilden der Stammfunktion für Sinus und Cosinus
-%	\begin{align*}
-%		f(x)&=a\cdot\sinn{bx}&g(x)&=a\cdot\coss{bx}\\
-%		\textcolor{loestc}{F(x)}&\textcolor{loestc}{=-\frac{a}{b}\cdot\coss{bx}}&\textcolor{loestc}{G(x)}&\textcolor{loestc}{=\frac{a}{b}\cdot\sinn{bx}}\\
-%	\end{align*}
-%	}
-%\end{tcolorbox}
-%Beispiele:
-%\begin{align*}
-%	f_1(x)&=2\cdot\sinn{3x}&g_1(x)&=4\cdot\coss{0,5x}\\
-%	F_1(x)&=\textcolor{loes}{-\frac{2}{3}\cdot\coss{3x}}&G_1(x)&=\textcolor{loes}{8\cdot\sinn{0,5x}}\\
-%	f_2(x)&=-\frac{1}{2}\cdot\sinn{\pi x}&g_2(x)&=-\coss{x}\\
-%	F_2(x)&=\textcolor{loes}{\frac{1}{2\pi}\cdot\coss{\pi x}}&G_2(x)&=\textcolor{loes}{-\sinn{x}}\\
-%\end{align*}
+%\cohead{\Large\textbf{LGS}}
+%\fakesubsection{Lineare Gleichungssysteme}
+%Eine lineare Gleichung besteht aus einer oder mehreren Unbekannten, die jeweils nur mit der Hochzahl 1 vorkommen. Zudem dürfen keine Produkte von mehreren Unbekannten vorkommen, z.B. ist \mbox{\(2x-5y=3\)} eine lineare Gleichung mit den Unbekannten \(x\) und \(y\). Dagegen sind \mbox{\(-3x^2+5y=0\)} oder \mbox{\(-3x\cdot y=2\)} keine linearen Gleichungen.
+%
+%Unter einem linearen Gleichungssystem (LGS) versteht man mehrere lineare Gleichungen, in denen die gleichen Unbekannten vorkommen, z.B.
+%
+%\bigskip
+%
+%\begin{minipage}{\textwidth}
+%    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.3\textwidth-4ex}
+%        \[\systeme{2x+y=3,-x+3y=-5}\]
+%    \end{minipage}}%
+%    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.7\textwidth-4ex}
+%        Das LGS hat die Lösung \(x=2\) und \(y=-1\), da diese Werte beide Gleichungen gleichzeitig erfüllen:
+%
+%        \(2\cdot 2-1=3\) und \(-2+3\cdot (-1)=-5\)
+%    \end{minipage}}%
+%\end{minipage}
+%
+%\bigskip
+%
+%Wir betrachten lineare Gleichungssysteme, die aus 3 Unbekannten und 3 Gleichungen bestehen. Unsere Überlegungen lassen sich aber auch auf Gleichungssysteme mit 4 Unbekannten und 4 Gleichungen usw. übertragen.
+%
+%Zum Lösen linearer Gleichungssysteme verwenden wir das gaußsche Eliminationsverfahren. Mit Hilfe von \textbf{elementaren Umformungen} bringen wir das LGS in die \textbf{obere Dreiecksform}.
+%
+%\bigskip
+%
+%\textbf{Matrixform}
+%
+%Zur Übersichtlichkeit und um Schreibarbeit zu sparen, verwenden wir die Matrixform. Dazu schreiben wir nur die Koeffizienten vor den Unbekannten in eine Matrix und ersetzen die Gleichzeichen durch eine vertikale Linie. Betrachten wir folgendes Beispiel:
+%
+%\begin{minipage}{\textwidth}
+%    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+%            \[\systeme{3x+2y-z=1, 2x-2y+4z=-2, -2x+y-2z=0}\]
+%    \end{minipage}}%
+%    \adjustbox{valign=middle}{\begin{minipage}{.2\textwidth}
+%        \vspace{.3cm}\centering
+%
+%        in
+%
+%        Matrixform
+%    \end{minipage}}%
+%    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+%        \[\begin{gmatrix}[p]
+%        3  &  2 & -1 &  1\\
+%        2  & -2 &  4 & -2\\
+%        -2 &  1 & -2 &  0
+%        \end{gmatrix}\]
+%    \end{minipage}}%
+%\end{minipage}
 %
 %
-%\begin{Exercise}[title={\raggedright\normalfont Bestimme jeweils eine Stammfunktion}, label=trigStammfunktionA1]\\
-%	\begin{minipage}{\textwidth}
-%		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-%				\begin{enumerate}[label=\alph*)]
-%					\item \(f_1(x)=-3\sinn{2x}\)
-%					\item \(f_2(x)=4\pi\sinn{2\pi x}\)
-%					\item \(f_3(x)=\coss{0,5x}\)
-%					\item \(f_4(x)=-2\coss{\frac{\pi}{2}x}\)
-%					\item \(f_5(x)=4\pi\sinn{3\pi x}\)
-%					\item \(f_6(x)=0,5\coss{5x}+2\)
-%					\item \(f_7(x)=-4\sinn{\frac{2}{3}x}\)
-%					\item \(f_8(x)=\coss{\frac{5}{4}x}-3\)
-%					\item \(f_9(x)=5\sinn{3\pi x}\)
-%					\item \(f_{10}(x)=\frac{3}{4}\sinn{\frac{3\pi}{2}x}\)
-%					\item \(f_{11}(x)=\frac{1}{3}\coss{2x}\)
-%					\item \(f_{12}(x)=-\sinn{6\pi x}+1,6\)
-%					\item \(f_{13}(x)=0,5\coss{\frac{\pi}{6}x}\)
-%				\end{enumerate}
-%		\end{minipage}}%
-%		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-%				\begin{enumerate}[label=\alph*)]
-%					\setcounter{enumi}{13}
-%					\item \(f_{14}(x)=-3\coss{0,2x}+2\)
-%					\item \(f_{15}(x)=-\frac{1}{7}\coss{\pi x}-\frac{1}{5}\)
-%					\item \(f_{16}(x)=-6\sinn{\frac{1}{\pi}x}-3\)
-%					\item \(f_{17}(x)=2\sinn{2,5x}-4\)
-%					\item \(f_{18}(x)=4\coss{8x}\)
-%					\item \(f_{19}(x)=-3\coss{\frac{5\pi}{8}x}-\frac{1}{4}\)
-%					\item \(f_{20}(x)=-4\sinn{3x}+6\)
-%					\item \(f_{21}(x)=4\coss{\frac{3\pi}{4}x}-12\)
-%					\item \(f_{22}(x)=2\sinn{6x}+2\)
-%					\item \(f_{23}(x)=-\frac{3}{4}\coss{\frac{3}{8}x}+\frac{1}{8}\)
-%					\item \(f_{24}(x)=-\frac{10}{11}\sinn{5\pi x}-\frac{5}{2}\)
-%					\item \(f_{25}(x)=\frac{15}{7}\sinn{\frac{5\pi}{3}x}+\frac{8}{3}\)
-%					\item \(f_{26}(x)=-\frac{9}{4}\coss{\frac{1}{3}x}-1\)
-%				\end{enumerate}
-%		\end{minipage}}
-%	\end{minipage}
+%
+%
+%
+%
+%\textbf{Elementare Umformungen:} Es gibt 3 elementare Umformungen. Diese ändern das Gleichungssystem, aber nicht die Lösung:
+%\begin{enumerate}
+%    \item \textbf{Vertauschen zweier Zeilen:}
+%
+%%    \[\systeme{3x+2y-z=1\vert I\rightarrow III, 2x-2y+4z=-2, -2x+y-2z=0}\]
+%
+%\end{enumerate}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%\newpage
+%\begin{Exercise}[title={\raggedright Bestimme jeweils die erste, zweite und dritte Ableitung.}, label=hoehereAbleitungenA1]
+%    \begin{enumerate}[label=\alph*)]
+%        \item \(f_1(x)=3x^4-2x^3+x^2-4\)
+%        \item \(f_2(x)=-\frac{1}{12}x^4+\frac{2}{9}x^3+x\)
+%        \item \(f_3(x)=\frac{7}{40}x^6-\frac{9}{8}x^4+\frac{3}{10}x^2\)
+%        \item \(f_4(x)=4e^{-2x}+5x-3\)
+%        \item \(f_5(x)=-\frac{5}{12}x^6-\frac{3}{2}x^3-\frac{3}{7}x\)
+%        \item \(f_6(x)=2x^2-x+5\)
+%        \item \(f_7(x)=-\frac{3}{28}x^7-\frac{5}{4}x^4+\frac{3}{10}x-8\)
+%        \item \(f_8(x)=\frac{1}{25}e^{5x}-x+8\)
+%        \item \(f_9(x)=-\frac{15}{8}x^4+\frac{3}{4}x^2\)
+%        \item \(f_{10}(x)=1,25x^4-0,2x^3+x\)
+%        \item \(f_{11}(x)=-0,1x^5+0,3x^4+x^3\)
+%        \item \(f_{12}(x)=12e^{\frac{1}{2}x}+\frac{3}{2}x+7\)
+%        \item \(f_{13}(x)=\frac{5}{36}x^3-\frac{15}{4}x^2+x+5\)
+%        \item \(f_{14}(x)=-\frac{1}{24}x^4-\frac{7}{6}x^3+2x^2+5\)
+%        \item \(f_{15}(x)=\frac{15}{14}x^7-\frac{8}{15}x^5+\frac{3}{4}x^3\)
+%        \item \(f_{16}(x)=e^{-x}-3\)
+%        \item \(f_{17}(x)=-\frac{2}{5}x^4-\frac{5}{9}x^3+\frac{7}{2}x^2\)
+%        \item \(f_{18}(x)=\frac{14}{15}x^5+\frac{2}{15}x^3+\frac{2}{7}x\)
+%        \item \(f_{19}(x)=0,2x^6-0,1x^4+0,5x^2\)
+%        \item \(f_{20}(x)=-e^{x}-x\)
+%    \end{enumerate}
 %\end{Exercise}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{Answer}[ref=trigStammfunktionA1]\\
-%	Für alle Stammfunktionen wurde die Integrationskonstante Null gewählt (\(c=0\)).\\
-%	\begin{minipage}{\textwidth}
-%		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-%				\begin{enumerate}[label=\alph*)]
-%					\item \(F_1(x)=\frac{3}{2}\coss{2x}\)
-%					\item \(F_2(x)=-2\coss{2\pi x}\)
-%					\item \(F_3(x)=2\sinn{0,5x}\)
-%					\item \(F_4(x)=-\frac{4}{\pi}\sinn{\frac{\pi}{2}x}\)
-%					\item \(F_5(x)=-\frac{4}{3}\coss{3\pi x}\)
-%					\item \(F_6(x)=0,1\sinn{5x}+2x\)
-%					\item \(F_7(x)=6\coss{\frac{2}{3}x}\)
-%					\item \(F_8(x)=\frac{4}{5}\sinn{\frac{5}{4}x}-3x\)
-%					\item \(F_9(x)=-\frac{5}{3\pi}\coss{3\pi x}\)
-%					\item \(F_{10}(x)=-\frac{1}{2\pi}\coss{\frac{3\pi}{2}x}\)
-%					\item \(F_{11}(x)=\frac{1}{6}\sinn{2x}\)
-%					\item \(F_{12}(x)=\frac{1}{6\pi}\coss{6\pi x}+1,6x\)
-%					\item \(F_{13}(x)=\frac{3}{\pi}\sinn{\frac{\pi}{6}x}\)
-%				\end{enumerate}
-%		\end{minipage}}%
-%		\adjustbox{valign=t}{\begin{minipage}{0.5\linewidth}
-%				\begin{enumerate}[label=\alph*)]
-%					\setcounter{enumi}{13}
-%					\item \(F_{14}(x)=-15\sinn{0,2x}+2x\)
-%					\item \(F_{15}(x)=-\frac{1}{7\pi}\sinn{\pi x}-\frac{1}{5}x\)
-%					\item \(F_{16}(x)=6\pi\coss{\frac{1}{\pi}x}-3x\)
-%					\item \(F_{17}(x)=-\frac{4}{5}\coss{2,5x}-4x\)
-%					\item \(F_{18}(x)=0,5\sinn{8x}\)
-%					\item \(F_{19}(x)=-\frac{24}{5\pi}\coss{\frac{5\pi}{8}x}-\frac{1}{4}x\)
-%					\item \(F_{20}(x)=\frac{4}{3}\coss{3x}+6x\)
-%					\item \(F_{21}(x)=\frac{16}{3\pi}\sinn{\frac{3\pi}{4}x}-12x\)
-%					\item \(F_{22}(x)=-\frac{1}{3}\coss{6x}+2x\)
-%					\item \(F_{23}(x)=-2\coss{\frac{3}{8}x}+\frac{1}{8}x\)
-%					\item \(F_{24}(x)=\frac{2}{11\pi}\coss{5\pi x}-\frac{5}{2}x\)
-%					\item \(F_{25}(x)=-\frac{9}{7\pi}\coss{\frac{5\pi}{3}x}+\frac{8}{3}x\)
-%					\item \(F_{26}(x)=-\frac{27}{4}\sinn{\frac{1}{3}x}-x\)
-%				\end{enumerate}
-%		\end{minipage}}
-%	\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{Answer}[ref=hoehereAbleitungenA1]
+%    \begin{enumerate}[label=\alph*)]
+%        \item \(f'_1(x)=12x^3-6x^2+2x\)\\
+%        \(f''_1(x)=36x^2-12x+2\)\\
+%        \(f'''_1(x)=72x-12\)
+%        \item \(f'_2(x)=-\frac{1}{3}x^3+\frac{2}{3}x^2+1\)\\
+%        \(f''_2(x)=-x^2+\frac{4}{3}x\)\\
+%        \(f'''_2(x)=-2x+\frac{4}{3}\)
+%        \item \(f'_3(x)=\frac{21}{20}x^5-\frac{9}{2}x^3+\frac{3}{5}x\)\\
+%        \(f''_3(x)=\frac{21}{4}x^4-\frac{27}{2}x^2+\frac{3}{5}\)\\
+%        \(f'''_3(x)=21x^3-27x\)
+%        \item \(f'_4(x)=-8e^{-2x}+5\)\\
+%        \(f''_4(x)=16e^{-2x}\)\\
+%        \(f'''_4(x)=-32e^{-2x}\)
+%        \item \(f'_5(x)=-\frac{5}{2}x^5-\frac{9}{2}x^2-\frac{3}{7}\)\\
+%        \(f''_5(x)=-\frac{25}{2}x^4-9x\)\\
+%        \(f'''_5(x)=-50x^3-9\)
+%        \item \(f'_6(x)=4x-1\)\\
+%        \(f''_6(x)=4\)\\
+%        \(f'''_6(x)=0\)
+%        \item \(f'_7(x)=-\frac{3}{4}x^6-5x^3+\frac{3}{10}\)\\
+%        \(f''_7(x)=-\frac{9}{2}x^5-15x^2\)\\
+%        \(f'''_7(x)=-\frac{45}{2}x^4-30x\)
+%        \item \(f'_8(x)=\frac{1}{5}e^{5x}-1\)\\
+%        \(f''_8(x)=e^{5x}\)\\
+%        \(f'''_8(x)=5e^{5x}\)
+%        \item \(f'_9(x)=-\frac{15}{2}x^3+\frac{3}{2}x\)\\
+%        \(f''_9(x)=-\frac{45}{2}x^2+\frac{3}{2}\)\\
+%        \(f'''_9(x)=-45x\)
+%        \item \(f'_{10}(x)=5x^3-0,6x^2+1\)\\
+%        \(f''_{10}(x)=15x^2-0,8x\)\\
+%        \(f'''_{10}(x)=30x-0,8\)
+%        \item \(f'_{11}(x)=-0,5x^4+1,2x^3+3x^2\)\\
+%        \(f''_{11}(x)=-2x^3+3,6x^2+6x\)\\
+%        \(f'''_{11}(x)=-6x^2+7,2x+6\)
+%        \item \(f'_{12}(x)=6e^{\frac{1}{2}x}+\frac{3}{2}\)\\
+%        \(f''_{12}(x)=3e^{\frac{1}{2}x}\)\\
+%        \(f'''_{12}(x)=\frac{3}{2}e^{\frac{1}{2}x}\)
+%        \item \(f'_{13}(x)=\frac{5}{12}x^2-\frac{15}{2}x+1\)\\
+%        \(f''_{13}(x)=\frac{5}{6}x-\frac{15}{2}\)\\
+%        \(f'''_{13}(x)=\frac{5}{6}\)
+%        \item \(f'_{14}(x)=-\frac{1}{6}x^3-\frac{7}{2}x^2+4x\)\\
+%        \(f''_{14}(x)=-\frac{1}{2}x^2-7x+4\)\\
+%        \(f'''_{14}(x)=-x-7\)
+%        \item \(f'_{15}(x)=\frac{15}{2}x^6-\frac{8}{3}x^4+\frac{9}{4}x^2\)\\
+%        \(f''_{15}(x)=45x^5-\frac{32}{3}x^3+\frac{9}{2}x\)\\
+%        \(f'''_{15}(x)=225x^4-32x^2+\frac{9}{2}\)
+%        \item \(f'_{16}(x)=-e^{-x}\)\\
+%        \(f''_{16}(x)=e^{-x}\)\\
+%        \(f'''_{16}(x)=-e^{-x}\)
+%        \item \(f'_{17}(x)=-\frac{8}{5}x^3-\frac{5}{3}x^2+7x\)\\
+%        \(f''_{17}(x)=-\frac{24}{5}x^2-\frac{10}{3}x+7\)\\
+%        \(f'''_{17}(x)=-\frac{48}{5}x-\frac{10}{3}\)
+%        \item \(f'_{18}(x)=\frac{14}{3}x^4+\frac{2}{5}x^2+\frac{2}{7}\)\\
+%        \(f''_{18}(x)=\frac{56}{3}x^3+\frac{4}{5}x\)\\
+%        \(f'''_{18}(x)=56x^2+\frac{4}{5}\)
+%        \item \(f'_{19}(x)=1,2x^5-0,4x^3+x\)\\
+%        \(f''_{19}(x)=6x^4-1,2x^2+1\)\\
+%        \(f'''_{19}(x)=24x^3-2,4x\)
+%        \item \(f'_{20}(x)=-e^{x}-1\)\\
+%        \(f''_{20}(x)=-e^{x}\)\\
+%        \(f'''_{20}(x)=-e^{x}\)
+%    \end{enumerate}
 %\end{Answer}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

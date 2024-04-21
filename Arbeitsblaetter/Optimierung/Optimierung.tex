@@ -17,7 +17,13 @@ Bei Optimierungsaufgaben muss für eine Größe wie die Fläche eines Rechtecks 
 		\end{enumerate}
 	\end{minipage}}%
 	\adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}
-		\includegraphics[width=\linewidth]{\optimierung/pics/Beispiel1.png}
+        \iftoggle{qrcode}{
+		\settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\optimierung/pics/Beispiel1.png}}%
+        \setlength{\qrheight}{2.5cm}%
+        \includegraphics[width=\linewidth]{\optimierung/pics/Beispiel1.png}%
+        \raisebox{\imgheight-\qrheight}{\makebox[0pt][r]{\href{https://www.geogebra.org/m/cxbqrqxz}{\includegraphics[height=\qrheight]{\optimierung/pics/Beispiel1QR.png}}}}%
+        }{
+        \includegraphics[width=\linewidth]{\optimierung/pics/Beispiel1.png}}%
 	\end{minipage}}%
 \end{minipage}
 \textcolor{loes}{\[A(u)=\frac{1}{2}a\cdot h_a=\frac{1}{2}u\cdot f(u)=\frac{1}{2}u\left(-u^2+5u\right)=-\frac{1}{2}u^3+\frac{5}{2}u^2\]}
@@ -42,7 +48,7 @@ Bei Optimierungsaufgaben muss für eine Größe wie die Fläche eines Rechtecks 
 \begin{Exercise}[title={\raggedright\normalfont\\Gegeben ist die Funktion \(f(x)=-x^2+4x\). Sei \(P(u\vert v)\) ein Punkt auf dem Graphen von \(f\) mit \(0\leq u\leq4\). Der Ursprung, der Punkt \(P\) und der Punkt \(Q(u\vert 0)\) begrenzen ein Dreieck. Welchen Flächeninhalt A kann dieses Dreieck maximal haben?}, label=optimierungA1]\end{Exercise}
 \begin{Exercise}[title={\raggedright\normalfont\\Gegeben ist die Funktion \(f(x)=-x^2+12\). Berechne die Koordinaten der Eckpunkte desjenigen Rechtecks oberhalb der x-Achse, dessen Flächeninhalt maximal ist, wenn eine Seite des Rechtecks auf der \(x\)-Achse liegt und 2 Eckpunkte auf dem Schaubild von \(f\) liegen. Gib den maximalen Flächeninhalt an. }, label=optimierungA2]\end{Exercise}
 \begin{Exercise}[title={\raggedright\normalfont\\Die Graphen zu den beiden Funktionen mit \(f(x)=x^2\) und \(g(x)=-x^2+6\) schließen eine Fläche ein. In diese Fläche wird ein Rechteck so gelegt, dass die Rechteckseiten parallel zu den Koordinatenachsen verlaufen. Berechne die Koordinaten der Eckpunkte desjenigen Rechtecks, dessen Flächeninhalt maximal ist, und gib den maximalen Flächeninhalt an. }, label=optimierungA3]\end{Exercise}
-\begin{Exercise}[title={\raggedright\normalfont\\Gegeben ist die Funktion \(f\) mit \(f(x)=(x-3)^2+2,5\). Betrachtet werden sollen alle achsenparallelen Rechtecke mit dem Ursprung als einen Eckpunkt und einem Punkt des Graphen als gegenüber liegendem Eckpunkt für \(0\leq x\leq 3\). Berechne die Koordinaten der Eckpunkte desjenigen Rechtecks, dessen Flächeninhalt maximal ist, und gib den maximalen Flächeninhalt an.}, label=optimierungA4]\end{Exercise}
+\begin{Exercise}[title={\raggedright\normalfont\\Gegeben ist die Funktion \(f\) mit \(f(x)=(x-3)^2\). Betrachtet werden sollen alle achsenparallelen Rechtecke mit dem Ursprung als einen Eckpunkt und einem Punkt des Graphen als gegenüber liegendem Eckpunkt für \(0\leq x\leq 3\). Berechne die Koordinaten der Eckpunkte desjenigen Rechtecks, dessen Flächeninhalt maximal ist, und gib den maximalen Flächeninhalt an.}, label=optimierungA4]\end{Exercise}
 \begin{Exercise}[title={\raggedright\normalfont\\Der Graph zu der Funktion mit \(f(x)=-kx^2+12,\ k>0\) und die \(x\)-Achse schließen eine Fläche ein. In diese Fläche wird ein Rechteck so gelegt, dass die Rechteckseiten parallel zu den Koordinatenachsen verlaufen. Berechne die Koordinaten der Eckpunkte desjenigen Rechtecks, dessen Flächeninhalt maximal ist in Abhängigkeit von \(k\), und gib den maximalen Flächeninhalt an.}, label=optimierungA5]\end{Exercise}
 
 
@@ -72,7 +78,13 @@ Bei Optimierungsaufgaben muss für eine Größe wie die Fläche eines Rechtecks 
 			Der maximale Flächeninhalt beträgt \(A\left(\frac{8}{3}\right)=\frac{128}{27}\)
 		\end{minipage}}%
 		\adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}
-			\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_1.png}
+                \iftoggle{qrcode}{
+                    \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_1.png}}%
+                    \setlength{\qrheight}{2.5cm}%
+                    \includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_1.png}%
+                    \raisebox{\imgheight-\qrheight}{\makebox[0pt][r]{\href{https://www.geogebra.org/m/bpm6d9z7}{\includegraphics[height=\qrheight]{\optimierung/pics/Aufgabe_1QR.png}}}}%
+                }{
+			\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_1.png}}%
 		\end{minipage}}%
 	\end{minipage}
 \end{Answer}
@@ -105,9 +117,14 @@ Bei Optimierungsaufgaben muss für eine Größe wie die Fläche eines Rechtecks 
 
 			Die Eckpunkte sind dann \(A(2\vert 0),\ B(2\vert f(2)=8),\ C(-2\vert 8),\ D(-2\vert 0)\).
 		\end{minipage}}%
-		\adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}
-			\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_2.png}
-		\end{minipage}}%
+		\adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}                \iftoggle{qrcode}{
+                    \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_2.png}}%
+                    \setlength{\qrheight}{2.5cm}%
+                    \includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_2.png}%
+                    \raisebox{\imgheight-\qrheight}{\makebox[0pt][r]{\href{https://www.geogebra.org/m/bsju83ap}{\includegraphics[height=\qrheight]{\optimierung/pics/Aufgabe_2QR.png}}}}%
+                }{
+                    \includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_2.png}}%
+        \end{minipage}}%
 	\end{minipage}
 \end{Answer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -139,9 +156,14 @@ Bei Optimierungsaufgaben muss für eine Größe wie die Fläche eines Rechtecks 
 
 			Die Eckpunkte sind dann\(A(1\vert f(1)=1),\)\\\(B(1\vert g(1)=5),\ C(-1\vert 5),\ D(-1\vert 1)\).
 		\end{minipage}}%
-		\adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}
-			\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_3.png}
-		\end{minipage}}%
+        \adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}                \iftoggle{qrcode}{
+            \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_3.png}}%
+            \setlength{\qrheight}{2.5cm}%
+            \includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_3.png}%
+            \raisebox{\imgheight-\qrheight}{\makebox[0pt][r]{\href{https://www.geogebra.org/m/sq4gxae9}{\includegraphics[height=\qrheight]{\optimierung/pics/Aufgabe_3QR.png}}}}%
+        }{
+            \includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_3.png}}%
+    \end{minipage}}%
 	\end{minipage}
 \end{Answer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,32 +175,37 @@ Bei Optimierungsaufgaben muss für eine Größe wie die Fläche eines Rechtecks 
 		\adjustbox{valign=t}{\begin{minipage}{.5\textwidth}\raggedright
 			\textbf{Zielfunktion}
 
-			\(A(u)=u\cdot f(u)=u^3-6u^2+11,5u\)
+			\(A(u)=u\cdot f(u)=u^3-6u^2+9u\)
 
 			\textbf{Extremstellen der Zielfunktion}
 
-			\(A'(u)=3u^2-12u+11,5\)
+			\(A'(u)=3u^2-12u+9\)
 
 			\(A''(u)=6u-12\)
 
-			\(A'(u)=0\) liefert \(u_1=\frac{12+\sqrt{6}}{6}\) und \(u_2=\frac{12-\sqrt{6}}{6}\).
+			\(A'(u)=0\) liefert \(u_1=3\) und \(u_2=1\).
 
-			Mit \(A''(u_1)=\sqrt{6}>0\) liegt bei \(u_1\) ein Tiefpunkt.
+			Mit \(A''(u_1)=6>0\) liegt bei \(u_1\) ein Tiefpunkt.
 
-			Mit \(A''(u_2)=-\sqrt{6}<0\) liegt bei \(u_2\) ein Hochpunkt.
+			Mit \(A''(u_2)=-6<0\) liegt bei \(u_2\) ein Hochpunkt.
 
 			\textbf{Antwort erstellen}
 
-			Der maximale Flächeninhalt beträgt \(A\left(u_2\right)=\frac{126+\sqrt{6}}{18}\approx 7,14\).
+			Der maximale Flächeninhalt beträgt \(A\left(u_2\right)=4\).
 
 			Die Eckpunkte sind dann
 			\(A\left(0\vert 0\right),
-			\ B\left(\frac{12-\sqrt{6}}{6}\middle\vert 0\right),\newline
-			\ C\left(\frac{12-\sqrt{6}}{6}\middle\vert f(u_2)=\frac{11+\sqrt{6}}{3}\right),\ D\left(0\middle\vert \frac{11+\sqrt{6}}{3}\right)\).
+			\ B\left(1\middle\vert 0\right),\newline
+			\ C\left(1\middle\vert f(u_2)=4\right),\ D\left(0\middle\vert 4\right)\).
 		\end{minipage}}%
-		\adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}
-			\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_4.png}
-		\end{minipage}}%
+        \adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}                \iftoggle{qrcode}{
+            \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_4.png}}%
+            \setlength{\qrheight}{2.5cm}%
+            \includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_4.png}%
+            \raisebox{\imgheight-\qrheight}{\makebox[0pt][r]{\href{https://www.geogebra.org/m/ptbksvzz}{\includegraphics[height=\qrheight]{\optimierung/pics/Aufgabe_4QR.png}}}}%
+        }{
+            \includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_4.png}}%
+    \end{minipage}}%
 	\end{minipage}
 \end{Answer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -200,7 +227,7 @@ Bei Optimierungsaufgaben muss für eine Größe wie die Fläche eines Rechtecks 
 
 			\(A''(u)=-12ku\)
 
-			\(A'(u)=0\) liefert \(u_1/2=\pm\frac{2}{\sqrt{k}}\).
+			\(A'(u)=0\) liefert \(u_{1/2}=\pm\frac{2}{\sqrt{k}}\).
 
 			Die negative Lösung liegt nicht im erlaubten Bereich und kann ignoriert werden.
 
@@ -216,8 +243,13 @@ Bei Optimierungsaufgaben muss für eine Größe wie die Fläche eines Rechtecks 
 			C\left(-\frac{2}{\sqrt{k}}\middle\vert 8\right),
 			\ D\left(-\frac{2}{\sqrt{k}}\middle\vert 0\right)\).
 		\end{minipage}}%
-		\adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}
-			\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_5.png}
-		\end{minipage}}%
+        \adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}                \iftoggle{qrcode}{
+            \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_5.png}}%
+            \setlength{\qrheight}{2.5cm}%
+            \includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_5.png}%
+            \raisebox{\imgheight-\qrheight}{\makebox[0pt][r]{\href{https://www.geogebra.org/m/wuxpt9u8}{\includegraphics[height=\qrheight]{\optimierung/pics/Aufgabe_5QR.png}}}}%
+        }{
+            \includegraphics[width=\linewidth]{\optimierung/pics/Aufgabe_5.png}}%
+    \end{minipage}}%
 	\end{minipage}
 \end{Answer}
