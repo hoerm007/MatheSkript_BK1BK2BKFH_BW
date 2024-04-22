@@ -1,7 +1,16 @@
 \cohead{\Large\textbf{Satz vom Nullprodukt/Produktform}}
 \fakesubsection{Satz vom Nullprodukt/Produktform}
-Die Produktform ist nach der Scheitelform und der Hauptform die dritte und letzte Darstellungsform für quadratische Funktionen. Um den Aufbau der Produktform nachvollziehen zu können, muss man den Satz vom Nullprodukt (SvN) kennen.\\
-Das Produkt zweier Zahlen \(a\) und \(b\) ist genau dann Null, wenn entweder \(a\) Null ist oder \(b\) Null ist:
+\setlength{\qrheight}{2.5cm}%
+\newlength{\produktbox}
+\iftoggle{qrcode}{\setlength{\produktbox}{\textwidth-\qrheight}}{\setlength{\produktbox}{\textwidth}}%
+\adjustbox{valign=t}{\begin{minipage}{\produktbox}
+    Die Produktform ist nach der Scheitelform und der Hauptform die dritte und letzte Darstellungsform für quadratische Funktionen. Um den Aufbau der Produktform nachvollziehen zu können, muss man den Satz vom Nullprodukt (SvN) kennen.
+
+    Das Produkt zweier Zahlen \(a\) und \(b\) ist genau dann Null, wenn entweder \(a\) Null ist oder \(b\) Null ist:
+\end{minipage}}%
+\iftoggle{qrcode}{%
+    \adjustbox{valign=t, min height=\qrheight, max height = \qrheight}{\href{https://www.geogebra.org/m/weczkmhe}{\includegraphics[width=\qrheight]{\quadFkt/pics/ProduktformQR.png}}}%
+}{}%
 \begin{tcolorbox}\centering
 	\(\textcolor{loestc}{a\cdot b=0\ \Leftrightarrow\ a=0\text{ oder }b=0}\)
 \end{tcolorbox}
@@ -16,39 +25,40 @@ Liegt die Funktionsgleichung einer quadratischen Funktion in der folgenden Form 
 \end{tcolorbox}
 
 \begin{minipage}{\textwidth}
-		\begin{minipage}{0.33\textwidth}\centering
-			\includegraphics[width=.95\textwidth]{\quadFkt/pics/produkt1.png}
-		\end{minipage}%
-		\begin{minipage}{0.33\textwidth}\centering
-			\includegraphics[width=.95\textwidth]{\quadFkt/pics/produkt2.png}
-		\end{minipage}%
-		\begin{minipage}{0.33\textwidth}\centering
-			\includegraphics[width=.95\textwidth]{\quadFkt/pics/produkt3.png}
-		\end{minipage}%
+		\adjustbox{valign=t, padding=0ex 0ex 3ex 0ex}{\begin{minipage}{\textwidth/\real{3}-2ex}\centering
+			\includegraphics[width=\textwidth]{\quadFkt/pics/produkt1.png}
+		\end{minipage}}%
+		\adjustbox{valign=t, padding=0ex 0ex 3ex 0ex}{\begin{minipage}{\textwidth/\real{3}-2ex}\centering
+			\includegraphics[width=\textwidth]{\quadFkt/pics/produkt2.png}
+		\end{minipage}}%
+		\adjustbox{valign=t}{\begin{minipage}{\textwidth/\real{3}-2ex}\centering
+			\includegraphics[width=\textwidth]{\quadFkt/pics/produkt3.png}
+		\end{minipage}}%
 
 		\bigskip
 
-		\adjustbox{valign=t}{\begin{minipage}{0.33\textwidth}\centering
+		\adjustbox{valign=t}{\begin{minipage}{\textwidth/\real{3}}\centering
 			\[f_1(x)=\frac{3}{4}\left(x\textcolor{loes}{+2}\right)\left(x\textcolor{loes}{-1}\right)\]
-			
+
 			\textcolor{loes}{Nullstellen: \(x_1= -2,\quad x_2=1\)}
 		\end{minipage}}%
-		\adjustbox{valign=t}{\begin{minipage}{0.33\textwidth}\centering
+		\adjustbox{valign=t}{\begin{minipage}{\textwidth/\real{3}}\centering
 			\begin{align*}
 			f_2(x)&=-\left(x\textcolor{loes}{+1}\right)\left(x\textcolor{loes}{+1}\right)\\
 			&\textcolor{loes}{\;=-\left(x+1\right)^2}
 			\end{align*}
-			
+
 			\textcolor{loes}{Nullstellen: \(x_{1/2}= -1\)}
-			
+
 			\textcolor{loes}{Doppelte Nullstelle}
 		\end{minipage}}%
-		\adjustbox{valign=t}{\begin{minipage}{0.33\textwidth}\centering
+		\adjustbox{valign=t}{\begin{minipage}{\textwidth/\real{3}}\centering
 			\[f_3(x)=x^2+1\]
-			
+
 			\textcolor{loes}{Keine Nullstellen, daher keine Produktform möglich.}
 		\end{minipage}}%
 \end{minipage}%
+\vspace{1.8cm}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,15 +92,15 @@ Liegt die Funktionsgleichung einer quadratischen Funktion in der folgenden Form 
 \end{Exercise}
 
 \begin{Exercise}[title={Bestimme die Nullstellen und skizziere das Schaubild}, label=produktformNullstellenA2]
-	
+
 	\begin{minipage}{\textwidth}
-		\begin{minipage}{0.49\textwidth}
+		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
 				\item \(f(x)=0,2\left(x+3\right)\left(x-2\right)\)
 				\item \(g(x)=-0,5\left(x+5\right)\left(x+2\right)\)
 			\end{enumerate}
 		\end{minipage}%
-		\begin{minipage}{0.49\textwidth}
+		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
 				\setcounter{enumi}{2}
 				\item \(h(x)=\left(x+1\right)^2\)
@@ -103,7 +113,7 @@ Liegt die Funktionsgleichung einer quadratischen Funktion in der folgenden Form 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Answer}[ref=produktformNullstellenA1]
-	
+
 	\begin{minipage}{\textwidth}
 		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
@@ -131,7 +141,7 @@ Liegt die Funktionsgleichung einer quadratischen Funktion in der folgenden Form 
 	\end{minipage}%
 \end{Answer}
 \begin{Answer}[ref=produktformNullstellenA2]
-	
+
 	\begin{minipage}{\textwidth}
 		\begin{minipage}{0.5\textwidth}
 			\begin{enumerate}[label=\alph*)]
@@ -147,8 +157,8 @@ Liegt die Funktionsgleichung einer quadratischen Funktion in der folgenden Form 
 			\end{enumerate}
 		\end{minipage}%
 	\end{minipage}%
-	
+
 	\bigskip
-	
+
 	\includegraphics[width=\textwidth]{\quadFkt/pics/produktA2.png}
 \end{Answer}

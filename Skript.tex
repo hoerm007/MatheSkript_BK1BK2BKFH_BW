@@ -61,7 +61,7 @@
 \usepackage{bm}						%\bm{xxx} for bold in math mode
 
 \usepackage{adjustbox}
-\usepackage{geometry}
+\usepackage[showframe]{geometry}    %[showframe] debugging mit Boxen
 \geometry{a4paper, portrait, left=1.5cm, right=2cm, top=1cm, bottom=2cm, headsep=0.2cm, includehead, head=27.30193pt}
 
 \usepackage{marvosym} %\Lightning
@@ -139,7 +139,7 @@
 
 \newtoggle{qrcode}
 \toggletrue{qrcode}
-\togglefalse{qrcode}
+%\togglefalse{qrcode}
 %\iftoggle{qrcode}{true}{false}
 
 \tcbset{
@@ -277,7 +277,7 @@
 %	\newpage
 %	\input{\ganzFkt/Nullstellen.tex}
 %	\newpage
-%	\input{\ganzFkt/Wurzeln.tex}
+	\input{\ganzFkt/Wurzeln.tex}%TODO Geogebra
 %	\newpage
 %	\input{\ganzFkt/Produktform.tex}
 %	\newpage
@@ -289,15 +289,15 @@
 %	\fakesection{Exponentialfunktionen}
 %	\input{\eFkt/Einfuehrung.tex}
 %	\newpage
-% 	\input{\eFkt/Begriffe.tex}
+% 	\input{\eFkt/Begriffe.tex}%TODO Geogebra
 %	\newpage
-% 	\input{\eFkt/WaagrechteAsymptoten.tex}
+% 	\input{\eFkt/WaagrechteAsymptoten.tex}%TODO Geogebra
 % 	\newpage
-% 	\input{\eFkt/Ln.tex}
+% 	\input{\eFkt/Ln.tex}%TODO Geogebra
 % 	\newpage
 % 	\input{\eFkt/FktAuf.tex}
 % 	\newpage
-% 	\input{\eFkt/SchiefeAsymptoten.tex}
+% 	\input{\eFkt/SchiefeAsymptoten.tex}%TODO Geogebra
 % 	\newpage
 % 	\input{\eFkt/NaehrungsweiseNST.tex}
 % 	\newpage
@@ -350,8 +350,8 @@
 %%% 	\input{\lgs/LGSEinfuehrung.tex}%TODO LGS erstellen
 %%% 	\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \fakesection{Optimierung}
- 	\input{\optimierung/Optimierung.tex}
+%    \fakesection{Optimierung}
+% 	\input{\optimierung/Optimierung.tex}
 % 	\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    \fakesection{Integration}
@@ -453,9 +453,6 @@
 %%    \[\systeme{3x+2y-z=1\vert I\rightarrow III, 2x-2y+4z=-2, -2x+y-2z=0}\]
 %
 %\end{enumerate}
-%
-%
-%
 %
 %
 %
@@ -670,3 +667,8 @@
 	\\
 	\hline
 \end{tabular}
+
+
+
+Verhalten
+\(f(x)\xrightarrow{\hphantom{\ }x\to-\infty\hphantom{\ }}\infty\)

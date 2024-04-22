@@ -1,16 +1,24 @@
 \cohead{\Large\textbf{Scheitelform}}
 \fakesubsection{Scheitelform}
 \begin{minipage}{\textwidth}
-\begin{minipage}{0.5\textwidth}\centering\Large
-	\textcolor{loes}{Das Schaubild der Funktion}
-	
-	\textcolor{loes}{\(f(x)=x^2\)}
-	
-	\textcolor{loes}{bezeichnet man als Normalparabel.}
-\end{minipage}%
-\begin{minipage}{0.5\textwidth}
+\settototalheight{\imgheight}{\includegraphics[width=0.5\textwidth]{\quadFkt/pics/normalparabel.png}}%
+\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}%
+        \iftoggle{qrcode}{%
+            \setlength{\qrheight}{2.5cm}%
+            \href{https://www.geogebra.org/m/tzeupua3}{\includegraphics[width=\qrheight]{\quadFkt/pics/ScheitelformQR.png}}%
+        }{%
+            \vspace{2.5cm+\baselineskip}%
+        }%
+
+        {\centering\Large\textcolor{loes}{Das Schaubild der Funktion}%
+
+        \textcolor{loes}{\(f(x)=x^2\)}%
+
+        \textcolor{loes}{bezeichnet man als Normalparabel.}}%
+\end{minipage}}%
+\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
 	\includegraphics[width=\textwidth]{\quadFkt/pics/normalparabel.png}
-\end{minipage}%
+\end{minipage}}%
 \end{minipage}
 \textbf{Verschieben in y-Richtung}
 \begin{tcolorbox}\centering
@@ -51,13 +59,13 @@
 \begin{tabular}{cc}
 	\begin{minipage}{0.47\textwidth}\centering\Large
 		\textcolor{loes}{Die Normalparabel wird um 2 Einheiten nach unten verschoben.}
-		
+
 		\bigskip
-		
+
 		\textcolor{loes}{\(f(x)=x^2-2\)}
-		
+
 		\bigskip
-		
+
 		\textcolor{loes}{Der Scheitel liegt bei \(S\left(0\middle\vert -2\right)\)}
 	\end{minipage}%
 	&
@@ -66,15 +74,15 @@
 	\end{minipage}%
 	\\
 	\midrule
-	\begin{minipage}{0.47\textwidth}\centering\Large 
+	\begin{minipage}{0.47\textwidth}\centering\Large
 		Die Normalparabel wird um 3 Einheiten nach oben verschoben.
-		
+
 		\bigskip
-		
+
 		\textcolor{loes}{\(f(x)=x^2+3\)}
-		
+
 		\bigskip
-		
+
 		\textcolor{loes}{Der Scheitel liegt bei \(S\left(0\middle\vert 3\right) \)}
 	\end{minipage}%
 	&
@@ -85,13 +93,13 @@
 	\midrule
 	\begin{minipage}{0.47\textwidth}\centering\Large
 		\textcolor{loes}{Die Normalparabel wird um 1 Einheit nach unten verschoben.}
-		
+
 		\bigskip
-		
+
 		\(f(x)=x^2-1\)
-		
+
 		\bigskip
-		
+
 		Der Scheitel liegt bei \(S\left(0\middle\vert -1\right)\)
 	\end{minipage}%
 	&
@@ -107,13 +115,13 @@
 \begin{tabular}{cc}
 	\begin{minipage}{0.47\textwidth}\centering\Large
 		\textcolor{loes}{Die Normalparabel wird um 2 Einheiten nach rechts verschoben.}
-		
+
 		\bigskip
-		
+
 		\textcolor{loes}{\(f(x)=\left( x-2\right)^2\)}
-		
+
 		\bigskip
-		
+
 		\textcolor{loes}{Der Scheitel liegt bei \(S\left(-2\middle\vert 0\right)\)}
 	\end{minipage}%
 	&
@@ -122,15 +130,15 @@
 	\end{minipage}%
 	\\
 	\midrule
-	\begin{minipage}{0.47\textwidth}\centering\Large 
+	\begin{minipage}{0.47\textwidth}\centering\Large
 		Die Normalparabel wird um 1 Einheit nach links verschoben.
-		
+
 		\bigskip
-		
+
 		\textcolor{loes}{\(f(x)=\left(x+1 \right)^2 \)}
-			
-		\bigskip	
-		
+
+		\bigskip
+
 		\textcolor{loes}{Der Scheitel liegt bei \(S\left(-1\middle\vert 0\right)\)}
 	\end{minipage}%
 	&
@@ -141,13 +149,13 @@
 	\midrule
 	\begin{minipage}{0.47\textwidth}\centering\Large
 		\textcolor{loes}{Die Normalparabel wird um 3 Einheiten nach rechts verschoben.}
-		
+
 		\bigskip
-		
+
 		\(f(x)=\left( x-3\right)^2\)
-		
+
 		\bigskip
-		
+
 		Der Scheitel liegt bei \(S\left(3\middle\vert 0\right)\)
 	\end{minipage}%
 	&
@@ -159,7 +167,7 @@
 \end{minipage}\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Exercise}[title={Bestimme jeweils an Hand des Schaubilds die Funktionsgleichung}, label=verschiebenA1]
-	
+
 	\begin{minipage}{\linewidth}\centering
 		\includegraphics[width=.8\linewidth]{\quadFkt/pics/verschiebenA1.png}
 	\end{minipage}%
@@ -219,9 +227,9 @@
 \begin{tabular}{cc}
 	\begin{minipage}{0.47\textwidth}\centering\Large
 		\textcolor{loes}{Die Normalparabel wird mit dem Faktor \(2\) gestreckt.}
-			
+
 		\bigskip
-		
+
 		\textcolor{loes}{\(f(x)=2x^2\)}
 	\end{minipage}
 	&
@@ -229,11 +237,11 @@
 		\includegraphics[width=.95\textwidth]{\quadFkt/pics/strecken1.png}
 	\end{minipage} \\
 	\midrule
-	\begin{minipage}{0.47\textwidth}\centering\Large 
+	\begin{minipage}{0.47\textwidth}\centering\Large
 		Die Normalparabel wird mit dem Faktor \(2\) gestaucht oder mit dem Faktor \(\tfrac{1}{2}\) gestreckt.
-		
+
 		\bigskip
-		
+
 		\textcolor{loes}{\(f(x)=\dfrac{1}{2}x^2\)}
 	\end{minipage}
 	&
@@ -243,9 +251,9 @@
 	\midrule
 	\begin{minipage}{0.47\textwidth}\centering\Large
 		\textcolor{loes}{Die Normalparabel wird am Scheitel nach unten geklappt und mit dem Faktor \(3\) gestaucht oder mit dem Faktor \(\tfrac{1}{3}\) gestreckt.}
-		
+
 		\bigskip
-		
+
 		\(f(x)=-\dfrac{1}{3}x^2\)
 	\end{minipage}
 	&
@@ -256,7 +264,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{Exercise}[title={Bestimme jeweils an Hand des Schaubilds die Funktionsgleichung}, label=scheitelformA1]
-	
+
 	\begin{minipage}{\linewidth}\centering
 		\includegraphics[width=\linewidth]{\quadFkt/pics/scheitelA1.png}
 	\end{minipage}%
@@ -282,7 +290,7 @@
 \end{Exercise}\newpage
 
 \begin{Answer}[ref=scheitelformA1]
-	
+
 	\begin{enumerate}[label=\alph*)]
 		\item \textcolor{red}{\(f(x)=\tfrac{1}{4}\left(x-2\right)^2+1\)} \quad b) \textcolor{blue}{\(g(x)=-2\left(x-3\right)^2-1\)} \setcounter{enumi}{2}
 		\item \textcolor{ForestGreen}{\(h(x)=\tfrac{2}{3}\left(x+3\right)^2-3\)} \quad d) \textcolor{YellowOrange}{\(i(x)=-\tfrac{3}{4}\left(x+2\right)^2+3\)}
@@ -291,7 +299,7 @@
 \end{Answer}
 
 \begin{Answer}[ref=scheitelformA2]
-	
+
 	\begin{minipage}{\linewidth}\centering
 		\includegraphics[width=\linewidth]{\quadFkt/pics/scheitelA2.png}
 	\end{minipage}\vspace{.1cm}
@@ -301,7 +309,7 @@
 	\end{enumerate}
 \end{Answer}
 \begin{Answer}[ref=scheitelformA3]
-	
+
 	\begin{enumerate}[label=\alph*)]
 		\item Die Normalparabel wird mit dem Faktor 5 gestreckt, um 1 Einheit nach rechts und 2 Einheiten nach oben verschoben.
 		\item Die Normalparabel wird an der x-Achse gespiegelt, um 3 Einheiten nach links und 2,5 Einheiten nach unten verschoben.
@@ -309,7 +317,7 @@
 	\end{enumerate}
 \end{Answer}
 \begin{Answer}[ref=scheitelformA4]
-	
+
 	\begin{enumerate}[label=\alph*)]
 		\item \(f_v(x)=-3\left(x+1\right)^2-4\) \quad b) \(g_v(x)=-\left(x+3\right)^2-5\)
 	\end{enumerate}
