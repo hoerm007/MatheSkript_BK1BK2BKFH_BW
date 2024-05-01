@@ -56,7 +56,7 @@
 \usepackage{pgfmath}
 \usepackage{systeme}				% Für LGS
 \sysdelim..							% Keine geschweifte Klammer neben LGS
-\usepackage{gauss}
+\usepackage{nicematrix}
 
 \usepackage{bm}						%\bm{xxx} for bold in math mode
 
@@ -128,6 +128,9 @@
 \renewcommand{\AnswerHeader}{
 	\newpage\textbf{L{\"o}sung zu \ExerciseName\ \ExerciseHeaderNB}\smallskip}
 
+%Zum Erstellen von umkringelten Nummern
+\newcommand*\gaussrow[1]{\tikz[baseline=(char.base)]{
+        \node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
 
 \definecolor{tcback}{rgb}{.95,.95,.95}
 %Farbe für die Lösungen, die die Schüler selbst ausfüllen sollen
@@ -194,22 +197,50 @@
 	\setlength\parindent{0pt} %keine Einrückungen beim Start eines Paragraphen
     \setlength\tabcolsep{6pt}
 	%Header
-	\lohead{Mathematik}
+	\lohead{ }
 	%\cohead{} %im Arbeitsblatt
-	\rohead{Datum \phantom{00.00.0000}}
+	\rohead{}
 	\lehead{lehead}
 	\cehead{cehead}
 	\rehead{rehead}
 %	\cofoot[plain content]{} %keine Seitenzahlen
 	\cofoot[\pagemark]{\pagemark}
-	\title{Mathematik\\
-		Ein Skript für das Berufskolleg}
-	\author{Hermann Maier}
-%	\maketitle
-%	\newpage
-%	\tableofcontents
-%	\newpage
-
+%	\title{Mathematik
+%
+%		Ein Skript für das Berufskolleg}
+%	\author{Hermann Maier}
+%    \maketitle
+%    \null\vfill
+%    \copyright {\the\year} Maier, Hermann, \href{mailto:maier@privatemail.com}{maier@privatemail.com}
+%
+%    Dieses Werk unterliegt der CC BY-NC-SA 4.0 Lizenz \href{https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.de}{https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.de}.
+%
+%    Sie dürfen:
+%    \begin{itemize}
+%        \item Teilen — das Material in jedwedem Format oder Medium vervielfältigen und weiterverbreiten
+%        \item Bearbeiten — das Material remixen, verändern und darauf aufbauen
+%    \end{itemize}
+%    Unter folgenden Bedingungen:
+%    \begin{itemize}
+%        \item Namensnennung - Sie müssen angemessene Urheber- und Rechteangaben machen , einen Link zur Lizenz beifügen und angeben, ob Änderungen vorgenommen wurden. Diese Angaben dürfen in jeder angemessenen Art und Weise gemacht werden, allerdings nicht so, dass der Eindruck entsteht, der Lizenzgeber unterstütze gerade Sie oder Ihre Nutzung besonders.
+%        \item Nicht kommerziell - Sie dürfen das Material nicht für kommerzielle Zwecke nutzen.
+%        \item Weitergabe unter gleichen Bedingungen - Wenn Sie das Material remixen, verändern oder anderweitig direkt darauf aufbauen, dürfen Sie Ihre Beiträge nur unter derselben Lizenz wie das Original verbreiten.
+%    \end{itemize}
+%
+%    \bigskip
+%
+%    \iftoggle{qrcode}{QR-Codes erzeugt mit \href{https://forqrcode.com/}{forqrcode.com}}
+%
+%    \newpage
+%    \tableofcontents
+    \thispagestyle{empty}
+    \newpage
+	\lohead{Mathematik}
+    %\cohead{} %im Arbeitsblatt
+    \rohead{Datum \phantom{00.00.0000}}
+    \lehead{lehead}
+    \cehead{cehead}
+    \rehead{rehead}
 	%\setlength\extrarowheight{10pt} %Horizontales padding für Tabellen
 	\def\grundlagen{./Arbeitsblaetter/Grundlagen}
 	\def\linFkt{./Arbeitsblaetter/LineareFunktionen}
@@ -277,7 +308,7 @@
 %	\newpage
 %	\input{\ganzFkt/Nullstellen.tex}
 %	\newpage
-	\input{\ganzFkt/Wurzeln.tex}%TODO Geogebra
+%	\input{\ganzFkt/Wurzeln.tex}
 %	\newpage
 %	\input{\ganzFkt/Produktform.tex}
 %	\newpage
@@ -390,77 +421,223 @@
 % 	\newpage
 
 
-%\cohead{\Large\textbf{LGS}}
-%\fakesubsection{Lineare Gleichungssysteme}
-%Eine lineare Gleichung besteht aus einer oder mehreren Unbekannten, die jeweils nur mit der Hochzahl 1 vorkommen. Zudem dürfen keine Produkte von mehreren Unbekannten vorkommen, z.B. ist \mbox{\(2x-5y=3\)} eine lineare Gleichung mit den Unbekannten \(x\) und \(y\). Dagegen sind \mbox{\(-3x^2+5y=0\)} oder \mbox{\(-3x\cdot y=2\)} keine linearen Gleichungen.
-%
-%Unter einem linearen Gleichungssystem (LGS) versteht man mehrere lineare Gleichungen, in denen die gleichen Unbekannten vorkommen, z.B.
-%
-%\bigskip
-%
-%\begin{minipage}{\textwidth}
-%    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.3\textwidth-4ex}
-%        \[\systeme{2x+y=3,-x+3y=-5}\]
-%    \end{minipage}}%
-%    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.7\textwidth-4ex}
-%        Das LGS hat die Lösung \(x=2\) und \(y=-1\), da diese Werte beide Gleichungen gleichzeitig erfüllen:
-%
-%        \(2\cdot 2-1=3\) und \(-2+3\cdot (-1)=-5\)
-%    \end{minipage}}%
-%\end{minipage}
-%
-%\bigskip
-%
-%Wir betrachten lineare Gleichungssysteme, die aus 3 Unbekannten und 3 Gleichungen bestehen. Unsere Überlegungen lassen sich aber auch auf Gleichungssysteme mit 4 Unbekannten und 4 Gleichungen usw. übertragen.
-%
-%Zum Lösen linearer Gleichungssysteme verwenden wir das gaußsche Eliminationsverfahren. Mit Hilfe von \textbf{elementaren Umformungen} bringen wir das LGS in die \textbf{obere Dreiecksform}.
-%
-%\bigskip
-%
-%\textbf{Matrixform}
-%
-%Zur Übersichtlichkeit und um Schreibarbeit zu sparen, verwenden wir die Matrixform. Dazu schreiben wir nur die Koeffizienten vor den Unbekannten in eine Matrix und ersetzen die Gleichzeichen durch eine vertikale Linie. Betrachten wir folgendes Beispiel:
-%
-%\begin{minipage}{\textwidth}
-%    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
-%            \[\systeme{3x+2y-z=1, 2x-2y+4z=-2, -2x+y-2z=0}\]
-%    \end{minipage}}%
-%    \adjustbox{valign=middle}{\begin{minipage}{.2\textwidth}
-%        \vspace{.3cm}\centering
-%
-%        in
-%
-%        Matrixform
-%    \end{minipage}}%
-%    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
-%        \[\begin{gmatrix}[p]
-%        3  &  2 & -1 &  1\\
-%        2  & -2 &  4 & -2\\
-%        -2 &  1 & -2 &  0
-%        \end{gmatrix}\]
-%    \end{minipage}}%
-%\end{minipage}
-%
-%
-%
-%
-%
-%
-%\textbf{Elementare Umformungen:} Es gibt 3 elementare Umformungen. Diese ändern das Gleichungssystem, aber nicht die Lösung:
-%\begin{enumerate}
-%    \item \textbf{Vertauschen zweier Zeilen:}
-%
-%%    \[\systeme{3x+2y-z=1\vert I\rightarrow III, 2x-2y+4z=-2, -2x+y-2z=0}\]
-%
-%\end{enumerate}
-%
-%
-%
-%
-%
-%
-%
-%
+\cohead{\Large\textbf{LGS}}
+\fakesubsection{Lineare Gleichungssysteme}
+Eine lineare Gleichung besteht aus einer oder mehreren Unbekannten, die jeweils nur mit der Hochzahl 1 vorkommen. Zudem dürfen keine Produkte von mehreren Unbekannten vorkommen, z.B. ist \mbox{\(2x-5y=3\)} eine lineare Gleichung mit den Unbekannten \(x\) und \(y\). Dagegen sind \mbox{\(-3x^2+5y=0\)} oder \mbox{\(-3x\cdot y=2\)} keine linearen Gleichungen.
+
+Unter einem linearen Gleichungssystem (LGS) versteht man mehrere lineare Gleichungen, in denen die gleichen Unbekannten vorkommen, z.B.
+
+\bigskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.3\textwidth-4ex}
+        \[\systeme{2x+y=\phantom{-}3, -x+3y=-5}\]
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.7\textwidth-4ex}
+        Das LGS hat die Lösung \(x=2\) und \(y=-1\), da diese Werte beide Gleichungen gleichzeitig erfüllen:
+
+        \(2\cdot 2-1=3\) und \(-2+3\cdot (-1)=-5\)
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+Wir betrachten lineare Gleichungssysteme, die aus 3 Unbekannten und 3 Gleichungen bestehen. Unsere Überlegungen lassen sich aber auch auf Gleichungssysteme mit 4 Unbekannten und 4 Gleichungen usw. übertragen.
+
+Zum Lösen linearer Gleichungssysteme verwenden wir das gaußsche Eliminationsverfahren. Mit Hilfe von \textbf{elementaren Umformungen} bringen wir das LGS in die \textbf{obere Dreiecksform}.
+
+\bigskip
+
+\textbf{Matrixform}
+
+Zur Übersichtlichkeit und um Schreibarbeit zu sparen, verwenden wir die Matrixform. Dazu schreiben wir nur die Koeffizienten vor den Unbekannten in eine Matrix und ersetzen die Gleichzeichen durch eine vertikale Linie. Betrachten wir folgendes Beispiel:
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \[\systeme{5x+3z=-1, 2x-2y+4z=-2, -2x+y-2z=\phantom{-}0}\]
+    \end{minipage}}%
+    \adjustbox{valign=t}{\begin{minipage}{.2\textwidth}\centering
+        \vspace{.5cm}
+        in
+
+        Matrixform
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+        \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+        5  &  0 &  3 & -1\\
+        2  & -2 &  4 & -2\\
+        -2 &  1 & -2 &  0
+        \end{pNiceArray}\]}
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+\textbf{Elementare Umformungen:} Es gibt 3 elementare Umformungen. Diese ändern das Gleichungssystem, aber nicht die Lösung:
+\begin{enumerate}
+    \item \textbf{Vertauschen zweier Zeilen:}
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}[last-col]
+                5  &  0 &  3 & -1&\gaussrow{1}\leftrightarrow \gaussrow{3}\\
+                2  & -2 &  4 & -2&\\
+                -2 &  1 & -2 &  0&
+            \end{pNiceArray}\]}
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                    -2 &  1 & -2 &  0\\
+                    2  & -2 &  4 & -2\\
+                    5  &  0 &  3 & -1
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+    \item \textbf{Multiplizieren einer Zeile mit einer Zahl ungleich Null:}
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}[last-col]
+                    -2 &  1 & -2 &  0&\\
+                    2  & -2 &  4 & -2&\\
+                    5  &  0 &  3 & -1&\vert \cdot 0,4
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                    -2 &  1 & -2 &  0\\
+                    2  & -2 &  4 & -2\\
+                    2  &  0 &  1,2 & -0,4
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+    \item \textbf{Addition einer einer Zeile zu einer anderen:}
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}[last-col]
+                    -2 &  1 & -2\phantom{,0} &  0\phantom{,0}&\\
+                    2  & -2 &  4\phantom{,0} & -2\phantom{,0}&\vert + \gaussrow{1}\\
+                    2  &  0 &  1,2 & -0,4&\vert + \gaussrow{1}
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                    -2 &  1 & -2\phantom{,0} &  0\phantom{,0}\\
+                    0  & -1 &  2\phantom{,0} & -2\phantom{,0}\\
+                    0  &  1 &  -0,8 & -0,4
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+\end{minipage}
+\end{enumerate}
+\newpage
+In unserem Beispiel haben wir nun beinahe die obere Dreiecksform erreicht:
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}[last-col]
+                    -2 &  1 & -2\phantom{,0} &  0\phantom{,0}&\\
+                    0  & -1 &  2\phantom{,0} & -2\phantom{,0}&\\
+                    0  &  1 &  -0,8 & -0,4&\vert +\gaussrow{2}
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                    -2 &  1 & -2\phantom{,0} &  0\phantom{,0}\\
+                    0  & -1 &  2\phantom{,0} & -2\phantom{,0}\\
+                    0  &  0 &  1,2 & -2,4
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+Die \textbf{obere Dreiecksform} ist erreicht, wenn nur noch im oberen Dreieck Zahlen ungleich Null stehen:
+
+\medskip
+
+\begin{minipage}{\textwidth}
+\adjustbox{valign=t, padding = 2ex 0ex 2ex 0ex}{\begin{minipage}{.3\textwidth-4ex}
+    \[\begin{pNiceArray}{ccc|c}
+            -2 &  \phantom{-}1 & -2\phantom{,0} &  \phantom{-}0\phantom{,0}\\
+            0  & -1 &  \phantom{-}2\phantom{,0} & -2\phantom{,0}\\
+            0  &  0 &  1,2 & -2,4
+        \CodeAfter
+        \tikz \path[draw=blue, thick] (2-1)--(3-2);
+        \tikz \path[draw=blue, thick] (3-1)--(3-2);
+        \tikz \path[draw=blue, thick] (3-1)--(2-1);
+        \tikz \path[draw=red, thick] (1-1)--(1-3);
+        \tikz \path[draw=red, thick] (1-1)--(3-3);
+        \tikz \path[draw=red, thick] (1-3)--(3-3);
+        \end{pNiceArray}\]
+\end{minipage}}%
+\adjustbox{valign=t}{\begin{minipage}{.7\textwidth}
+        Im unteren, blau markierten Dreieck stehen nur noch Nullen. Nur im oberen, rot markierten Dreieck stehen noch Zahlen ungleich Null. ACHTUNG: Im roten Dreieck dürfen auch Nullen stehen.
+\end{minipage}}%
+\end{minipage}
+
+Die Lösung des LGS lässt sich von der oberen Dreiecksform aus leicht durch Rückwärtsauflösen bestimmen. Dazu gehen wir die Zeilen von unten nach oben, also rückwärts durch:
+
+\begin{itemize}
+    \item Dritte Zeile:
+
+    \textcolor{loes}{\(1,2z=-2,4 \Rightarrow z=-2\)}
+
+    \item Zweite Zeile:
+
+    \textcolor{loes}{\(-y+2\cdot(-2)=-2 \Rightarrow y=-2\)}
+
+    \item Erste Zeile:
+
+    \textcolor{loes}{\(-2x+1\cdot(-2)-2\cdot(-2)=0 \Rightarrow x=1\)}
+\end{itemize}
+
+Hinweis: Üblicherweise kombiniert man die beiden elementaren Umformungen der Multiplikation einer Zeile mit einer Zahl und der Addition einer Zeile zu einer anderen, z.B.:
+
+\medskip
+
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding = 0ex 0ex 4ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \[\begin{pNiceArray}{rrr|r}[last-col]
+                    -2 &  1 & -2 &  0&\\
+                    2  & -2 &  4 & -2&\\
+                    5  &  0 &  3 & -1&\vert  +2,5\cdot\gaussrow{1}
+            \end{pNiceArray}\]
+    \end{minipage}}%
+    \adjustbox{valign=t, padding = 4ex 0ex 0ex 0ex}{\begin{minipage}{.4\textwidth-4ex}
+            \textcolor{loes}{\[\begin{pNiceArray}{rrr|r}
+                    -2 &  1\phantom{,5} & -2 &  0\\
+                    2  & -2\phantom{,5} &  4 & -2\\
+                    0  &  2,5&  -2 & -1
+                \end{pNiceArray}\]}
+    \end{minipage}}%
+\end{minipage}
+
+\bigskip
+
+Zum Lösen eines LGS mit Hilfe des gaußschen Eliminationsverfahrens führt man also immer folgende Schritte aus:
+
+\medskip
+
+\begin{enumerate}
+    \item \textbf{Aufstellen der Matrixform.}
+    \item \textbf{Durch elementare Umformungen die Matrix auf die obere Dreiecksform bringen.}
+    \item \textbf{Durch Rückwärtsauflösen die Lösung des LGS bestimmen.}
+\end{enumerate}
 %
 %
 %\newpage
