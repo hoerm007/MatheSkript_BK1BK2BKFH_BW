@@ -19,20 +19,19 @@
 \usepackage{tcolorbox} 				        %Merkboxen
 \usepackage{array}
 \usepackage[hidelinks]{hyperref}			%Hyperlinks setzen
-\usepackage[]{exercise}			            %Nach hyperref einbinden! answerdelayed
+\usepackage[]{exercise}			            %Nach hyperref einbinden! answerdelayed, noanswer
 \usepackage{tikz}
 \usepackage{pgf}
 \usepackage{pgfmath}
-\usepackage{systeme}				% Für LGS
-\sysdelim..							% Keine geschweifte Klammer neben LGS
+\usepackage{systeme}				        % Für LGS
+\sysdelim..							        % Keine geschweifte Klammer neben LGS
 \usepackage{nicematrix}
-\usepackage{bm}						%\bm{xxx} for bold in math mode
+\usepackage{bm}						        %\bm{xxx} for bold in math mode
 \usepackage{adjustbox}
-\usepackage[]{geometry}    %[showframe] debugging mit Boxen
-\usepackage{marvosym} %\Lightning
+\usepackage[showframe]{geometry}            %[showframe] debugging mit Boxen
+\usepackage{marvosym}                       %\Lightning
 \usepackage{multirow}
 \usepackage{etoolbox}
-%\usepackage{showframe} %Zeichnet Rahmen ein, um overfull Box-Warnungen beheben zu können
 
 %%%%%%%%%%%%%%%%%%%%%%% MATHE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\td}{\ \text{d}}
@@ -50,10 +49,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%% FARBEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{tcback}{rgb}{.95,.95,.95}
-%Farbe für die Lösungen, die die Schüler selbst ausfüllen sollen
+%Farben für ein leeres Skript (Farbe der Lösung entspricht der Hintergrundfarbe)
 \definecolor{loes}{rgb}{1,1,1}
 \definecolor{loestc}{rgb}{.95,.95,.95}
-%Arbeitsblatt-Modus
+%Farben für ein ausgefülltes Skript. Die folgenden beiden Zeilen auskommentieren, um ein leeres Skript zu erhalten.
 \definecolor{loes}{rgb}{.0,.13,.8}
 \definecolor{loestc}{rgb}{.6,.0,.1}
 
@@ -63,6 +62,7 @@
 %\togglefalse{qrcode}
 
 %%%%%%%%%%%%%%%%% FORMATIERUNGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\titlepagestyle}{empty}
 \setlist[enumerate]{nosep, topsep=0pt}	%Kleinere Abstände bei Aufzählungen
 \setlist[itemize]{noitemsep, topsep=0pt}
 %Geometry anpassen
@@ -82,6 +82,7 @@
 %	boxsep=5pt,
 %	arc=0pt,outer arc=0pt,
 }
+%Fake(sub)sections tauchen im Inhaltsverzeichnis auf, erstellen im Dokument aber keine Überschriften
 \newcommand{\fakesection}[1]{%
 	\par\refstepcounter{section}% Increase section counter
 	\sectionmark{#1}% Add section mark (header)
@@ -132,6 +133,7 @@
 %Trennlinie in Kopfzeile
 \setkomafont{headsepline}{\color{black}}
 
+
 \begin{document}
     \newlength{\imgheight}
     \newlength{\qrheight}
@@ -144,13 +146,12 @@
 	\lehead{lehead}
 	\cehead{cehead}
 	\rehead{rehead}
-%	\cofoot[plain content]{} %keine Seitenzahlen
-	\cofoot[\pagemark]{\pagemark}
 	\title{Mathematik
 
 		Ein Skript für das Berufskolleg}
 	\author{Hermann Maier}
     \maketitle
+    \newpage
     \null\vfill
     \copyright {\the\year} Maier, Hermann, \href{mailto:maier@privatemail.com}{maier@privatemail.com}
 
@@ -170,11 +171,14 @@
 
     \bigskip
 
-    \iftoggle{qrcode}{QR-Codes erzeugt mit \href{https://forqrcode.com/}{forqrcode.com}}
+    \iftoggle{qrcode}{QR-Codes erzeugt mit \href{https://forqrcode.com/}{forqrcode.com}
 
+    \bigskip}
+
+    Aktuelle Version in Form der Quelldateien unter \href{https://github.com/hoerm007/MatheSkript/}{github.com/hoerm007/MatheSkript}
     \newpage
+    \cofoot[\pagemark]{\pagemark}
     \tableofcontents
-    \thispagestyle{empty}
     \newpage
 	\lohead{Mathematik}
     %\cohead{} %im Arbeitsblatt
@@ -209,7 +213,7 @@
 	\fakesection{Lineare Funktionen}
 	\input{\linFkt/Begriffe.tex}
 	\newpage
-	\input{\linFkt/Einfuehrung.tex}%TODO erste/zweite Winkelhalbierende erwähnen
+	\input{\linFkt/Einfuehrung.tex}
 	\newpage
 	\input{\linFkt/Punktprobe.tex}
 	\newpage
