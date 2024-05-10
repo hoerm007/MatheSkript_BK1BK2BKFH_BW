@@ -1,107 +1,41 @@
 \documentclass[a4paper,12pt, headsepline, ngerman]{scrartcl}
 
+%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{scrlayer-scrpage}
 \usepackage[nodisplayskipstretch]{setspace} %vspace before/after math mode
-%\setstretch{5}
-\raggedbottom
-\onehalfspacing
-%\renewcommand*{\familydefault}{\sfdefault}
-
-
-
-\pagestyle{scrheadings} %KOMA-Script mit Kopf-Fuß-Zeilen
-\usepackage[hidelinks]{hyperref}			%Hyperlinks setzen
-\usepackage{babel}				%Silbentrennung mit ngerman
-
-\usepackage{booktabs} 			% For prettier tables
-
-\usepackage{mathtools}  		%Mathe-Paket
-\usepackage{amssymb}			%Symbole
-\usepackage{bbm}				%\mathbbm{N} für natürliche Zahlen o.ä.
-%\usepackage{graphicx}			%Optionen für \includegraphics{imagefile}
-%Solte in mathtools beinhaltet sein
-\usepackage{color}				%\textcolor{blue}{text...}
-\usepackage[dvipsnames]{xcolor}
+\usepackage{babel}				            %Silbentrennung mit ngerman
+\usepackage{booktabs} 			            %For prettier tables
+\usepackage{mathtools}  		            %Mathe-Paket
+\usepackage{amssymb}			            %Symbole
+\usepackage{bbm}			             	%\mathbbm{N} für natürliche Zahlen o.ä.
+\usepackage{color}				            %\textcolor{blue}{text...}
+\usepackage[dvipsnames]{xcolor}             % Mehr Farben
 %Häufig verwendetet Farben
 %ForestGreen 		RGB(  0,155, 85)
 %YellowOrange		RGB(250,162, 26)
-
-\usepackage[T1]{fontenc}		%Umlaute
-
-
-%\usepackage{showframe} %Zeichnet Rahmen ein, um overfull Box-Warnungen beheben zu können
-
-\usepackage{ulem}
-%\uline{important} underlined text
-%\uuline{urgent} double-underlined text
-%\uwave{boat} wavy underline
-%\sout{wrong} line struck through word
-%\xout{removed} marked over like //////////
-%\dashuline{dashing} dashed underline
-%\dotuline{dotty} dotted underline
-
-%\usepackage{}
-\usepackage{cancel}					%Durchstreichen von Dingen in Formeln
-\usepackage{enumitem}				%Aufzählungen [label=\alph*)]
-\setlist[enumerate]{nosep, topsep=0pt}	%Kleinere Abstände bei Aufzählungen
-\setlist[itemize]{noitemsep, topsep=0pt}
-
-\usepackage{framed}                 %Rahmen machen \begin{framed} ... \end{framed}
-
-\usepackage{tcolorbox} 				%Für Boxen um Text
+\usepackage[T1]{fontenc}		            %Umlaute
+\usepackage{cancel}					        %Durchstreichen von Dingen in Formeln
+\usepackage{enumitem}				        %Aufzählungen [label=\alph*)]
+\usepackage{tcolorbox} 				        %Merkboxen
 \usepackage{array}
-%Plots
+\usepackage[hidelinks]{hyperref}			%Hyperlinks setzen
+\usepackage[]{exercise}			            %Nach hyperref einbinden! answerdelayed
 \usepackage{tikz}
 \usepackage{pgf}
 \usepackage{pgfmath}
 \usepackage{systeme}				% Für LGS
 \sysdelim..							% Keine geschweifte Klammer neben LGS
 \usepackage{nicematrix}
-
 \usepackage{bm}						%\bm{xxx} for bold in math mode
-
 \usepackage{adjustbox}
 \usepackage[]{geometry}    %[showframe] debugging mit Boxen
-\geometry{a4paper, portrait, left=1.5cm, right=2cm, top=1cm, bottom=2cm, headsep=0.2cm, includehead, head=27.30193pt}
-
 \usepackage{marvosym} %\Lightning
 \usepackage{multirow}
 \usepackage{etoolbox}
-\renewcommand{\mvchr}[1]{{\mbox{\mvs\symbol{#1}}}} %\Lightning in math mode
+%\usepackage{showframe} %Zeichnet Rahmen ein, um overfull Box-Warnungen beheben zu können
 
-\usetikzlibrary{intersections}
-
-\setkomafont{headsepline}{\color{black}}
-
-\usepackage{amsthm}					%Definitionsumgebung für \newtheorem{defi}{Definition}[section] usw.
-\theoremstyle{definition}
-\newtheorem{defi}{Definition}[subsection]
-\newtheorem*{bsp}{Beispiel}
-\newtheorem{kon}[defi]{Konstruktion}
-\newtheorem{nota}[defi]{Notation}
-\newtheorem{cha}[defi]{Charakterisierung}
-\newtheorem{norm}[defi]{Normierung}
-\newtheorem{bem}[defi]{Bemerkung}
-\newtheorem{folg}[defi]{Folgerung}
-\newtheorem{beob}[defi]{Beobachtung}
-\newtheorem{erin}[defi]{Erinnerung}
-\newtheorem{sit}[defi]{Situation}
-%Einheiten
-\newcommand{\ms}{\frac{m}{s}}
-\newcommand{\kmh}{\frac{km}{h}}
-%Mathebefehle
-\newcommand{\beq}{\begin{align}}
-\newcommand{\eeq}{\end{align}}
-\newcommand{\beqn}{\begin{align*}}
-\newcommand{\eeqn}{\end{align*}}
+%%%%%%%%%%%%%%%%%%%%%%% MATHE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\td}{\ \text{d}}
-\newcommand{\ul}{\underline}
-\newcommand{\tTr}{\text{Tr}}
-\newcommand{\bra}[1]{\langle #1\vert}
-\newcommand{\braa}{\langle}
-\newcommand{\ket}[1]{\vert#1\rangle}
-\newcommand{\kett}{\rangle}
-\newcommand{\braket}[2]{\langle #1\vert#2\rangle}
 \newcommand{\sinn}[1]{\sin\hspace{-1pt}\left(#1\right)}
 \newcommand{\arcsinn}[1]{\sin^{-1}\hspace{-2pt}\left(#1\right)}
 \newcommand{\coss}[1]{\cos\hspace{-1pt}\left(#1\right)}
@@ -111,27 +45,10 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
-
-%Exercise-Paket Umbenennungen
-\usepackage[]{exercise}			%Nach hyperref einbinden! answerdelayed
-\renewcommand{\listexercisename}{Liste der Aufgaben}%
-\renewcommand{\ExerciseName}{Aufgabe}%
-\renewcommand{\AnswerName}{L{\"o}sung zu Aufgabe}%
-\renewcommand{\ExerciseListName}{Aufg.}%
-\renewcommand{\AnswerListName}{L{\"o}sung}%
-\renewcommand{\ExePartName}{Teil}%
-\renewcommand{\ArticleOf}{von\ }%
-%\renewcommand{\ExerciseHeaderTitle}{\ExerciseTitle}
-\renewcommand{\ExerciseHeader}{%
-	\textbf{\large\ExerciseHeaderDifficulty\ExerciseName\ %
-	\ExerciseHeaderNB\normalsize\ExerciseHeaderTitle\ExerciseHeaderOrigin}\medskip}
-\renewcommand{\AnswerHeader}{
-	\newpage\textbf{L{\"o}sung zu \ExerciseName\ \ExerciseHeaderNB}\smallskip}
-
-%Zum Erstellen von umkringelten Nummern
-\newcommand*\gaussrow[1]{\tikz[baseline=(char.base)]{
+\newcommand*\gaussrow[1]{\tikz[baseline=(char.base)]{%Umkringelte Nummern für LGS
         \node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
 
+%%%%%%%%%%%%%%%%%%%%%% FARBEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{tcback}{rgb}{.95,.95,.95}
 %Farbe für die Lösungen, die die Schüler selbst ausfüllen sollen
 \definecolor{loes}{rgb}{1,1,1}
@@ -140,11 +57,17 @@
 \definecolor{loes}{rgb}{.0,.13,.8}
 \definecolor{loestc}{rgb}{.6,.0,.1}
 
+%%%%%%%%%%%%%%%%%%%% IF-TOGGLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtoggle{qrcode}
 \toggletrue{qrcode}
 %\togglefalse{qrcode}
-%\iftoggle{qrcode}{true}{false}
 
+%%%%%%%%%%%%%%%%% FORMATIERUNGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlist[enumerate]{nosep, topsep=0pt}	%Kleinere Abstände bei Aufzählungen
+\setlist[itemize]{noitemsep, topsep=0pt}
+%Geometry anpassen
+\geometry{a4paper, portrait, left=1.5cm, right=2cm, top=1cm, bottom=2cm, headsep=0.2cm, includehead, head=27.30193pt}
+%Merkboxen
 \tcbset{
 %	frame code={}
 %	center title,
@@ -159,7 +82,6 @@
 %	boxsep=5pt,
 %	arc=0pt,outer arc=0pt,
 }
-%\sqrt[\leftroot{0}\uproot{2}n]{x}
 \newcommand{\fakesection}[1]{%
 	\par\refstepcounter{section}% Increase section counter
 	\sectionmark{#1}% Add section mark (header)
@@ -172,14 +94,12 @@
 	\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}% Add section to ToC
 	% Add more content here, if needed.
 }
-
 %Kein hässlicher Abstand vor Klammer auf/zu mit \left(..\right)
 \let\originalleft\left
 \let\originalright\right
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
 %Kein vertikaler Abstand vor/nach Mathegruppen
-
 \newcommand{\zerodisplayskips}{%
 	\setlength{\abovedisplayskip}{0pt}%
 	\setlength{\belowdisplayskip}{0pt}%
@@ -188,8 +108,29 @@
 \appto{\normalsize}{\zerodisplayskips}
 \appto{\small}{\zerodisplayskips}
 \appto{\footnotesize}{\zerodisplayskips}
-
-%\sqrt[\leftroot{0}\uproot{1}n]{y} für bessere Wurzeln
+%Textformatierung
+\raggedbottom
+\onehalfspacing
+\pagestyle{scrheadings}                     %KOMA-Script mit Kopf-Fuß-Zeilen
+%Exercise-Package anpassen
+\renewcommand{\listexercisename}{Liste der Aufgaben}%
+\renewcommand{\ExerciseName}{Aufgabe}%
+\renewcommand{\AnswerName}{L{\"o}sung zu Aufgabe}%
+\renewcommand{\ExerciseListName}{Aufg.}%
+\renewcommand{\AnswerListName}{L{\"o}sung}%
+\renewcommand{\ExePartName}{Teil}%
+\renewcommand{\ArticleOf}{von\ }%
+%\renewcommand{\ExerciseHeaderTitle}{\ExerciseTitle}
+\renewcommand{\ExerciseHeader}{%
+    \textbf{\large\ExerciseHeaderDifficulty\ExerciseName\ %
+        \ExerciseHeaderNB\normalsize\ExerciseHeaderTitle\ExerciseHeaderOrigin}\medskip}
+\renewcommand{\AnswerHeader}{
+    \newpage\textbf{L{\"o}sung zu \ExerciseName\ \ExerciseHeaderNB}\smallskip}
+%\Lightning in math mode
+\renewcommand{\mvchr}[1]{{\mbox{\mvs\symbol{#1}}}}
+\usetikzlibrary{intersections}
+%Trennlinie in Kopfzeile
+\setkomafont{headsepline}{\color{black}}
 
 \begin{document}
     \newlength{\imgheight}
@@ -420,6 +361,7 @@
  	\newpage
  	\input{\trigonometrie/TrigoStammfunktionen.tex}
  	\newpage
+
 
 
 %\cohead{\Large\textbf{LGS}}
@@ -963,7 +905,7 @@
 	\hline
 \end{tabular}
 
-
+\sqrt[\leftroot{0}\uproot{2}n]{x}
 
 Verhalten
 \(f(x)\xrightarrow{\hphantom{\ }x\to-\infty\hphantom{\ }}\infty\)
