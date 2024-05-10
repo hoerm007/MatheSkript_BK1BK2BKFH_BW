@@ -7,4 +7,4 @@ Das Skript kann über die Definition der Farben loes und loestc "leer" erstellt 
 Der Autor teilt das leere Skript an die SuS aus und stellt das ausgefüllte Skript online zur Verfügung. So können abwesende SuS selbständig verpassten Stoff nachholen. 
 Die Lösungen zu allen Übungsaufgaben sind im Skript mit in begriffen. 
 
-Zu ausgewählten Themen wurden Materialien in Geogebra erstellt, die vom Skript per klickbarem QR-Code erreichbar sind.
+Zu ausgewählten Themen wurden Materialien in Geogebra erstellt, die vom Skript per klickbarem QR-Code erreichbar sind. Das Erstellen der QR-Codes im Skript kann über den Toggle "qrcode" an- und ausgeschaltet werden.
