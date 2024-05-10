@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt, headsepline, ngerman]{scrartcl}
+\documentclass[a4paper,12pt, headsepline, ngerman, toc=left]{scrartcl}
 
 %%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{scrlayer-scrpage}
@@ -28,7 +28,7 @@
 \usepackage{nicematrix}
 \usepackage{bm}						        %\bm{xxx} for bold in math mode
 \usepackage{adjustbox}
-\usepackage[showframe]{geometry}            %[showframe] debugging mit Boxen
+\usepackage[]{geometry}            %[showframe] debugging mit Boxen
 \usepackage{marvosym}                       %\Lightning
 \usepackage{multirow}
 \usepackage{etoolbox}
@@ -132,7 +132,9 @@
 \usetikzlibrary{intersections}
 %Trennlinie in Kopfzeile
 \setkomafont{headsepline}{\color{black}}
-
+\makeatletter
+\renewcommand*{\@pnumwidth}{2em}%Platz für 3-stellige Seitenzahlen im toc
+\makeatother
 
 \begin{document}
     \newlength{\imgheight}
