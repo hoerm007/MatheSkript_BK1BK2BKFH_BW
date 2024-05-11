@@ -1,7 +1,7 @@
 % !TeX root = ../../Skript.tex
 \cohead{\Large\textbf{Wendepunkte}}
 \fakesubsection{Wendepunkte}
-Als Wendepunkte bezeichnet man die Punkte einer Funktion an denen die Krümmung wechselt, also die Funktion von einer Linkskurve in eine Rechtskurve übergeht oder umgekehrt. Oder anders ausgedrückt, eine Funktion hat genau dann einen Wendepunkt, wenn die zweite Ableitung eine Nullstelle mit Vorzeichenwechsel hat.\\
+Als Wendepunkte bezeichnet man die Punkte des Schaubilds einer Funktion an denen die Krümmung wechselt, also das Schaubild von einer Linkskurve in eine Rechtskurve übergeht oder umgekehrt. Anders ausgedrückt, das Schaubild einer Funktion hat genau dann einen Wendepunkt, wenn die zweite Ableitung eine Nullstelle mit Vorzeichenwechsel hat.\\
 Die folgenden drei Aussagen sind äquivalent:
 
 \bigskip
@@ -33,23 +33,44 @@ Beispiel:
 
 			\(f(x)=\frac{1}{6}x^3-\frac{1}{2}x^2-\frac{3}{2}x+1\)
 
-			\textcolor{loes}{Das Schaubild von \(f(x\) hat bei \(x_0\)=1 einen Wendepunkt.}
+			\textcolor{loes}{Das Schaubild von \(f(x)\) hat bei \(x_0\)=1 einen Wendepunkt.}
 	\end{minipage}}%
 	\adjustbox{valign=t, padding=1.5ex 0ex 0ex 0ex}{\begin{minipage}{\textwidth/\real{3}-1ex}
 			\centering\includegraphics[width=\textwidth]{\ableitung/pics/WP_ableitung.png}
 
 			\(f'(x)=\frac{1}{2}x^2-x-\frac{3}{2}\)
 
-			\textcolor{loes}{Das Schaubild von \(f'(x\) hat bei \(x_0\)=1 einen Extrempunkt.}
+			\textcolor{loes}{Das Schaubild von \(f'(x)\) hat bei \(x_0\)=1 einen Extrempunkt.}
 	\end{minipage}}%
 	\adjustbox{valign=t, padding=1.5ex 0ex 0ex 0ex}{\begin{minipage}{\textwidth/\real{3}-1ex}
 			\centering\includegraphics[width=\textwidth]{\ableitung/pics/WP_zwableitung.png}
 
 			\(f''(x)=x-1\)
 
-			\textcolor{loes}{Das Schaubild von \(f''(x\) hat bei \(x_0\)=1 eine Nullstelle mit Vorzeichenwechsel.}
+			\textcolor{loes}{Das Schaubild von \(f''(x)\) hat bei \(x_0\)=1 eine Nullstelle mit Vorzeichenwechsel.}
 	\end{minipage}}%
 \end{minipage}
+
+\bigskip
+
+\begin{tcolorbox}[width=\textwidth]
+    \textbf{Wendetangente:}
+
+    \bigskip
+
+    \textcolor{loestc}{Die Tangente im Wendepunkt nennt man Wendetangente.}
+
+    \bigskip
+\end{tcolorbox}
+
+\bigskip
+
+Die Wendetangente im obigen Beispiel berührt das Schaubild im Wendepunkt bei \(W\left(1|f(1)=-\frac{5}{6}\right)\) mit der Steigung \(m_t=f'(1)=-2\). Der \(y\)-Achsenabschnitt ergibt sich aus \(m_t\cdot x_0+b=f(x_0)\)
+\begin{align*}
+    -2\cdot 1 + b &= -\frac{5}{6}\ \vert+2\\
+    b&=\frac{7}{6}
+\end{align*}
+Die Wendetangente hat also die Gleichung \(t_W(x)=-2x+\frac{7}{6}\)
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Exercise}[title={\raggedright Bestimme die Wendepunkte.}, label=wendepunkteA1]
