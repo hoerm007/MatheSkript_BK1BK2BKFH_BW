@@ -47,7 +47,13 @@ Beispiel: Bestimme die Tangente an die Funktion \(f(x)=\frac{1}{2}x^2-x-1\) an d
 		\end{enumerate}
 	\end{minipage}}%
 	\adjustbox{valign=t, padding=2ex 0ex 0ex 0ex}{\begin{minipage}{0.5\textwidth-4ex}
-		\centering\includegraphics[width=\textwidth]{\ableitung/pics/tangenteBsp.png}
+            \iftoggle{qrcode}{
+            \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\ableitung/pics/tangenteBsp.png}}%
+            \setlength{\qrheight}{2.5cm}%
+            \includegraphics[width=\linewidth]{\ableitung/pics/tangenteBsp.png}%
+            \raisebox{0pt}{\makebox[0pt][r]{\href{https://www.geogebra.org/m/ubfugbep}{\includegraphics[height=\qrheight]{\ableitung/pics/TangentenQR.png}}}}%
+        }{
+            \includegraphics[width=\linewidth]{\ableitung/pics/tangenteBsp.png}}%
 	\end{minipage}}%
 \end{minipage}\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
