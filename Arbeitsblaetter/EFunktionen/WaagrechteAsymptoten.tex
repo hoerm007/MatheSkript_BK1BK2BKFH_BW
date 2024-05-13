@@ -18,15 +18,22 @@ Jede Funktion vom Typ \(f(x)=a\cdot e^{kx}\) hat als Asymptote die x-Achse \(y=0
 		\textcolor{blue}{\(f_2(x)=e^x+2\)} mit Asymptote \textcolor{blue}{\(y=2\)}
 	\end{minipage}}%
 	\adjustbox{valign=t, padding =2ex 0ex 0ex 0ex}{\begin{minipage}{0.5\textwidth-2ex}
-		\begin{minipage}{\textwidth}
-			\includegraphics[width=\linewidth]{\eFkt/pics/versch2.png}
+		\begin{minipage}{\linewidth}
+            \iftoggle{qrcode}{%
+                \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\eFkt/pics/versch2.png}}%
+                \setlength{\qrheight}{2.5cm}%
+                \includegraphics[width=\linewidth]{\eFkt/pics/versch2.png}%
+                \raisebox{\imgheight-\qrheight}{\makebox[0pt][r]{\href{https://www.geogebra.org/m/xnzg5tn5}{\includegraphics[height=\qrheight]{\eFkt/pics/waagrechteAsymptotenQR.png}}}}%
+            }{%
+                \includegraphics[width=\linewidth]{\eFkt/pics/versch2.png}
+            }%
 		\end{minipage}%
 
         \smallskip
 
 		\textcolor{red}{\(f_3(x)=2e^{-0,5x}\)} um \textcolor{blue}{1} nach unten verschoben:
 
-		\textcolor{blue}{\(f_3(x)=2e^{-0,5x}-1\)} mit Asymptote \textcolor{blue}{\(y=-1\)}
+		\textcolor{blue}{\(f_4(x)=2e^{-0,5x}-1\)} mit Asymptote \textcolor{blue}{\(y=-1\)}
 	\end{minipage}}%
 \end{minipage}
 
