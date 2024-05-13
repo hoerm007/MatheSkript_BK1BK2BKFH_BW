@@ -8,7 +8,13 @@ Wie die Wurzel zu \(x^2\) und die dritte Wurzel zu \(x^3\) gibt es auch zu \(e^x
 Mit Hilfe des Schaubilds von \(e^x\) überlegen wir uns, welche Werte man in den \(ln(y)\) einsetzen darf und welche Ergebnisse man erhält:
 
 \begin{minipage}{\textwidth}\centering
-	\includegraphics[width=\linewidth]{\eFkt/pics/ln.png}
+    \iftoggle{qrcode}{
+    \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\eFkt/pics/ln.png}}%
+    \setlength{\qrheight}{2.5cm}%
+    \includegraphics[width=\linewidth]{\eFkt/pics/ln.png}%
+    \raisebox{\imgheight-\qrheight}{\makebox[0pt][r]{\href{https://www.geogebra.org/m/dduaugse}{\includegraphics[height=\qrheight]{\eFkt/pics/natuerlicherLogarithmusQR.png}}}}%
+    }{
+    \includegraphics[width=\linewidth]{\eFkt/pics/ln.png}}%
 \end{minipage}\vspace{0.2cm}
 \begin{itemize}
 	\item \(y\) ist größer 1 bzw. \(y>1\):
