@@ -2,13 +2,22 @@
 \cohead{\Large\textbf{Normalengleichungen}}
 \fakesubsection{Normalengleichungen bestimmen}
 Eine Normale an eine Funktion ist eng mit der Tangenten verwandt. Während eine Tangente am Berührpunkt die gleiche Steigung wie die Funktion hat, schneidet eine Normale die Funktion senkrecht. Damit eine Gerade \(n(x)=mx+b\) eine Normale an der Stelle \(x_0\) an das Schaubild einer Funktion \(f(x)\) ist, müssen 2 Bedingungen erfüllt sein:
-\begin{tcolorbox}
 
-    \bigskip
+\iftoggle{qrcode}{\setlength{\qrheight}{2.5cm}}{\setlength{\qrheight}{0cm}}%
+\begin{minipage}{\linewidth}
+    \begin{minipage}{\linewidth-\qrheight}
+    \begin{tcolorbox}[width=\linewidth]
 
-	\textcolor{loestc}{Die Normalen an der Stelle \(x_0\) muss senkrecht zur Funktion stehen:
+        \bigskip
+
+	   \textcolor{loestc}{Die Normalen an der Stelle \(x_0\) muss senkrecht zur Funktion stehen:
 		\[m\cdot f'(x_0)=-1\]}
-\end{tcolorbox}
+    \end{tcolorbox}%
+    \end{minipage}%
+    \iftoggle{qrcode}{\begin{minipage}{\qrheight}
+        \href{https://www.geogebra.org/m/faavja2d}{\includegraphics[height=\qrheight]{\ableitung/pics/NormalenQR.png}}%
+    \end{minipage}}{}%
+\end{minipage}%
 \begin{tcolorbox}
 
     \bigskip
