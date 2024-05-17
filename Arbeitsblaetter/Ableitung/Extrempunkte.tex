@@ -1,3 +1,4 @@
+% !TeX root = ../../Skript.tex
 \cohead{\Large\textbf{Extrempunkte}}
 \fakesubsection{Extrem- und Sattelpunkte}
 \textbf{Hochpunkt}
@@ -59,14 +60,24 @@ Ein Sattelpunkt ist kein Extrempunkt, jedoch ist die Ableitung am Sattelpunkt eb
 \end{minipage}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\setlength{\tabcolsep}{0pt}
-\begin{tabular}{p{\textwidth/\real{3}}p{\textwidth/\real{3}}p{\textwidth/\real{3}}}
-	Hochpunkt HP&Tiefpunkt TP&Sattelpunkt SP\\
-	\midrule
-	\multicolumn{3}{c}{\textcolor{loes}{NST in der Ableitung: \(f'(x)=0\)}}\vspace{1cm}\\
-	\textcolor{loes}{NST mit +-VZW}&\textcolor{loes}{NST mit -+VZW}&\textcolor{loes}{NST ohne VZW}\\
-	\bottomrule
-\end{tabular}}
+\iftoggle{qrcode}{\setlength{\qrheight}{2.5cm}}{\setlength{\qrheight}{0cm}}%
+\newlength{\extremTableWidth}%
+\setlength{\extremTableWidth}{\linewidth-\qrheight}%
+\begin{minipage}{\textwidth}
+    \adjustbox{valign=t, padding =0ex 0ex 0ex 0ex}{\begin{minipage}{\extremTableWidth}
+        {\setlength{\tabcolsep}{0pt}%
+            \begin{tabular}{p{\extremTableWidth/\real{3}}p{\extremTableWidth/\real{3}}p{\extremTableWidth/\real{3}}}
+                Hochpunkt HP&Tiefpunkt TP&Sattelpunkt SP\\
+                \midrule
+                \multicolumn{3}{c}{\textcolor{loes}{NST in der Ableitung: \(f'(x)=0\)}}\vspace{1cm}\\
+                \textcolor{loes}{NST mit +-VZW}&\textcolor{loes}{NST mit -+VZW}&\textcolor{loes}{NST ohne VZW}\\
+                \bottomrule
+        \end{tabular}}
+    \end{minipage}}%
+    \iftoggle{qrcode}{\adjustbox{valign=t, padding =0ex 0ex 0ex 0ex}{\begin{minipage}{\qrheight}%
+            \href{https://www.geogebra.org/m/ecphwwvv}{\includegraphics[height=\qrheight]{\ableitung/pics/ExtrempunkteQR.png}}%
+        \end{minipage}}}{}%
+\end{minipage}%
 
 \bigskip
 
@@ -85,7 +96,10 @@ Ist \(x_0\) eine NST der ersten Ableitung \(f'(x_0)=0\) so gilt:
 	\end{minipage}}%
 \end{minipage}
 
-\vspace{2.5ex}
+\vspace{1.5ex}
+\par\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{1.5ex}
 
 \begin{minipage}{\textwidth}
 	\adjustbox{valign=t}{\begin{minipage}{0.7\textwidth}
@@ -96,7 +110,10 @@ Ist \(x_0\) eine NST der ersten Ableitung \(f'(x_0)=0\) so gilt:
 	\end{minipage}}%
 \end{minipage}
 
-\vspace{2.5ex}
+\vspace{1.5ex}
+\par\noindent\rule{\textwidth}{0.4pt}
+
+\vspace{1.5ex}
 
 \begin{minipage}{\textwidth}
 	\adjustbox{valign=t}{\begin{minipage}{0.7\textwidth}
