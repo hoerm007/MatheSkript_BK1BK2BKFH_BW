@@ -1,8 +1,22 @@
 % !TeX root = ../../Skript.tex
 \cohead{\Large\textbf{Allgemeine Sinus-/Cosinusfunktion}}
 \fakesubsection{Allgemeine Sinus- und Cosinusfunktion}
-Die allgemeine Sinusfunktion bzw. Cosinusfunktion sind gegeben durch:
-\[f(x)=a\sin\left(bx\right)+d\qquad g(x)=a\cos\left(bx\right)+d\]
+\iftoggle{qrcode}{\setlength{\qrheight}{2.5cm}}{\setlength{\qrheight}{0cm}}%
+\newlength{\trigoAllg}%
+\setlength{\trigoAllg}{\linewidth-\qrheight}%
+\begin{minipage}{\linewidth}
+    \adjustbox{valign=t, padding =0ex 0ex 0ex 0ex}{\begin{minipage}{\trigoAllg}
+        Die allgemeine Sinusfunktion bzw. Cosinusfunktion sind gegeben durch:
+
+        \[f(x)=a\sin\left(bx\right)+d\qquad g(x)=a\cos\left(bx\right)+d\]
+     \end{minipage}}%
+    \iftoggle{qrcode}{\adjustbox{valign=t, padding =0ex 0ex 0ex 0ex}{\begin{minipage}{\qrheight}%
+                \href{https://www.geogebra.org/m/kuhfc6gm}{\includegraphics[height=\qrheight]{\trigonometrie/pics/AllgSinCosQR.png}}%
+    \end{minipage}}}{}%
+\end{minipage}%
+
+\iftoggle{qrcode}{}{\bigskip}%
+
 \begin{itemize}
 	\item \(a\): \textcolor{loes}{Streckfaktor relativ zum Mittelwert in \(y\)-Richtung. Der Betrag von \(a\) gibt die Amplitude an.}
 
