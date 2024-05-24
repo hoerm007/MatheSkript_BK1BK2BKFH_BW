@@ -28,17 +28,27 @@ Gegeben ist das Schaubild der Funktion \(f(x)=\coss{x}\). Skizziere das Schaubil
 \end{minipage}%
 
 \newpage
+\iftoggle{qrcode}{\setlength{\qrheight}{2.5cm}}{\setlength{\qrheight}{0cm}}%
+\newlength{\trigoAbl}%
+\setlength{\trigoAbl}{\linewidth-\qrheight}%
+\begin{minipage}{\linewidth}
+    \adjustbox{valign=t, padding =0ex 0ex 0ex 0ex}{\begin{tcolorbox}[width=\trigoAbl]
+            \textbf{Ableitungsregeln für Sinus und Cosinus}
+            \begin{align*}
+                f(x)&=a\cdot\sinn{bx}&g(x)&=a\cdot\coss{bx}\\
+                \textcolor{loestc}{f'(x)}&\textcolor{loestc}{\;=a\cdot b\cdot\coss{bx}}&\textcolor{loestc}{g'(x)}&\textcolor{loestc}{\;=-a\cdot b\cdot\sinn{bx}}
+            \end{align*}
 
-\begin{tcolorbox}
-	\textbf{Ableitungsregeln für Sinus und Cosinus}
-		\begin{align*}
-			f(x)&=a\cdot\sinn{bx}&g(x)&=a\cdot\coss{bx}\\
-			\textcolor{loestc}{f'(x)}&\textcolor{loestc}{\;=a\cdot b\cdot\coss{bx}}&\textcolor{loestc}{g'(x)}&\textcolor{loestc}{\;=-a\cdot b\cdot\sinn{bx}}
-		\end{align*}
+            \bigskip
 
-        \bigskip
+    \end{tcolorbox}}%
+    \iftoggle{qrcode}{\adjustbox{valign=t, padding =0ex 0ex 0ex 0ex}{\begin{minipage}{\qrheight}%
+                \href{https://www.geogebra.org/m/uv4dpht4}{\includegraphics[height=\qrheight]{\trigonometrie/pics/TrigAbleitungQR.png}}%
+    \end{minipage}}}{}%
+\end{minipage}%
 
-\end{tcolorbox}
+\medskip
+
 Beispiele:
 \begin{align*}
 	f_1(x)&=2\cdot\sinn{3x}&g_1(x)&=4\cdot\coss{0,5x}\\
