@@ -10,9 +10,6 @@
 \usepackage{bbm}			             	%\mathbbm{N} für natürliche Zahlen o.ä.
 \usepackage{color}				            %\textcolor{blue}{text...}
 \usepackage[dvipsnames]{xcolor}             % Mehr Farben
-%Häufig verwendetet Farben
-%ForestGreen 		RGB(  0,155, 85)
-%YellowOrange		RGB(250,162, 26)
 \usepackage[T1]{fontenc}		            %Umlaute
 \usepackage{cancel}					        %Durchstreichen von Dingen in Formeln
 \usepackage{enumitem}				        %Aufzählungen [label=\alph*)]
@@ -51,20 +48,30 @@
 \newcommand*\gaussrow[1]{\tikz[baseline=(char.base)]{
         \node[shape=circle,draw,inner sep=1.2pt] (char) {#1};}}
 
-%%%%%%%%%%%%%%%%%%%%%% FARBEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\definecolor{tcback}{rgb}{.95,.95,.95}
-%Farben für ein leeres Skript (Farbe der Lösung entspricht der Hintergrundfarbe)
-\definecolor{loes}{rgb}{1,1,1}
-\definecolor{loestc}{rgb}{.95,.95,.95}
-%Farben für ein ausgefülltes Skript. Die folgenden beiden Zeilen auskommentieren, um ein leeres Skript zu erhalten.
-\definecolor{loes}{rgb}{.0,.13,.8}
-\definecolor{loestc}{rgb}{.6,.0,.1}
-
 %%%%%%%%%%%%%%%%%%%% IF-TOGGLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtoggle{qrcode} %Steuert das Erstellen der QR-Codes
 \toggletrue{qrcode}
 %\togglefalse{qrcode}
-
+\newtoggle{titlepage} %Titelseite und Inhaltsverzeichnis
+\toggletrue{titlepage}
+\togglefalse{titlepage}
+\newtoggle{ausfuellen} %Ausfüllen der Arbeitsblätter
+\toggletrue{ausfuellen}
+\togglefalse{ausfuellen}
+%%%%%%%%%%%%%%%%%%%%%% FARBEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Häufig verwendetet Farben
+%ForestGreen 		RGB(  0,155, 85)
+%YellowOrange		RGB(250,162, 26)
+\definecolor{tcback}{rgb}{.95,.95,.95} %Hintergrundfarbe der Merkboxen
+\iftoggle{ausfuellen}{
+    %Farben für ein ausgefülltes Skript. Hier kann man die Schriftfarbe für die Teile, die eigentlich die SuS ausfüllen sollen, vorgeben.
+    \definecolor{loes}{rgb}{.0,.13,.8}
+    \definecolor{loestc}{rgb}{.6,.0,.1}
+}{
+    %Farben für ein leeres Skript (Farbe der ausgefüllten Teile entspricht der Hintergrundfarbe).
+    \definecolor{loes}{rgb}{1,1,1} %Weiß
+    \definecolor{loestc}{rgb}{.95,.95,.95} %Hintergrundfarbe der Merkboxen
+}
 %%%%%%%%%%%%%%%%% FORMATIERUNGEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand*{\titlepagestyle}{empty}
 \setlist[enumerate]{nosep, topsep=0pt}	%Kleinere Abstände bei Aufzählungen
@@ -125,7 +132,6 @@
 \renewcommand{\AnswerListName}{L{\"o}sung}%
 \renewcommand{\ExePartName}{Teil}%
 \renewcommand{\ArticleOf}{von\ }%
-%\renewcommand{\ExerciseHeaderTitle}{\ExerciseTitle}
 \renewcommand{\ExerciseHeader}{%
     \textbf{\large\ExerciseHeaderDifficulty\ExerciseName\ %
         \ExerciseHeaderNB\normalsize\ExerciseHeaderTitle\ExerciseHeaderOrigin}\medskip}
@@ -140,7 +146,7 @@
 \renewcommand*{\@pnumwidth}{2em}%Platz für 3-stellige Seitenzahlen im toc
 \makeatother
 
-\begin{document}
+\begin{document}%TODO Schaubilder doppeln auf leer/lösung und per if-toggle einbinden
     \newlength{\imgheight}
     \newlength{\qrheight}
 	\setlength\parindent{0pt} %keine Einrückungen beim Start eines Paragraphen
@@ -152,6 +158,7 @@
 	\lehead{lehead}
 	\cehead{cehead}
 	\rehead{rehead}
+    \iftoggle{titlepage}{%
 	\title{Mathematik
 
 		Ein Skript für das Berufskolleg}
@@ -183,10 +190,10 @@
 
     Aktuelle Version in Form der Quelldateien unter
 
-    \href{https://github.com/hoerm007/MatheSkript_BK1BK2BKFH_BW}{https://github.com/hoerm007/MatheSkript\_BK1BK2BKFH\_BW}
+    \href{https://github.com/hoerm007/MatheSkript_BK1BK2BKFH_BW}{https://github.com/hoerm007/MatheSkript\_BK1BK2BKFH\_BW}}{}%
     \newpage
     \cofoot[\pagemark]{\pagemark}
-    \tableofcontents
+    \iftoggle{titlepage}{\tableofcontents}{}%
     \newpage
     \setkomafont{headsepline}{\color{black}}
 	\lohead{Mathematik}
@@ -205,13 +212,13 @@
 	\def\optimierung{./Arbeitsblaetter/Optimierung}
 	\def\integration{./Arbeitsblaetter/Integration}
 	\def\trigonometrie{./Arbeitsblaetter/Trigonometrie}
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fakesection{Grundlagen}
-	\input{\grundlagen/Mengen.tex}
+	\input{./Arbeitsblaetter/Grundlagen/Mengen.tex}
 	\newpage
-	\input{\grundlagen/EinfachesRechnen.tex}
+	\input{./Arbeitsblaetter/Grundlagen/EinfachesRechnen.tex}
 	\newpage
-	\input{\grundlagen/Mitternachtsformel.tex}
+	\input{./Arbeitsblaetter/Grundlagen/Mitternachtsformel.tex}
 	\newpage
 %	\cohead{\Large\textbf{Lösungen}}
 %	\fakesubsection{Lösungen}
@@ -219,17 +226,17 @@
 %	\newpage
 %	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fakesection{Lineare Funktionen}
-	\input{\linFkt/Begriffe.tex}
+	\input{./Arbeitsblaetter/LineareFunktionen/Begriffe.tex}
 	\newpage
-	\input{\linFkt/Einfuehrung.tex}
+	\input{./Arbeitsblaetter/LineareFunktionen/Einfuehrung.tex}
 	\newpage
-	\input{\linFkt/Punktprobe.tex}
+	\input{./Arbeitsblaetter/LineareFunktionen/Punktprobe.tex}
 	\newpage
-	\input{\linFkt/Nullstellen.tex}
+	\input{./Arbeitsblaetter/LineareFunktionen/Nullstellen.tex}
 	\newpage
-	\input{\linFkt/Lage.tex}
+	\input{./Arbeitsblaetter/LineareFunktionen/Lage.tex}
 	\newpage
-	\input{\linFkt/Schnittpunkt.tex}
+	\input{./Arbeitsblaetter/LineareFunktionen/Schnittpunkt.tex}
 	\newpage
 %%	\cohead{\Large\textbf{Lösungen}}
 %%	\fakesubsection{Lösungen}
@@ -237,11 +244,11 @@
 %%	\newpage
 %	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fakesection{Quadratische Funktionen}
-	\input{\quadFkt/Scheitelform.tex}
+	\input{./Arbeitsblaetter/QuadratischeFunktionen/Scheitelform.tex}
 	\newpage
-	\input{\quadFkt/Hauptform.tex}
+	\input{./Arbeitsblaetter/QuadratischeFunktionen/Hauptform.tex}
 	\newpage
-	\input{\quadFkt/Produktform.tex}
+	\input{./Arbeitsblaetter/QuadratischeFunktionen/Produktform.tex}
 	\newpage
 %%	\cohead{\Large\textbf{Lösungen}}
 %%	\fakesubsection{Lösungen}
@@ -249,21 +256,21 @@
 %%	\newpage
 %	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fakesection{Ganzrationale Funktionen}
-	\input{\ganzFkt/Einfuehrung.tex}
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Einfuehrung.tex}
 	\newpage
-	\input{\ganzFkt/Potenzfunktionen.tex}
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Potenzfunktionen.tex}
 	\newpage
-	\input{\ganzFkt/Hauptform.tex}
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Hauptform.tex}
 	\newpage
-	\input{\ganzFkt/Symmetrie.tex}
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Symmetrie.tex}
 	\newpage
-	\input{\ganzFkt/Verhalten.tex}
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Verhalten.tex}
 	\newpage
-	\input{\ganzFkt/Nullstellen.tex}
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Nullstellen.tex}
 	\newpage
-	\input{\ganzFkt/Wurzeln.tex}
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Wurzeln.tex}
 	\newpage
-	\input{\ganzFkt/Produktform.tex}
+	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Produktform.tex}
 	\newpage
 %%	\cohead{\Large\textbf{Lösungen}}
 %%	\fakesubsection{Lösungen}
@@ -271,106 +278,106 @@
 %%	\newpage
 %	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fakesection{Exponentialfunktionen}%TODO Aufgaben mit Prozenten
-	\input{\eFkt/Einfuehrung.tex}
+	\input{./Arbeitsblaetter/EFunktionen/Einfuehrung.tex}
 	\newpage
- 	\input{\eFkt/Begriffe.tex}%TODO Geogebra
+ 	\input{./Arbeitsblaetter/EFunktionen/Begriffe.tex}
 	\newpage
- 	\input{\eFkt/WaagrechteAsymptoten.tex}%TODO Geogebra
+ 	\input{./Arbeitsblaetter/EFunktionen/WaagrechteAsymptoten.tex}
  	\newpage
- 	\input{\eFkt/Ln.tex}%TODO Geogebra
+ 	\input{./Arbeitsblaetter/EFunktionen/Ln.tex}
  	\newpage
- 	\input{\eFkt/FktAuf.tex}
+ 	\input{./Arbeitsblaetter/EFunktionen/FktAuf.tex}
  	\newpage
- 	\input{\eFkt/SchiefeAsymptoten.tex}%TODO Geogebra
+ 	\input{./Arbeitsblaetter/EFunktionen/SchiefeAsymptoten.tex}
  	\newpage
- 	\input{\eFkt/NaehrungsweiseNST.tex}
+ 	\input{./Arbeitsblaetter/EFunktionen/NaehrungsweiseNST.tex}
  	\newpage
 %% 	\cohead{\Large\textbf{Lösungen}}
 %% 	\fakesubsection{Lösungen}
 %% 	\shipoutAnswer
 %% 	\newpage
 % 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \fakesection{Differentialrechnung}
- 	\input{\ableitung/MittlereAenderungsrate.tex}%TODO Geogebra
+   \fakesection{Differentialrechnung}
+ 	\input{./Arbeitsblaetter/Ableitung/MittlereAenderungsrate.tex}
  	\newpage
- 	\input{\ableitung/GrafischesAbleitung.tex}%TODO Geogebra
+ 	\input{./Arbeitsblaetter/Ableitung/GrafischesAbleitung.tex}%TODO Geogebra
  	\newpage
- 	\input{\ableitung/MomentanPunktweise.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/MomentanPunktweise.tex}
  	\newpage
- 	\input{\ableitung/MomentanAllg.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/MomentanAllg.tex}
  	\newpage
- 	\input{\ableitung/Ableitungsregeln.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/Ableitungsregeln.tex}
  	\newpage
- 	\input{\ableitung/Faktorregel.tex}%TODO underfull boxes
+ 	\input{./Arbeitsblaetter/Ableitung/Faktorregel.tex}%TODO underfull boxes
  	\newpage
- 	\input{\ableitung/Potenzregel.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/Potenzregel.tex}
  	\newpage
- 	\input{\ableitung/Summenregel.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/Summenregel.tex}
  	\newpage
- 	\input{\ableitung/eFktAbleitung.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/eFktAbleitung.tex}
  	\newpage
- 	\input{\ableitung/SchaubilderDerAbleitung.tex}%TODO Geogebra
+ 	\input{./Arbeitsblaetter/Ableitung/SchaubilderDerAbleitung.tex}%TODO Geogebra
  	\newpage
- 	\input{\ableitung/Tangenten.tex}%TODO Geogebra
+ 	\input{./Arbeitsblaetter/Ableitung/Tangenten.tex}
  	\newpage
- 	\input{\ableitung/Normalen.tex}%TODO Geogebra
+ 	\input{./Arbeitsblaetter/Ableitung/Normalen.tex}
  	\newpage
- 	\input{\ableitung/Beruehren.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/Beruehren.tex}
  	\newpage
- 	\input{\ableitung/Monotonie.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/Monotonie.tex}
  	\newpage
- 	\input{\ableitung/HoehereAbleitungen.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/HoehereAbleitungen.tex}
  	\newpage
- 	\input{\ableitung/Extrempunkte.tex}%TODO Geogebra
+ 	\input{./Arbeitsblaetter/Ableitung/Extrempunkte.tex}
  	\newpage
- 	\input{\ableitung/Kruemmung.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/Kruemmung.tex}
  	\newpage
- 	\input{\ableitung/Wendepunkte.tex}%TODO Wendetangente erwähnen + Aufgaben
+ 	\input{./Arbeitsblaetter/Ableitung/Wendepunkte.tex}
  	\newpage
- 	\input{\ableitung/FktGleichungenAufstellen.tex} %TODO Aufgaben erstellen
- 	\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \fakesection{Lineare Gleichungssysteme}
- 	\input{\lgs/LGSEinfuehrung.tex}
+ 	\input{./Arbeitsblaetter/Ableitung/FktGleichungenAufstellen.tex} %TODO Aufgaben erstellen
  	\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \fakesection{Optimierung}
- 	\input{\optimierung/Optimierung.tex}
+   \fakesection{Lineare Gleichungssysteme}
+ 	\input{./Arbeitsblaetter/LGS/LGSEinfuehrung.tex}
  	\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \fakesection{Integration}
- 	\input{\integration/Stammfunktionen.tex}
- 	\newpage
- 	\input{\integration/Integral_grafisch.tex}%TODO Geogebra
- 	\newpage
- 	\input{\integration/Integral_berechnen.tex}%overfull hbox, falls ref fehlt, kein Problem
- 	\newpage
- 	\input{\integration/Flaechenberechnung.tex}
- 	\newpage
- 	\input{\integration/IntGrenze_bestimmen.tex}
- 	\newpage
- 	\input{\integration/FlaechZwischenFunktionen.tex}
- 	\newpage
- 	\input{\integration/VerhaeltnisVonFlaechen.tex}
+   \fakesection{Optimierung}
+ 	\input{./Arbeitsblaetter/Optimierung/Optimierung.tex}
  	\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \fakesection{Trigonometrie}
- 	\input{\trigonometrie/Bogenmass.tex}
+   \fakesection{Integration}
+ 	\input{./Arbeitsblaetter/Integration/Stammfunktionen.tex}
  	\newpage
- 	\input{\trigonometrie/DefinitionSinCos.tex}
+ 	\input{./Arbeitsblaetter/Integration/Integral_grafisch.tex}%TODO Geogebra
  	\newpage
- 	\input{\trigonometrie/EigenschaftenSinCos.tex}
+ 	\input{./Arbeitsblaetter/Integration/Integral_berechnen.tex}%overfull hbox, falls ref fehlt, kein Problem
  	\newpage
- 	\input{\trigonometrie/AllgSinusUndCosinus.tex}
+ 	\input{./Arbeitsblaetter/Integration/Flaechenberechnung.tex}
  	\newpage
- 	\input{\trigonometrie/TrigonometrieExtremWende.tex}
+ 	\input{./Arbeitsblaetter/Integration/IntGrenze_bestimmen.tex}
  	\newpage
- 	\input{\trigonometrie/SinCosGleichungenOhneXStreckung.tex}
+ 	\input{./Arbeitsblaetter/Integration/FlaechZwischenFunktionen.tex}
  	\newpage
- 	\input{\trigonometrie/SinCosGleichungenMitXStreckung.tex}
+ 	\input{./Arbeitsblaetter/Integration/VerhaeltnisVonFlaechen.tex}
  	\newpage
- 	\input{\trigonometrie/TrigoAbleitung.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \fakesection{Trigonometrie}
+ 	\input{./Arbeitsblaetter/Trigonometrie/Bogenmass.tex}%TODO Geogebra
  	\newpage
- 	\input{\trigonometrie/TrigoStammfunktionen.tex}
+ 	\input{./Arbeitsblaetter/Trigonometrie/DefinitionSinCos.tex}%TODO Geogebra
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/EigenschaftenSinCos.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/AllgSinusUndCosinus.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/TrigonometrieExtremWende.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/SinCosGleichungenOhneXStreckung.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/SinCosGleichungenMitXStreckung.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/TrigoAbleitung.tex}
+ 	\newpage
+ 	\input{./Arbeitsblaetter/Trigonometrie/TrigoStammfunktionen.tex}
  	\newpage
 \end{document}
