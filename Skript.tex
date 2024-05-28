@@ -51,10 +51,10 @@
 %%%%%%%%%%%%%%%%%%%% IF-TOGGLES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtoggle{qrcode} %Steuert das Erstellen der QR-Codes
 \toggletrue{qrcode}
-%\togglefalse{qrcode}
+\togglefalse{qrcode}
 \newtoggle{titlepage} %Titelseite und Inhaltsverzeichnis
 \toggletrue{titlepage}
-\togglefalse{titlepage}
+%\togglefalse{titlepage}
 \newtoggle{ausfuellen} %Ausfüllen der Arbeitsblätter
 \toggletrue{ausfuellen}
 \togglefalse{ausfuellen}
@@ -147,6 +147,7 @@
 \makeatother
 
 \begin{document}%TODO Schaubilder doppeln auf leer/lösung und per if-toggle einbinden
+    \iftoggle{ausfuellen}{\def\AUSGEFUELLT{AUSGEFUELLT}}{\def\AUSGEFUELLT{}}
     \newlength{\imgheight}
     \newlength{\qrheight}
 	\setlength\parindent{0pt} %keine Einrückungen beim Start eines Paragraphen
@@ -281,6 +282,8 @@
 	\input{./Arbeitsblaetter/EFunktionen/Einfuehrung.tex}
 	\newpage
  	\input{./Arbeitsblaetter/EFunktionen/Begriffe.tex}
+	\newpage
+%%%%%    \input{./Arbeitsblaetter/EFunktionen/WachstumZerfall.tex}%TODO fertig erstellen
 	\newpage
  	\input{./Arbeitsblaetter/EFunktionen/WaagrechteAsymptoten.tex}
  	\newpage
