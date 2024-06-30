@@ -4,7 +4,7 @@
 Wir kennen nun die Ableitung der Normalparabel. Es scheint naheliegend, dass die Ableitungen von \(2x^2,\ 3x^2,\ -x^2\) und ähnlichen Funktionen eine zu \(x^2\) ähnliche Ableitung haben. Wir berechnen die Ableitung von \(f_a(x)=ax^2\):
 
 \begin{minipage}{\textwidth}
-	\begin{minipage}{0.4\textwidth}
+	\adjustbox{valign=t}{\begin{minipage}{0.4\textwidth}
 		\begin{align*}
 			f_a(x)&=ax^2\\
 			f_a'(x)&=\textcolor{loes}{\lim\limits_{h\to 0}\frac{f_a(x+h)-f_a(x)}{h}}\\
@@ -14,10 +14,12 @@ Wir kennen nun die Ableitung der Normalparabel. Es scheint naheliegend, dass die
 			&\textcolor{loes}{\;=\lim\limits_{h\to 0}a2x+ah}\\
 			&\textcolor{loes}{\;=a2x}
 		\end{align*}
-	\end{minipage}%
-	\begin{minipage}{0.6\textwidth}
+	\end{minipage}}%
+	\adjustbox{valign=t, padding=4ex 0ex 0ex 0ex}{\begin{minipage}{0.6\textwidth-4ex}
+        \vspace{1cm}
+
 		\textcolor{loes}{\(f(x)=x^2\) und \(f_a(x)=ax^2\) unterscheiden sich nur durch den Faktor \(a\). Das gleiche Verhalten zeigen die Ableitungen. \(f'(x)=2x\) und \(f_a'(x)=a2x\) unterscheiden sich ebenfalls nur durch den Faktor \(a\).}
-	\end{minipage}%
+	\end{minipage}}%
 \end{minipage}
 
 \vspace{2cm}
