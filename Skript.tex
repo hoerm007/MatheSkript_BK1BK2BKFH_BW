@@ -25,7 +25,7 @@
 \usepackage{nicematrix}
 \usepackage{bm}						        %\bm{xxx} for bold in math mode
 \usepackage{adjustbox}
-\usepackage[]{geometry}            %[showframe] debugging mit Boxen
+\usepackage[]{geometry}                     %[showframe] debugging mit Boxen
 \usepackage{marvosym}                       %\Lightning
 \usepackage{multirow}
 \usepackage{etoolbox}
@@ -57,7 +57,7 @@
 %\togglefalse{titlepage}
 \newtoggle{ausfuellen} %Ausfüllen der Arbeitsblätter
 \toggletrue{ausfuellen}
-\togglefalse{ausfuellen}
+%\togglefalse{ausfuellen}
 %%%%%%%%%%%%%%%%%%%%%% FARBEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Häufig verwendetet Farben
 %ForestGreen 		RGB(  0,155, 85)
@@ -167,6 +167,14 @@
     \maketitle
     \newpage
     \null\vfill
+    \begin{tcolorbox}[colframe=red]
+        Aktuelle Version sowie Quelldateien unter
+
+        \href{https://github.com/hoerm007/MatheSkript_BK1BK2BKFH_BW}{https://github.com/hoerm007/MatheSkript\_BK1BK2BKFH\_BW}%
+    \end{tcolorbox}
+
+    \bigskip
+
     \copyright {\the\year} Maier, Hermann, \href{mailto:maier@privatemail.com}{maier@privatemail.com}
 
     Dieses Werk unterliegt der CC BY-NC-SA 4.0 Lizenz \href{https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.de}{https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.de}.
@@ -183,15 +191,9 @@
         \item Weitergabe unter gleichen Bedingungen - Wenn Sie das Material remixen, verändern oder anderweitig direkt darauf aufbauen, dürfen Sie Ihre Beiträge nur unter derselben Lizenz wie das Original verbreiten.
     \end{itemize}
 
-    \bigskip
+    \iftoggle{qrcode}{\bigskip
 
-    \iftoggle{qrcode}{QR-Codes erzeugt mit \href{https://forqrcode.com/}{forqrcode.com}
-
-    \bigskip}
-
-    Aktuelle Version in Form der Quelldateien unter
-
-    \href{https://github.com/hoerm007/MatheSkript_BK1BK2BKFH_BW}{https://github.com/hoerm007/MatheSkript\_BK1BK2BKFH\_BW}}{}%
+    QR-Codes erzeugt mit \href{https://forqrcode.com/}{forqrcode.com}}{}}{}%
     \newpage
     \cofoot[\pagemark]{\pagemark}
     \iftoggle{titlepage}{\tableofcontents}{}%
@@ -213,7 +215,7 @@
 	\def\optimierung{./Arbeitsblaetter/Optimierung}
 	\def\integration{./Arbeitsblaetter/Integration}
 	\def\trigonometrie{./Arbeitsblaetter/Trigonometrie}
-%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fakesection{Grundlagen}
 	\input{./Arbeitsblaetter/Grundlagen/Mengen.tex}
 	\newpage
@@ -221,11 +223,7 @@
 	\newpage
 	\input{./Arbeitsblaetter/Grundlagen/Mitternachtsformel.tex}
 	\newpage
-%	\cohead{\Large\textbf{Lösungen}}
-%	\fakesubsection{Lösungen}
-%	\shipoutAnswer
-%	\newpage
-%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fakesection{Lineare Funktionen}
 	\input{./Arbeitsblaetter/LineareFunktionen/Begriffe.tex}
 	\newpage
@@ -239,11 +237,7 @@
 	\newpage
 	\input{./Arbeitsblaetter/LineareFunktionen/Schnittpunkt.tex}
 	\newpage
-%%	\cohead{\Large\textbf{Lösungen}}
-%%	\fakesubsection{Lösungen}
-%%	\shipoutAnswer
-%%	\newpage
-%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fakesection{Quadratische Funktionen}
 	\input{./Arbeitsblaetter/QuadratischeFunktionen/Scheitelform.tex}
 	\newpage
@@ -251,11 +245,7 @@
 	\newpage
 	\input{./Arbeitsblaetter/QuadratischeFunktionen/Produktform.tex}
 	\newpage
-%%	\cohead{\Large\textbf{Lösungen}}
-%%	\fakesubsection{Lösungen}
-%%	\shipoutAnswer
-%%	\newpage
-%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fakesection{Ganzrationale Funktionen}
 	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Einfuehrung.tex}
 	\newpage
@@ -273,17 +263,13 @@
 	\newpage
 	\input{./Arbeitsblaetter/GanzrationaleFunktionen/Produktform.tex}
 	\newpage
-%%	\cohead{\Large\textbf{Lösungen}}
-%%	\fakesubsection{Lösungen}
-%%	\shipoutAnswer
-%%	\newpage
-%	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\fakesection{Exponentialfunktionen}%TODO Aufgaben mit Prozenten
 	\input{./Arbeitsblaetter/EFunktionen/Einfuehrung.tex}
 	\newpage
  	\input{./Arbeitsblaetter/EFunktionen/Begriffe.tex}
 	\newpage
-%%%%%    \input{./Arbeitsblaetter/EFunktionen/WachstumZerfall.tex}%TODO fertig erstellen
+%%%%    \input{./Arbeitsblaetter/EFunktionen/WachstumZerfall.tex}%TODO fertig erstellen
 	\newpage
  	\input{./Arbeitsblaetter/EFunktionen/WaagrechteAsymptoten.tex}
  	\newpage
@@ -295,15 +281,13 @@
  	\newpage
  	\input{./Arbeitsblaetter/EFunktionen/NaehrungsweiseNST.tex}
  	\newpage
-%% 	\cohead{\Large\textbf{Lösungen}}
-%% 	\fakesubsection{Lösungen}
-%% 	\shipoutAnswer
-%% 	\newpage
-% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	\input{./Arbeitsblaetter/EFunktionen/Aufgaben.tex}
+ 	\newpage
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \fakesection{Differentialrechnung}
  	\input{./Arbeitsblaetter/Ableitung/MittlereAenderungsrate.tex}
  	\newpage
- 	\input{./Arbeitsblaetter/Ableitung/GrafischesAbleitung.tex}%TODO Geogebra
+ 	\input{./Arbeitsblaetter/Ableitung/GrafischesAbleiten.tex}%TODO Geogebra
  	\newpage
  	\input{./Arbeitsblaetter/Ableitung/MomentanPunktweise.tex}
  	\newpage
@@ -311,7 +295,7 @@
  	\newpage
  	\input{./Arbeitsblaetter/Ableitung/Ableitungsregeln.tex}
  	\newpage
- 	\input{./Arbeitsblaetter/Ableitung/Faktorregel.tex}%TODO underfull boxes
+ 	\input{./Arbeitsblaetter/Ableitung/Faktorregel.tex}
  	\newpage
  	\input{./Arbeitsblaetter/Ableitung/Potenzregel.tex}
  	\newpage
@@ -339,15 +323,15 @@
  	\newpage
  	\input{./Arbeitsblaetter/Ableitung/FktGleichungenAufstellen.tex} %TODO Aufgaben erstellen
  	\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \fakesection{Lineare Gleichungssysteme}
  	\input{./Arbeitsblaetter/LGS/LGSEinfuehrung.tex}
  	\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \fakesection{Optimierung}
  	\input{./Arbeitsblaetter/Optimierung/Optimierung.tex}
  	\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \fakesection{Integration}
  	\input{./Arbeitsblaetter/Integration/Stammfunktionen.tex}
  	\newpage
@@ -363,7 +347,7 @@
  	\newpage
  	\input{./Arbeitsblaetter/Integration/VerhaeltnisVonFlaechen.tex}
  	\newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    \fakesection{Trigonometrie}
  	\input{./Arbeitsblaetter/Trigonometrie/Bogenmass.tex}%TODO Geogebra
  	\newpage
