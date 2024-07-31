@@ -36,12 +36,12 @@ Das (bestimmte) Integral von \(f(x)\) zwischen \(x=a\) und \(x=b\) mit \(a<b\) w
 	\adjustbox{valign=t}{\begin{minipage}{.4\textwidth}
             	\begin{minipage}{\textwidth}
                 \iftoggle{qrcode}{%
-                    \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\integration/pics/EinViertelXQuadratPlusEins.png}}%
+                    \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\integration/pics/EinViertelXQuadratPlusEins\iftoggle{ausfuellen}{}{_empty}.png}}%
                     \setlength{\qrheight}{2.5cm}%
-                    \includegraphics[width=\linewidth]{\integration/pics/EinViertelXQuadratPlusEins.png}%
+                    \includegraphics[width=\linewidth]{\integration/pics/EinViertelXQuadratPlusEins\iftoggle{ausfuellen}{}{_empty}.png}%
                     \adjustbox{raise=\imgheight-\qrheight, lap=-\textwidth}{\makebox[0pt][l]{\href{https://www.geogebra.org/m/spwcgydg}{\includegraphics[height=\qrheight]{\integration/pics/EinViertelXQuadratPlusEinsQR.png}}}}%
                 }{%
-                    \includegraphics[width=\linewidth]{\integration/pics/EinViertelXQuadratPlusEins.png}
+                    \includegraphics[width=\linewidth]{\integration/pics/EinViertelXQuadratPlusEins\iftoggle{ausfuellen}{}{_empty}.png}
                 }%
             \end{minipage}%
 	\end{minipage}}%
@@ -49,7 +49,7 @@ Das (bestimmte) Integral von \(f(x)\) zwischen \(x=a\) und \(x=b\) mit \(a<b\) w
 \vspace{1cm}\\
 \begin{minipage}{\textwidth}
 	\adjustbox{valign=t}{\begin{minipage}{.4\textwidth}
-		\includegraphics[width=\linewidth]{\integration/pics/MinusZweiFuenftelXHochZweiPlusEins.png}
+		\includegraphics[width=\linewidth]{\integration/pics/MinusZweiFuenftelXHochZweiPlusEins\iftoggle{ausfuellen}{}{_empty}.png}
 	\end{minipage}}%
 	\adjustbox{valign=t, padding=2ex 0ex 0ex 0ex}{\begin{minipage}{.6\textwidth-2ex}\raggedright
 		Als zweites Beispiel betrachten wir die Funktion \(f(x)=-\frac{2}{5}x^2+1\).

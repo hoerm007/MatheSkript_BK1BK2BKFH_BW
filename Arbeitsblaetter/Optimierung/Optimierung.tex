@@ -19,12 +19,12 @@ Bei Optimierungsaufgaben muss für eine Größe wie die Fläche eines Rechtecks 
 	\end{minipage}}%
 	\adjustbox{valign=t, padding = 2ex 0ex 0ex 0ex}{\begin{minipage}{.5\textwidth-2ex}
         \iftoggle{qrcode}{
-		\settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\optimierung/pics/Beispiel1.png}}%
+		\settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\optimierung/pics/Beispiel1\iftoggle{ausfuellen}{}{_empty}.png}}%
         \setlength{\qrheight}{2.5cm}%
-        \includegraphics[width=\linewidth]{\optimierung/pics/Beispiel1.png}%
+        \includegraphics[width=\linewidth]{\optimierung/pics/Beispiel1\iftoggle{ausfuellen}{}{_empty}.png}%
         \raisebox{\imgheight-\qrheight}{\makebox[0pt][r]{\href{https://www.geogebra.org/m/cxbqrqxz}{\includegraphics[height=\qrheight]{\optimierung/pics/Beispiel1QR.png}}}}%
         }{
-        \includegraphics[width=\linewidth]{\optimierung/pics/Beispiel1.png}}%
+        \includegraphics[width=\linewidth]{\optimierung/pics/Beispiel1\iftoggle{ausfuellen}{}{_empty}.png}}%
 	\end{minipage}}%
 \end{minipage}
 \textcolor{loes}{\[A(u)=\frac{1}{2}a\cdot h_a=\frac{1}{2}u\cdot f(u)=\frac{1}{2}u\left(-u^2+5u\right)=-\frac{1}{2}u^3+\frac{5}{2}u^2\]}

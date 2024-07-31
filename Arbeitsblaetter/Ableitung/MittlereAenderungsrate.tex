@@ -30,10 +30,10 @@ Diesen Ausdruck kennen wir bereits. Sind von einer Geraden zwei Punkte \(P_1(x_1
         \iftoggle{qrcode}{%
         \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\ableitung/pics/mittAenderungsrate.png}}%
         \setlength{\qrheight}{2.5cm}%
-        \includegraphics[width=\linewidth]{\ableitung/pics/mittAenderungsrate.png}%
+        \includegraphics[width=\linewidth]{\ableitung/pics/mittAenderungsrate\iftoggle{ausfuellen}{}{_empty}.png}%
         \adjustbox{raise=\imgheight-\qrheight, lap=-\textwidth}{\makebox[0pt][l]{\href{https://www.geogebra.org/m/gsantmrf}{\includegraphics[height=\qrheight]{\ableitung/pics/mittlereAenderungsrateQR.png}}}}
         }{%
-        \includegraphics[width=\linewidth]{\ableitung/pics/mittAenderungsrate.png}
+        \includegraphics[width=\linewidth]{\ableitung/pics/mittAenderungsrate\iftoggle{ausfuellen}{}{_empty}.png}
         }%
 	\end{minipage}}%
 	\adjustbox{valign=t, padding= 2ex 0ex 0ex 0ex}{\begin{minipage}{0.5\textwidth-2ex}\raggedright
