@@ -12,14 +12,22 @@ Die Funktion \(f(x)=a\cdot e^{k\cdot x},\ a\neq 0,\,k\neq 0\) nimmt in Abhängig
 \begin{minipage}{\textwidth}
 	\adjustbox{valign=t, padding =0ex 0ex 2ex 0ex}{\begin{minipage}{0.5\textwidth-2ex}
 		\begin{minipage}{\textwidth}
-			\includegraphics[width=\linewidth]{\eFkt/pics/e_x.png}
+            \iftoggle{qrcode}{%
+                \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\eFkt/pics/e_x.png}}%
+                \setlength{\qrheight}{2.5cm}%
+                %\includegraphics[width=\linewidth]{\eFkt/pics/e_x.png}%
+                \includegraphics[width=\linewidth]{\eFkt/pics/e_x\iftoggle{ausfuellen}{}{_empty}.png}%
+                \adjustbox{raise=\imgheight-\qrheight, lap=-\textwidth}{\makebox[0pt][l]{\href{https://www.geogebra.org/m/k2zss2kz}{\includegraphics[height=\qrheight]{\eFkt/pics/BegriffeQR.png}}}}
+            }{%
+                \includegraphics[width=\linewidth]{\eFkt/pics/e_x\iftoggle{ausfuellen}{}{_empty}.png}
+            }%
 		\end{minipage}%
 
 		\centering \(a\) positiv, \(k\) positiv, z.B. \(f_1(x)=e^x\)
 	\end{minipage}}%
 	\adjustbox{valign=t, padding =2ex 0ex 0ex 0ex}{\begin{minipage}{0.5\textwidth-2ex}
 		\begin{minipage}{\textwidth}
-			\includegraphics[width=\linewidth]{\eFkt/pics/e_minusx.png}
+			\includegraphics[width=\linewidth]{\eFkt/pics/e_minusx\iftoggle{ausfuellen}{}{_empty}.png}
 		\end{minipage}%
 
 		\centering \(a\) positiv, \(k\) negativ, z.B. \(f_2(x)=e^{-x}\)
@@ -31,14 +39,14 @@ Die Funktion \(f(x)=a\cdot e^{k\cdot x},\ a\neq 0,\,k\neq 0\) nimmt in Abhängig
 \begin{minipage}{\textwidth}
 	\adjustbox{valign=t, padding =0ex 0ex 2ex 0ex}{\begin{minipage}{0.5\textwidth-2ex}
 		\begin{minipage}{\textwidth}
-			\includegraphics[width=\linewidth]{\eFkt/pics/minuse_x.png}
+			\includegraphics[width=\linewidth]{\eFkt/pics/minuse_x\iftoggle{ausfuellen}{}{_empty}.png}
 		\end{minipage}%
 
 		\centering \(a\) negativ, \(k\) positiv, z.B. \(f_3(x)=-e^x\)
 	\end{minipage}}%
 	\adjustbox{valign=t, padding =2ex 0ex 0ex 0ex}{\begin{minipage}{0.5\textwidth-2ex}
 		\begin{minipage}{\textwidth}
-			\includegraphics[width=\linewidth]{\eFkt/pics/minuse_minusx.png}
+			\includegraphics[width=\linewidth]{\eFkt/pics/minuse_minusx\iftoggle{ausfuellen}{}{_empty}.png}
 		\end{minipage}%
 
 		\centering \(a\) negativ, \(k\) negativ, z.B. \(f_4(x)=-e^{-x}\)
@@ -68,14 +76,7 @@ Zur Einführung der neuen Begriffe Asymptote und Monotonie betrachten wir als Be
 	\end{minipage}}%
 	\adjustbox{valign=t, padding =2ex 0ex 0ex 0ex}{\begin{minipage}{0.45\textwidth-2ex}
 		\begin{minipage}{\textwidth}
-            \iftoggle{qrcode}{%
-            \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\eFkt/pics/2hochx.png}}%
-            \setlength{\qrheight}{2.5cm}%
-            \includegraphics[width=\linewidth]{\eFkt/pics/2hochx.png}%
-            \adjustbox{raise=\imgheight-\qrheight, lap=-\textwidth}{\makebox[0pt][l]{\href{https://www.geogebra.org/m/k2zss2kz}{\includegraphics[height=\qrheight]{\eFkt/pics/BegriffeQR.png}}}}
-            }{%
-                \includegraphics[width=\linewidth]{\eFkt/pics/2hochx.png}
-            }%
+            \includegraphics[width=\linewidth]{\eFkt/pics/2hochx.png}
 		\end{minipage}%
 	\end{minipage}}%
 \end{minipage}

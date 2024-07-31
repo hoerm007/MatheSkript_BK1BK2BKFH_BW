@@ -9,10 +9,10 @@ Beispiel: \(f(x)=\textcolor{blue}{2\cdot e^{x}}\textcolor{red}{-x-3}\)
 \iftoggle{qrcode}{%
     \settototalheight{\imgheight}{\includegraphics[width=\linewidth]{\eFkt/pics/schiefeAsymptote.png}}%
     \setlength{\qrheight}{2.5cm}%
-    \includegraphics[width=\linewidth]{\eFkt/pics/schiefeAsymptote.png}%
+    \includegraphics[width=\linewidth]{\eFkt/pics/schiefeAsymptote\iftoggle{ausfuellen}{}{_empty}.png}%
     \adjustbox{raise=\imgheight-\qrheight, lap=-\textwidth}{\makebox[0pt][l]{\href{https://www.geogebra.org/m/kmttcwtn}{\includegraphics[height=\qrheight]{\eFkt/pics/schiefeAsymptotenQR.png}}}}
 }{%
-    \includegraphics[width=\linewidth]{\eFkt/pics/schiefeAsymptote.png}
+    \includegraphics[width=\linewidth]{\eFkt/pics/schiefeAsymptote\iftoggle{ausfuellen}{}{_empty}.png}
 }%
 \end{minipage}
 
