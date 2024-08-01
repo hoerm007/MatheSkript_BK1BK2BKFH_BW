@@ -8,7 +8,7 @@
     \adjustbox{valign=t, padding =0ex 0ex 0ex 0ex}{\begin{minipage}{\trigoAllg}
         Die allgemeine Sinusfunktion bzw. Cosinusfunktion sind gegeben durch:
 
-        \[f(x)=a\sin\left(bx\right)+d\qquad g(x)=a\cos\left(bx\right)+d\]
+        \[f(x)=\textcolor{red}{a}\sin\left(\textcolor{blue}{b}x\right)+\textcolor{YellowOrange}{d}\qquad g(x)=\textcolor{red}{a}\cos\left(\textcolor{blue}{b}x\right)+\textcolor{YellowOrange}{d}\]
      \end{minipage}}%
     \iftoggle{qrcode}{\adjustbox{valign=t, padding =0ex 0ex 0ex 0ex}{\begin{minipage}{\qrheight}%
                 \href{https://www.geogebra.org/m/kuhfc6gm}{\includegraphics[height=\qrheight]{\trigonometrie/pics/AllgSinCosQR.png}}%
@@ -18,15 +18,15 @@
 \iftoggle{qrcode}{}{\bigskip}%
 
 \begin{itemize}
-	\item \(a\): \textcolor{loes}{Streckfaktor relativ zum Mittelwert in \(y\)-Richtung. Der Betrag von \(a\) gibt die Amplitude an.}
+	\item \(\textcolor{red}{a}\): \textcolor{loes}{Streckfaktor relativ zum Mittelwert in \(y\)-Richtung. Der Betrag von \(a\) gibt die Amplitude an. Für positive \(a\) hat der \(sin\) auf der \(y\)-Achse eine positive Steigung und umgekehrt. Für positive \(a\) hat der \(cos\) auf der \(y\)-Achse einen Hochpunkt, für negative \(a\) einen Tiefpunkt.}
 
     \bigskip
 
-	\item \(d\): \textcolor{loes}{Verschiebung in \(y\)-Richtung. Da der Mittelwert zuvor bei \(0\) lag, entspricht \(d\) dem Mittelwert.}
+	\item \(\textcolor{YellowOrange}{d}\): \textcolor{loes}{Verschiebung in \(y\)-Richtung. Da der Mittelwert zuvor bei \(0\) lag, entspricht \(d\) dem Mittelwert.}
 
     \bigskip
 
-	\item \(b\): \textcolor{loes}{Streckfaktor in \(x\)-Richtung. Zwischen dem Streckfaktor und der Periode \(p\) besteht folgender Zusammenhang: \(b\cdot p=2\pi\).}
+	\item \(\textcolor{blue}{b}\): \textcolor{loes}{Streckfaktor in \(x\)-Richtung. Zwischen dem Streckfaktor und der Periode \(p\) besteht folgender Zusammenhang: \(b\cdot p=2\pi\).}
 
     \bigskip
 
@@ -34,22 +34,22 @@
 
 \bigskip
 
-Beispiel: \(\displaystyle f(x)=2\sin\left(0,5x\right)-1\)
+Beispiel: \(\displaystyle f(x)=\textcolor{red}{2}\sin\left(\textcolor{blue}{0,5}x\right)\textcolor{YellowOrange}{-1}\)
 
 \medskip
 
 \begin{minipage}{\textwidth}
-	\includegraphics[width=\textwidth]{\trigonometrie/pics/AllgSin.png}
+	\includegraphics[width=\textwidth]{\trigonometrie/pics/AllgSin\iftoggle{ausfuellen}{}{_empty}.png}
 \end{minipage}
 
-\vspace{2cm}
+\bigskip
 
-Beispiel: \(\displaystyle g(x)=-0,5\cos\left(\pi x\right)+1\)
+Beispiel: \(\displaystyle g(x)=\textcolor{red}{-0,5}\cos\left(\textcolor{blue}{\pi} x\right)\textcolor{YellowOrange}{+1}\)
 
 \medskip
 
 \begin{minipage}{\textwidth}
-	\includegraphics[width=\textwidth]{\trigonometrie/pics/AllgCos.png}
+	\includegraphics[width=\textwidth]{\trigonometrie/pics/AllgCos\iftoggle{ausfuellen}{}{_empty}.png}
 \end{minipage}
 \newpage
 
