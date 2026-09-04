@@ -26,7 +26,6 @@
 \bigskip
 
 \begin{minipage}{\textwidth}
-
 	\begin{minipage}{0.65\textwidth}
 		\centering\Large\textcolor{loes}{Für \(n=1\) ergibt sich eine Gerade.}
 	\end{minipage}%
@@ -43,9 +42,9 @@
 
 			\textcolor{loes}{Achsensymmetrie zur y-Achse}
 
-			\textcolor{loes}{\(f(x)\xrightarrow{\hphantom{\ }x\to-\infty\hphantom{\ }}\infty\)}
+			\textcolor{loes}{\(x\to-\infty: f(x)\to\infty\)}
 
-			\textcolor{loes}{\(f(x)\xrightarrow{\hphantom{\ }x\to\infty\hphantom{\ }}\infty\)}
+			\textcolor{loes}{\(x\to\infty: f(x)\to\infty\)}
 	\end{minipage}%
 	\begin{minipage}{0.35\textwidth}
 		\includegraphics[width=\linewidth]{\ganzFkt/pics/potenzGeradeHZ.png}
@@ -60,14 +59,18 @@
 
 			\textcolor{loes}{Punktsymmetrie zum Ursprung}
 
-			\textcolor{loes}{\(f(x)\xrightarrow{\hphantom{\ }x\to-\infty\hphantom{\ }}-\infty\)}
+			\textcolor{loes}{\(x\to-\infty: f(x)\to-\infty\)}
 
-			\textcolor{loes}{\(f(x)\xrightarrow{\hphantom{\ }x\to\infty\hphantom{\ }}\infty\)}
+			\textcolor{loes}{\(x\to\infty: f(x)\to\infty\)}
 	\end{minipage}%
 	\begin{minipage}{0.35\textwidth}
 		\includegraphics[width=\linewidth]{\ganzFkt/pics/potenzUngeradeHZ.png}
 	\end{minipage}%
-\end{minipage}
+\end{minipage}%
+
+\bigskip
+
+\textcolor{loes}{Hinweis: Für n=0 ergibt sich eine konstante Funktion, die für uns vergleichsweise unwichtig ist.}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Exercise}[title={Skizziere das Schaubild, gib die Symmetrie sowie das Verhalten für sehr große/kleine \(x\) an.}, label=potenzA1]
@@ -92,6 +95,31 @@
 		\end{minipage}%
 	\end{minipage}%
 \end{Exercise}
+
+\begin{Exercise}[title={Ordne die passenden Aussagen den Funktionen zu. Jeder Funktion können mehrere Aussagen zugeordnet werden. Die Aussagen können mehrfach verwendet werden.}, label=potenzA2]
+	
+	\begin{minipage}{\textwidth}
+		\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\alph*)]
+				\item \(f(x)=-2x^4\)
+				\item \(g(x)=\frac{1}{3}x^3\)
+				\item \(h(x)=6x^6\)
+				\item \(i(x)=-0,5x^5\)
+			\end{enumerate}
+		\end{minipage}}%
+		\adjustbox{valign=t}{\begin{minipage}{0.5\textwidth}
+			\begin{enumerate}[label=\arabic*)]
+				\item Das Schaubild der Funktion ist punktsymmetrisch zum Ursprung.
+				\item Es gilt \(x\to-\infty: f(x)\to\infty\)
+				\item Das Schaubild ist parabelförmig.
+				\item Der Streckfaktor ist negativ.
+				\item Die Funktionswerte sind alle negativ oder Null.
+				\item Der Exponent ist ungerade.
+				\item Die Funktionswerte decken die reellen Zahlen ab. 
+			\end{enumerate}
+		\end{minipage}}%
+	\end{minipage}%
+\end{Exercise}
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{Answer}[ref=potenzA1]
@@ -108,9 +136,9 @@
 
 			Achsensymmetrie zur y-Achse
 
-			\(f(x)\xrightarrow{\hphantom{\ }x\to-\infty\hphantom{\ }}\infty\)
+			\(x\to-\infty: f(x)\to\infty\)
 
-			\(f(x)\xrightarrow{\hphantom{\ }x\to\infty\hphantom{\ }}\infty\)
+			\(x\to\infty: f(x)\to\infty\)
 
 			\includegraphics[width=.95\linewidth]{\ganzFkt/pics/potenzPosGerA1.png}
 		\end{minipage}%
@@ -119,10 +147,10 @@
 			Parabelförmig
 
 			Achsensymmetrie zur y-Achse
-
-			\(f(x)\xrightarrow{\hphantom{\ }x\to-\infty\hphantom{\ }}-\infty\)
-
-			\(f(x)\xrightarrow{\hphantom{\ }x\to\infty\hphantom{\ }}-\infty\)
+			
+			\(x\to-\infty: f(x)\to-\infty\)
+			
+			\(x\to\infty: f(x)\to-\infty\)
 
 			\includegraphics[width=.95\linewidth]{\ganzFkt/pics/potenzNegGerA1.png}
 		\end{minipage}%
@@ -134,10 +162,11 @@
 
 			S-förmig
 
-			Punktsymmetrie zum Ursprung\\
-			\(f(x)\xrightarrow{\hphantom{\ }x\to-\infty\hphantom{\ }}-\infty\)
-
-			\(f(x)\xrightarrow{\hphantom{\ }x\to\infty\hphantom{\ }}\infty\)
+			Punktsymmetrie zum Ursprung
+			
+			\(x\to-\infty: f(x)\to-\infty\)
+			
+			\(x\to\infty: f(x)\to\infty\)
 
 			\includegraphics[width=.95\linewidth]{\ganzFkt/pics/potenzPosUngerA1.png}
 		\end{minipage}%
@@ -147,12 +176,27 @@
 			S-förmig
 
 			Punktsymmetrie zum Ursprung
-
-			\(f(x)\xrightarrow{\hphantom{\ }x\to-\infty\hphantom{\ }}\infty\)
-
-			\(f(x)\xrightarrow{\hphantom{\ }x\to\infty\hphantom{\ }}-\infty\)
+			
+			\(x\to-\infty: f(x)\to\infty\)
+			
+			\(x\to\infty: f(x)\to-\infty\)
 
 			\includegraphics[width=.95\linewidth]{\ganzFkt/pics/potenzNegUngerA1.png}
 		\end{minipage}%
 	\end{minipage}
+\end{Answer}
+
+\begin{Answer}[ref=potenzA2]
+	
+	\adjustbox{valign=t}{\begin{minipage}{\textwidth}
+			\begin{enumerate}[label=\arabic*)]
+				\item Das Schaubild der Funktion ist punktsymmetrisch zum Ursprung: \(g(x)\) oder \(i(x)\)
+				\item Es gilt \(x\to-\infty: f(x)\to\infty\): \(h(x)\) oder \(i(x)\)
+				\item Das Schaubild ist parabelförmig: \(f(x)\) oder \(h(x)\)
+				\item Der Streckfaktor ist negativ: \(f(x)\) oder \(i(x)\)
+				\item Die Funktionswerte sind alle negativ oder Null: \(f(x)\)
+				\item Der Exponent ist ungerade: \(g(x)\) oder \(i(x)\)
+				\item Die Funktionswerte decken die reellen Zahlen ab: \(g(x)\) oder \(i(x)\)
+			\end{enumerate}
+	\end{minipage}}%
 \end{Answer}
